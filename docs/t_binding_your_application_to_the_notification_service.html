@@ -1,0 +1,39 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You must bind your application to the Notification service instance to provision connection details and credentials for your Notification service instance in the VCAP_SERVICES environment variable. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Binding Your Application to the Notification Service Instance"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Helen Cheung"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_fac6ab57-f79a-4e32-935c-8d52098536ec"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Binding Your Application to the Notification Service Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_fac6ab57-f79a-4e32-935c-8d52098536ec">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Binding Your Application to the Notification Service Instance</h1>
+<div class="body taskbody"><p class="shortdesc"></p>
+<div class="section context">You must bind your application to the Notification service instance to provision connection details and credentials for your Notification service instance in the VCAP_SERVICES environment variable. Cloud Foundry runtime uses VCAP_SERVICES environment variables to communicate with a deployed application about its environment.</div>
+<ol class="ol steps" id="task_fac6ab57-f79a-4e32-935c-8d52098536ec__steps_2a13e408-9997-48ef-892b-e66547a8605b"><li class="li step stepexpand"><span class="ph cmd">Bind your application to your service instance with the following command:</span><div class="itemgroup info"><samp class="ph codeph">cf bind-service &lt;app_name&gt; &lt;service_instance_name&gt;</samp></div></li>
+<li class="li step stepexpand"><span class="ph cmd">Restage your application to ensure the environment variable changes take effect:</span><div class="itemgroup info"><samp class="ph codeph">cf restage &lt;application_name&gt;</samp></div></li>
+<li class="li step stepexpand"><span class="ph cmd">To view the environment variables for your application, enter the following command:</span><div class="itemgroup info"><samp class="ph codeph">cf env &lt;application_name&gt;</samp></div><div class="itemgroup info">The command shows the environment variables, which contain your basic authorization credentials, client ID, and the ingestion and query endpoint URIs.</div><div class="itemgroup info">The application's <span class="ph uicontrol">VCAP SERVICES</span> contains the following variables: <pre class="pre codeblock">"notification": [
+   {
+    "credentials": {
+     "catalog-uri": "&lt;service url&gt;",
+     "tenant-uuid": "&lt;tenant uuid&gt;",
+     "version": "1",
+     "trusted-issuer-ids": "&lt;trusted issuers&gt;",
+     "zone-oauth-scope": "notification.zone.&lt;tenant uuid&gt;.user"
+    },
+    "label": "notification",
+    "name": "&lt;service_instance_name&gt;",
+    "plan": "&lt;plan&gt;",
+    "provider": null,
+    "syslog_drain_url": null
+     
+    ]
+   }</pre>
+</div></li>
+</ol>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="To create a service instance using a command line: Note: The following steps are performed using the Cloud Foundry CLI tool. It is found at: https://github.com/cloudfoundry/cli . Make sure you have ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating a Notification Service Instance"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Helen Cheung"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_544bad23-6e53-41eb-8e8f-0f97cb531fb0"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating a Notification Service Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_544bad23-6e53-41eb-8e8f-0f97cb531fb0">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Creating a Notification Service Instance</h1>
+<div class="body taskbody"><p class="shortdesc"></p>
+<div class="section context">To create a service instance using a command line: <div class="note note"><span class="notetitle">Note:</span> The following steps are performed using the Cloud Foundry CLI tool. It is found at: <a class="xref" href="https://github.com/cloudfoundry/cli" target="_blank">https://github.com/cloudfoundry/cli</a>. Make sure you have the latest version. To complete the steps in a web browser, follow the instructions on the service page in the Predix catalog.</div>
+</div>
+<ol class="ol steps" id="task_544bad23-6e53-41eb-8e8f-0f97cb531fb0__steps_cd29a3b0-b936-439d-a96b-523e9e2d5290"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                    <p class="p">The value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is available in the Predix welcome email that you get when you register for an Predix.io user account. Depending on your Predix.io registration, the value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is one of the following:</p>
+
+                    <ul class="ul" id="task_544bad23-6e53-41eb-8e8f-0f97cb531fb0__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li">Predix Basic <p class="p"><samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Select <p class="p"><samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Japan<p class="p"><samp class="ph codeph">https://api.system.aws-jp01-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix UK <p class="p"><samp class="ph codeph">https://api.system.dc-uk01-pr.ice.predix.io</samp></p>
+</li>
+</ul>
+
+                    <p class="p">For example,</p>
+
+                    <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">List the services in the Cloud Foundry marketplace:</span><div class="itemgroup info"><samp class="ph codeph">cf marketplace</samp></div><div class="itemgroup info">You see the available services and associated plans.</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Create a notification service instance by running the following command:</span><div class="itemgroup info">On Mac OS and Linux, the syntax is:</div><div class="itemgroup info"><samp class="ph codeph">cf create-service notification &lt;plan&gt; &lt;service_instance_name&gt; -c '{“trustedIssuerId”: “&lt;predix uaa instance url&gt;/oauth/token”}'</samp></div><div class="itemgroup info">On Windows, the syntax is: </div><div class="itemgroup info"><samp class="ph codeph">cf create-service notification &lt;plan&gt; &lt;service_instance_name&gt; -c "{\“trustedIssuerId\”: [\“&lt;predix uaa instance url&gt;/oauth/token\”]}"</samp></div><div class="itemgroup info">where:<ul class="ul" id="task_544bad23-6e53-41eb-8e8f-0f97cb531fb0__ul_72ae9b0f-9695-4d9b-9728-dd05a02e97e2"><li class="li">&lt;plan&gt; – the plan associated with a service.</li>
+<li class="li">&lt;service_instance_name&gt; – the service instance you are creating.</li>
+</ul>
+</div><div class="itemgroup info">Once a service instance is created, you are issued a tenant UUID for the created service instance. You will need to bind the application to the service instance to obtain the tenant UUID. See <a class="xref" href="t_binding_your_application_to_the_notification_service.html#task_fac6ab57-f79a-4e32-935c-8d52098536ec">Binding Your Application to the Notification Service Instance</a>.</div></li>
+</ol>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

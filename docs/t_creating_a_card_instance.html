@@ -1,0 +1,74 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Procedure for creating a card instance in the View service database. Select a REST client (such as Postman ) that can execute API requests to use View service. . For more information about this API, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating a Card"></meta><meta name="abstract" content="Procedure for creating a card instance in the View service database."></meta><meta name="description" content="Procedure for creating a card instance in the View service database."></meta><meta name="DC.Relation" scheme="URI" content="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f"></meta><meta name="DC.Relation" scheme="URI" content="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_vg3_zyt_d5"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating a Card</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_vg3_zyt_d5">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Creating a Card</h1>
+<div class="body taskbody"><p class="shortdesc">Procedure for creating a card instance in the View service database.</p>
+<div class="section prereq p">
+            <p class="p">Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to use View service. .</p>
+
+            <p class="p">For more information about this API, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
+
+        </div>
+<div class="section context">A <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">card</a> is a <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">component</a> that provides a composable user interface object. If you have access to the public Github repository, consider cloning or forking one of the sample cards in the <samp class="ph codeph">px-sample-cards</samp> repository rather than building one from scratch.<div class="note note"><span class="notetitle">Note:</span> The code in this repository depends upon commercial software provided by Highsoft. GE does not provides licensing to use the Highcharts and Highstock code. Your organization must obtain its own development and distribution license from Highcharts to use the code. For pricing and to purchase, visit <a class="xref" href="http://shop.highsoft.com" target="_blank">http://shop.highsoft.com</a></div>
+</div>
+<ol class="ol steps" id="task_vg3_zyt_d5__steps_bh3_zyt_d5"><li class="li step"><span class="ph cmd"><a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">Create a card instance</a> in the View service database. For example:</span><ol type="a" class="ol substeps" id="task_vg3_zyt_d5__substeps_nhz_xbx_mx"><li class="li substep substepexpand"><span class="ph cmd">Add a card to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application. For example:</span><div class="itemgroup info">
+                            <pre class="pre codeblock">&lt;!-- a card that can display temperature of a city --&gt;
+&lt;my-temperature-card id="card-1" title="San Ramon Temperature"postal="94582" unit="F"&gt;&lt;/my-temperature-card&gt;
+</pre>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">In a REST client, enter the following POST request:</span><div class="itemgroup info">
+                            <pre class="pre codeblock">[POST] /api/cards</pre>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">Copy the following JSON blocks into the request body:</span><div class="itemgroup info">
+                            <pre class="pre codeblock">[{
+    "title": "San Ramon Temperature",
+    "slug": "my-temperature-card",
+    "attributes": {
+        "postal": "94582",
+        "unit": "F"
+    }
+}]</pre>
+
+                        </div></li>
+</ol>
+</li>
+<li class="li step"><span class="ph cmd">In a REST client, <a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">retrieve a card instance</a> in JSON format from the database. For example:</span><ol type="a" class="ol substeps" id="task_vg3_zyt_d5__substeps_u5q_4tc_dx"><li class="li substep substepexpand"><span class="ph cmd">In a REST client, enter the following GET request:</span><div class="itemgroup info">
+                            <pre class="pre codeblock">[GET] /api/cards</pre>
+
+                        </div></li>
+<li class="li substep substepexpand"><span class="ph cmd">Copy the following JSON blocks into the request body:</span><div class="itemgroup info">
+                            <pre class="pre codeblock">
+[{
+    "title": "San Ramon Temperature",
+    "slug": "my-temperature-card",
+    "attributes": {
+        "postal": "94582",
+        "unit": "F"
+    }
+}]
+</pre>
+
+                        </div></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
+<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="View service overview">About the View Service</a></div>
+</div>
+<div class="relinfo relref"><strong>Related reference</strong><br></br>
+<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">View Service Database Operations</a></div>
+</div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

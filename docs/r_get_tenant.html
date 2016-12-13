@@ -1,0 +1,76 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This service returns the tenant. METHOD GET URI GET tenant/{tenant_uuid} Path Parameters Parameter Description Required? tenant_uuid UUID of the tenant to retrieve. Yes Sample Response Payload { ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get Tenant"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Helen Cheung"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_8935e490-99c0-4645-9854-8049a3d52f7c"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get Tenant</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_8935e490-99c0-4645-9854-8049a3d52f7c">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Get Tenant</h1>
+<div class="body refbody"><p class="shortdesc"></p>
+<div class="section">
+            <p class="p">This service returns the tenant.</p>
+
+        </div>
+<div class="section">
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_8935e490-99c0-4645-9854-8049a3d52f7c__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET tenant/{tenant_uuid}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Path Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_8935e490-99c0-4645-9854-8049a3d52f7c__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.55102040816326%" id="d8527e50">Parameter</th>
+<th class="entry" valign="top" width="52.0408163265306%" id="d8527e52">Description</th>
+<th class="entry" valign="top" width="20.40816326530612%" id="d8527e54">Required?</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8527e50 ">tenant_uuid</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8527e52 ">UUID of the tenant to retrieve.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8527e54 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Sample Response Payload</h2>
+            
+            <pre class="pre codeblock"> {
+  "payload": {
+    "id": 20,
+    "bindingId": "a114e44e-225b-4701-b5e4-5465730e2f63",
+    "uuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+    "planId": "03863586-9484-430d-ab26-aa050aa3e222",
+    "timestamp": 1476989584771,
+    "trustedIssuers": "https://8ec6f31a-4084-4951-ad9e-cc7d1501c440.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+    "eatUuid": "0fc5b8ff-ab39-4a16-aad6-311c74862cf6",
+    "eatStatus": 1,
+    "defaultConfigurationUuid": "dde8596d-b1b2-4bd4-9f74-294cb8c97b6d",
+    "dailyLimit": 2000,
+    "monthlyLimit": 5000,
+    "successWebhook": null,
+    "failWebhook": null
+  },
+  "uuid": "0fe5f384-56ff-4118-bf85-edbd98392735",
+  "status": 1000,
+  "message": "OK",
+  "timestamp": 1481593852500
+}</pre>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

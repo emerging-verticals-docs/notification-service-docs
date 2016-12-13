@@ -1,0 +1,113 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You can create users locally in UAA for authentication and assign them to the required groups. Log in to predix.io. When you create a UAA instance, an admin client is automatically created for you to ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating Users in a UAA Instance"></meta><meta name="abstract" content="You can create users locally in UAA for authentication and assign them to the required groups."></meta><meta name="description" content="You can create users locally in UAA for authentication and assign them to the required groups."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_lrr_n5w_fs"></meta><meta name="DC.Language" content="en-US"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating Users in a UAA Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_lrr_n5w_fs">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Creating Users in a UAA Instance</h1>
+<div class="body taskbody"><p class="shortdesc">You can create users locally in UAA for authentication and assign them to the required groups. </p>
+<div class="section prereq p">
+            <ul class="ul" id="task_lrr_n5w_fs__ul_e9727a98-b308-4d04-bdea-d0b80703b697"><li class="li">Log in to predix.io.</li>
+</ul>
+
+        </div>
+<div class="section context">
+            <div class="p">When you create a UAA instance, an admin client is automatically created for you to be able to configure your UAA instance. The admin client is assigned all the required authorities and scopes by default.<div class="note note"><span class="notetitle">Note:</span> The admin client is not assigned the authority to be able to change the user password by default. If you need the ability to update or change the user password, you must add the <samp class="ph codeph">uaa.admin</samp> authority to your admin client. You can use the UAA command-line interface (UAAC), to add the additional authority to your admin client. For more information on installing the command-line interface, see <a class="xref" href="https://github.com/cloudfoundry/cf-uaac" target="_blank">https://github.com/cloudfoundry/cf-uaac</a>.</div>
+</div>
+
+            <p class="p">Use the following procedure to create users locally in UAA.</p>
+
+        </div>
+<ol class="ol steps" id="task_lrr_n5w_fs__steps_kxh_22x_1x"><li class="li step stepexpand"><span class="ph cmd">In the Console view, select the Space where your services are located.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">In the Services Instances page, select the UAA instance that you need to configure.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Select the <span class="ph uicontrol">Configure Service Instance</span> option.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">In the UAA Dashboard login page, specify your admin client secret and click <span class="ph uicontrol">Login</span>.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">In UAA Dashboard, select the <span class="ph uicontrol">User Management</span> tab.</span><div class="itemgroup info">The User Management tab has two sections, <span class="ph uicontrol">Users</span> and <span class="ph uicontrol">Groups</span>. The <span class="ph uicontrol">Groups</span> section displays the groups that you have created in your UAA instance.</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Click on the <span class="ph uicontrol">Add User</span> button to open the <span class="ph uicontrol">New User</span> form.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Specify the following values in the <span class="ph uicontrol">New User</span> form:</span><div class="itemgroup info">
+                    
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_lrr_n5w_fs__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d17293e93">Field</th>
+<th class="entry" valign="top" width="72.29916897506925%" id="d17293e95">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">User Name</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Specify the user name.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Email</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Specify the email address.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Password</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Specify the password. An administrator can set password policies to define the permitted structure of the password. For more information, see <a class="xref" href="t_creating_password_policy.html#task_gdk_f43_fx" title="You can configure the settings for clients in UAA for password policy such as length, accepted or required character types, expiration times, and reset policy.">Creating Password Policies</a>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Given Name</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Specify the first name of the user.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Family Name</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Specify the last name of the user.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Groups</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Select the groups to associate the user with. For more information on groups, see <a class="xref" href="t_creating_groups_in_uaa_instance.html#task_vgj_vcy_1x" title="If you design your application to authorize using specific scopes, you can create groups corresponding to those scopes in UAA and assign users to those groups. When the users log into your web application, the application redirects them to UAA. If a user is in the specified group and you chose to authorize the web application with that scope, the web application gets a signed token that contains that scope.">Creating Groups in a UAA Instance</a>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Active</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Select this option to allow this user to login.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d17293e93 "><span class="ph uicontrol">Verified</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d17293e95 ">Select this option to indicate that this user has been verified.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                </div></li>
+</ol>
+</div>
+<div class="topic task nested1" id="task_uzr_xdx_1x"><h2 class="title topictitle2">Creating Users in a UAA Instance Using UAAC</h2>
+<div class="body taskbody"><p class="shortdesc">Optional procedure for creating users in a UAA instance using UAAC instead of graphical user interaface.</p>
+<div class="section context">
+                <p class="p">For applications accessing your UAA instance, you can create additional clients and users with required scopes.</p>
+
+                <p class="p">You can use the UAA command-line interface (UAAC), to create users and manage their scopes. For more information on installing the command-line interface, see <a class="xref" href="https://github.com/cloudfoundry/cf-uaac" target="_blank">https://github.com/cloudfoundry/cf-uaac</a>.</p>
+
+            </div>
+<ol class="ol steps" id="task_uzr_xdx_1x__steps_dln_c2x_1x"><li class="li step stepexpand"><span class="ph cmd">Create a new user.</span><div class="itemgroup info">
+                        <pre class="pre codeblock">uaac user add &lt;my-user&gt; --emails &lt;my_user&gt;-user@ge.com --password &lt;my_password&gt;
+  </pre>
+
+                    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Create the groups in your UAA instance.</span><div class="itemgroup info">
+                        <p class="p">For more information on available groups, see <a class="xref" href="https://github.com/cloudfoundry/uaa/blob/master/docs/UAA-APIs.rst#scopes-authorized-by-the-uaa" target="_blank">https://github.com/cloudfoundry/uaa/blob/master/docs/UAA-APIs.rst#scopes-authorized-by-the-uaa</a>.</p>
+
+                        <p class="p">For example:</p>
+
+                        <pre class="pre codeblock">uaac group add scim.read
+uaac group add scim.write</pre>
+
+                    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Add the new user to the required groups.</span><div class="itemgroup info">
+                        <p class="p">For example:</p>
+
+                        <pre class="pre codeblock">uaac member add zones.&lt;my_uaa_instance&gt;.admin &lt;my-user&gt;
+uaac member add scim.read &lt;my-user&gt;
+uaac member add scim.write &lt;my-user&gt;
+uaac member add clients.write &lt;my-user&gt;
+uaac member add clients.read &lt;my-user&gt;
+uaac member add clients.admin &lt;my-user&gt;
+uaac member add clients.secret &lt;my-user&gt;</pre>
+
+                    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Verify that the user is created with the correct scope.</span><div class="itemgroup info">
+                        <pre class="pre codeblock">uaac token owner get &lt;my-oauth-client&gt; &lt;my-user&gt;
+uaac token decode</pre>
+
+                    </div></li>
+</ol>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

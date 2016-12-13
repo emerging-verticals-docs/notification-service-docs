@@ -1,0 +1,40 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="User Account and Authentication (UAA) is a web service provided by Cloud Foundry to manage users and OAuth2 clients. Its primary role is as an OAuth2 provider, issuing tokens for client applications ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="About the User Account and Authentication Service"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_gg1_t5r_zr"></meta><meta name="DC.Language" content="en-US"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>About the User Account and Authentication Service</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="concept_gg1_t5r_zr">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">About the User Account and Authentication Service</h1>
+<div class="body conbody"><p class="shortdesc"></p>
+<p class="p">User Account and Authentication (UAA) is a web service provided by Cloud Foundry to manage users and OAuth2 clients. Its primary role is as an OAuth2 provider, issuing tokens for client applications to use when they act on behalf of Cloud Foundry users. In collaboration with the login server, it can authenticate users with their Cloud Foundry credentials, and can act as an SSO service using those credentials (or others). The service provides endpoints for managing user accounts and for registering OAuth2 clients.</p>
+<p class="p">The Predix platform provides UAA as a service for developers to authenticate their application users. As a Predix platform user, you can secure access to your application by obtaining a UAA instance from the Cloud Foundry marketplace and configuring it to authenticate trusted users. </p>
+<p class="p">All Predix platform services require a UAA instance to ensure secure use of each service.</p>
+<div class="note note"><span class="notetitle">Note:</span> The maximum number of UAA instances that you can create in your space is 10. As a best practice, use the same UAA instance for your services.</div>
+<p class="p"> UAA includes the following features: </p>
+<ul class="ul" id="concept_gg1_t5r_zr__ul_f83a67cf-caa5-4518-adce-1f330ffa8755"><li class="li">
+                <p class="p">Identity management through <a class="xref" href="http://www.simplecloud.info/specs/draft-scim-core-schema-00.html" target="_blank">SCIM APIs</a>.</p>
+
+            </li>
+<li class="li">
+                <p class="p">A complete OAuth 2.0 authorization server. </p>
+
+            </li>
+<li class="li">
+                <p class="p">Login and logout services for  UAA authentication. </p>
+
+            </li>
+<li class="li">
+                <p class="p">SAML federation capabilities to meet  third-party SAML identity provider requirements.</p>
+
+            </li>
+</ul>
+<p class="p">The UAA Server supports the APIs defined in the UAA-APIs document. For more information, see <a class="xref" href="https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst" target="_blank">https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst</a>.</p>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

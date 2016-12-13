@@ -1,0 +1,63 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Authentication for the Notification service is controlled by the designated trusted issuer and is managed by the User Account and Authentication (UAA) web service. You must set up a UAA service ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Notification Service Setup"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Helen Cheung"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_802317bc-73ca-4797-aa7f-c4aebe67eb2b"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Notification Service Setup</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_802317bc-73ca-4797-aa7f-c4aebe67eb2b">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Notification Service Setup</h1>
+<div class="body refbody"><p class="shortdesc"></p>
+<div class="section">
+            <p class="p">Authentication for the Notification service is controlled by the designated trusted issuer and is managed by the User Account and Authentication (UAA) web service. You must set up a UAA service instance as the trusted issuer before getting started with the Notification service. </p>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Task Roadmap</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_802317bc-73ca-4797-aa7f-c4aebe67eb2b__table_0f739b03-3b32-410c-86c3-c0d8f7c23660" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="4.391743522178305%" id="d8707e30">#</th>
+<th class="entry" valign="top" width="43.82960035133949%" id="d8707e32">Task</th>
+<th class="entry" valign="top" width="51.77865612648221%" id="d8707e34">Information</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d8707e30 ">1</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d8707e32 ">Configure the trusted issuer.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d8707e34 ">Create an instance of User Account and Authentication (UAA) service. UAA is the authorization server that each platform service uses for authentication. <p class="p">For more information, see <a class="xref" href="t_creating_a_uaa_service_instance_for_predix_ui_seed.html#task_45f2e938-720e-41fc-878d-8cca720a8967">Creating a UAA Service Instance for the Predix UI Seed</a>.</p>
+<div class="note tip"><span class="tiptitle">Tip:</span> The maximum number of UAA instances that you can create in your space is 10. As a best practice, use the same UAA instance for your services.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d8707e30 ">2</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d8707e32 ">Create an instance of the Notification service.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d8707e34 ">For more information, see <a class="xref" href="t_creating_a_notification_service_instance.html#task_544bad23-6e53-41eb-8e8f-0f97cb531fb0">Creating a Notification Service Instance</a>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d8707e30 ">3</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d8707e32 ">Create OAuth2 clients to setup access to your service authenticated using UAA. </td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d8707e34 ">When you create a UAA instance, an admin client is automatically created for you to access UAA for additional configuration. You can create a new client for your service instance with specific scopes. If an Oauth2 client already exists, you can update the client to add your service instance. <p class="p">For more information, see <a class="xref" href="t_creating_an_oauth_client.html#task_79a81b74-552e-4f74-abfc-bd37e6adac87" title="You can create OAuth2 clients with specific permissions for your application to work with Predix Platform services. Often this is the first step after creating an instance of a service.">Creating an OAuth2 Client</a>.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d8707e30 ">4</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d8707e32 ">Update the Oath2 client to add service specific scopes or authorities. </td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d8707e34 ">To enable your application to access a platform service, your JSON Web Token (JWT) must contain the scopes required for a platform service. <p class="p">For more information see <a class="xref" href="t_updating_oauth2_client.html#task_k3h_k2c_1x" title="To use an OAuth2 client for secure access to your Predix Platform service instance from your application, you must update your OAuth2 client to add additional authorities or scopes that are specific to each service.">Updating the OAuth2 Client for Services</a>.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d8707e30 ">5</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d8707e32 ">Bind your application to the service instance.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d8707e34 ">To establish communication between your application and the platform service, you must bind the application to the service. <p class="p">See <a class="xref" href="t_binding_your_application_to_the_notification_service.html#task_fac6ab57-f79a-4e32-935c-8d52098536ec">Binding Your Application to the Notification Service Instance</a>.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d8707e30 ">6</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d8707e32 ">Start using the Notification service.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d8707e34 ">See Using the Notification Service.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

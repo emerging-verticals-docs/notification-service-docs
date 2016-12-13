@@ -1,0 +1,37 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="View service overview The Predix UI platform ( http://predixdev.github.io/predix-ui/ ) is a set of user interface components that combine these elements: Component – User-interface element that allows ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="About the View Service"></meta><meta name="abstract" content="View service overview"></meta><meta name="description" content="View service overview"></meta><meta name="DC.Relation" scheme="URI" content="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b"></meta><meta name="DC.Relation" scheme="URI" content="t_getting_started_with_view_service.html#task_ugp_skh_t5"></meta><meta name="DC.Relation" scheme="URI" content="t_usng_view_service.html#task_wzj_dvq_tv"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_61e0544e-1969-465c-8e56-d5da6a83366f"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>About the View Service</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="concept_61e0544e-1969-465c-8e56-d5da6a83366f">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">About the View Service</h1>
+<div class="body conbody"><p class="shortdesc">View service overview</p>
+<p class="p">The Predix UI platform (<a class="xref" href="http://predixdev.github.io/predix-ui/" target="_blank">http://predixdev.github.io/predix-ui/</a>) is a set of user interface components that combine these elements:</p>
+<div class="p">
+                                                <ul class="ul" id="concept_61e0544e-1969-465c-8e56-d5da6a83366f__d15e70"><li class="li"><strong class="ph b">Component</strong> – User-interface element that allows you to add features or access services following consistent UX practices, standards and specification.</li>
+<li class="li"><strong class="ph b">Card</strong> – Container that resides within the content area of the user interface. You can create interactions between components within an individual card, as well as interactions with other cards based on user <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">context</a>.</li>
+<li class="li"><strong class="ph b">Deck</strong> – Container that supplies simple one-dimensional layout control for cards and components arranged in a specified order. This control can originate from the deck itself.</li>
+<li class="li"><strong class="ph b">View</strong> – Visual summary of the information displayed in a web application. It consists of one or more decks that an application user can select at runtime to quickly digest information and take appropriate action. </li>
+</ul>
+
+                                    </div>
+<div class="fig fignone" id="concept_61e0544e-1969-465c-8e56-d5da6a83366f__fig_etn_pmz_dw"><img class="image" id="concept_61e0544e-1969-465c-8e56-d5da6a83366f__image_d4p_dlv_lw" src="i_view_service_overview_20160629.jpg"></img><p class="figcap">View Service Overview</p></div>
+<p class="p">The View service stores the state and layout of card and deck objects in a database. The View service database also stores relationship information between card and deck objects. </p>
+<p class="p">As a developer, you can use the View service database to share and recreate saved cards, as well as send the <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">context</a> of a deck object (including cards and associated components) to render as a view in a web browser. This deck-based modular view framework gives an application user the flexibility to select a specific view at run time to grasp information intuitively and make time-critical decisions. </p>
+<div class="note note"><span class="notetitle">Note:</span> See <a class="xref" href="t_displaying_a_multicard_.deck.html#task_274cefdb-fc52-4746-9fa2-a477e9d954f2" title="Procedure for setting up a web application to display a deck with two cards">Displaying a Multi-Card Deck</a> for an sample web application that illustrates how the View service database supports card and deck operations.</div>
+</div>
+<div class="related-links"><div class="relinfo reltasks"><strong>Related tasks</strong><br></br>
+<div class="related_link"><a class="navheader_parent_path" href="t_getting_started_with_view_service.html#task_ugp_skh_t5" title="Getting Started with View Service">Getting Started with View Service</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="t_usng_view_service.html#task_wzj_dvq_tv" title="View service tasks">Using View Service</a></div>
+</div>
+<div class="relinfo relref"><strong>Related reference</strong><br></br>
+<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">View Service Database Operations</a></div>
+</div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

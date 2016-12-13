@@ -1,0 +1,22 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The Predix platform offers microservices through the Predix Catalog. The microservices are provisioned in the Cloud Foundry marketplace. You can select the microservices to use depending on your ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Understanding Platform Services"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_2b5dbd77-4870-4417-8268-2fc4ae40597e"></meta><meta name="DC.Language" content="en-US"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Understanding Platform Services</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="concept_2b5dbd77-4870-4417-8268-2fc4ae40597e">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Understanding Platform Services</h1>
+<div class="body conbody"><p class="shortdesc"></p>
+<p class="p">The Predix platform offers microservices through the Predix Catalog. The microservices are provisioned in the Cloud Foundry marketplace. You can select the microservices to use depending on your application requirements. For a complete list of microservices offered on the Predix platform, see the Catalog page on Predix.io.</p>
+<p class="p">Predix platform services use OAuth2 for authentication. The services leverage the <a class="xref" href="c_uaa_service_overview.html#concept_gg1_t5r_zr">User Account and Authentication (UAA)</a> web service to manage OAuth2 clients. </p>
+<p class="p">User Account and Authentication (UAA) is a web service provided by Cloud Foundry to manage users and OAuth2 clients. Its primary role is as an OAuth2 provider, issuing tokens for client applications to use when they act on behalf of Cloud Foundry users. In collaboration with the login server, it can authenticate users with their Cloud Foundry credentials, and can act as an SSO service using those credentials (or others). The service provides endpoints for managing user accounts and for registering OAuth2 clients.</p>
+<p class="p">To use the platform services, you must first set up an instance of the UAA service as your trusted issuer. All access to the services is then authenticated using the designated trusted issuer.</p>
+<p class="p">The following diagram shows how platform services are integrated with UAA for authentication.</p>
+<img class="image" id="concept_2b5dbd77-4870-4417-8268-2fc4ae40597e__image_0e6b3afc-44af-4e40-a268-248ef355a2ca" src="Platform_services_and_UAA1.png"></img></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="When you create a new OAuth2 client, the client is assigned default scopes and authorities. You must add additional authorities or scopes that are specific to each service. The following table lists ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Authorities or Scopes Required for Platform Services"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Your Name Here"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_ec1_t3d_bx"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Authorities or Scopes Required for Platform Services</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_ec1_t3d_bx">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Authorities or Scopes Required for Platform Services</h1>
+<div class="body refbody"><p class="shortdesc"></p>
+<div class="section">
+            <p class="p">When you create a new OAuth2 client, the client is assigned default scopes and authorities. You must add additional authorities or scopes that are specific to each service.</p>
+
+            <p class="p">The following table lists the scopes and authorities specific to each platform service that you must add to your OAuth2 client.</p>
+
+        </div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ec1_t3d_bx__table_dl1_j2w_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="28.653295128939828%" id="d7581e27">Service Name</th>
+<th class="entry" valign="top" width="71.34670487106017%" id="d7581e29">Authorities/Scopes</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Access Control</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">
+                            <ul class="ul" id="reference_ec1_t3d_bx__ul_929072ed-725c-457a-af99-e364b1328118"><li class="li">acs.policies.read</li>
+<li class="li">acs.policies.write</li>
+<li class="li">acs.attributes.read</li>
+<li class="li">acs.attributes.write</li>
+<li class="li">predix-acs.zones.&lt;acs_instance_guid&gt;.user <p class="p">This value is added by default if you use the UAA Dashboard. It is also generated in the VCAP_SERVICES environment variable as <samp class="ph codeph">oauth-scope</samp> when you bind your application to your ACS service instance. </p>
+</li>
+</ul>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Tenant Management</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">
+                            <ul class="ul" id="reference_ec1_t3d_bx__ul_ce686e5b-8539-4846-8b26-5a6f0009cba3"><li class="li">tms.tenant.read</li>
+<li class="li">tms.tenant.write</li>
+<li class="li">predix-tms.zones.&lt;tms_instance_guid&gt;.user (added by default)</li>
+</ul>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Analytics Catalog</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">analytics.zones.&lt;service_instance_guid&gt;.user (added by default)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Analytics Runtime</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">analytics.zones.&lt;service_instance_guid&gt;.user (added by default)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Asset</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">predix-asset.zones.&lt;service_instance_guid&gt;.user (added by default)</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Event Hub</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">
+                            <ul class="ul" id="reference_ec1_t3d_bx__ul_37e41944-3d30-4e33-beb6-d9fd2a6ab3ff"><li class="li">Publish<ul class="ul" id="reference_ec1_t3d_bx__ul_d42a7317-918e-4920-b759-925f37e1f7bb"><li class="li">predix-event-hub.zones.&lt;Predix-Zone-Id&gt;.user</li>
+<li class="li">predix-event-hub.zones.&lt;Predix-Zone-Id&gt;.wss.publish</li>
+<li class="li">predix-event-hub.zones.&lt;Predix-Zone-Id&gt;.grpc.publish</li>
+</ul>
+</li>
+<li class="li">Subscribe<ul class="ul" id="reference_ec1_t3d_bx__ul_b07abab8-7f49-4945-b2da-6ee0ca7c7083"><li class="li">predix-event-hub.zones.&lt;Predix-Zone-Id&gt;.user</li>
+<li class="li">predix-event-hub.zones.&lt;Predix-Zone-Id&gt;.grpc.subscribe</li>
+</ul>
+</li>
+</ul>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">Time Series</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">
+                            <ul class="ul" id="reference_ec1_t3d_bx__ul_89dba5dd-7266-4fc7-89b4-40bc5cdfbb4c"><li class="li">Data ingestion<ul class="ul" id="reference_ec1_t3d_bx__ul_29b7c6ee-9f2a-49d4-8b28-b9493bb43648"><li class="li">timeseries.zones.&lt;Predix-Zone-Id&gt;.user (added by default)</li>
+<li class="li">timeseries.zones.&lt;Predix-Zone-Id&gt;.ingest </li>
+</ul>
+</li>
+<li class="li">Data queries<ul class="ul" id="reference_ec1_t3d_bx__ul_4fd198b2-33ed-4c9c-b7dc-ca67b01e0ff0"><li class="li">timeseries.zones.&lt;Predix-Zone-Id&gt;.user (added by default)</li>
+<li class="li">timeseries.zones.&lt;Predix-Zone-Id&gt;.query </li>
+</ul>
+</li>
+</ul>
+
+                        </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="28.653295128939828%" headers="d7581e27 ">View</td>
+<td class="entry" valign="top" width="71.34670487106017%" headers="d7581e29 ">
+                            <ul class="ul" id="reference_ec1_t3d_bx__ul_kh4_sxj_r5"><li class="li">views.zones.&lt;view_instanceId&gt;.user (added by default)</li>
+<li class="li">views.admin.user</li>
+<li class="li">views.power.user</li>
+</ul>
+
+                        </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

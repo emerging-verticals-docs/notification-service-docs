@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="As a developer, you should understand these Predix UI terms and definitions. Component A web component is a user interface element that enables a user to perform a function or access a service. It ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Predix UI Glossary"></meta><meta name="abstract" content="As a developer, you should understand these Predix UI terms and definitions."></meta><meta name="description" content="As a developer, you should understand these Predix UI terms and definitions."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_nc4_5vg_qv"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Predix UI Glossary</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="concept_nc4_5vg_qv">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Predix UI Glossary</h1>
+<div class="body conbody"><p class="shortdesc">As a developer, you should understand these <span class="ph">Predix UI</span> terms and definitions.</p>
+<dl class="dl"><dt class="dt dlterm">Component</dt>
+<dd class="dd">A web <em class="ph i">component</em> is a user interface element that enables a user to perform a function or access a service. It defines the fundamental interactions between presentation, interaction and behavior with context, data-binding and services.<p class="p">Components adhere to the following principles of workflow and data aggregation at a granular level:</p>
+<ul class="ul" id="concept_nc4_5vg_qv__ul_b4575d47-dad5-44f2-87e1-91ff00146d4a"><li class="li">Definition of dependencies, behavior, styling and template using simple HTML syntax (for example, <samp class="ph codeph">&lt;px-datepicker/&gt;</samp>.</li>
+<li class="li">Rendering of "sketch" (minimally-styled) and "Predix" (fully-styled) themes.</li>
+<li class="li">Independent releases and versions.</li>
+<li class="li">Ability to inherit functionality from other components by either extension or composition.</li>
+<li class="li">Nesting as part of another component that can exercise its public API.</li>
+<li class="li">Ability to expose an API used by an application framework such as <a class="xref" href="https://docs.angularjs.org/guide/introduction" target="_blank">AngularJS</a>. This includes scope and bidirectional binding.</li>
+</ul>
+</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">Card</dt>
+<dd class="dd">A card is a component that can be shared across different display environments. A card acts as a container that resides within the content area of a web browser. It can contain embedded data for use when connectivity is limited or cut off. A developer can show and hide cards as needed. <p class="p">A card can receive and transmit events, and is both aware of and reactive to the context in which it resides. Components can interact within an individual card, and a card can interact with other cards. You can also create a deck from a collection of cards to create more intricate user interactions. See <a class="xref" href="t_usng_view_service.html#task_wzj_dvq_tv" title="View service tasks">Using View Service</a> for information about how cards and decks are used.</p>
+</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">Deck</dt>
+<dd class="dd">A deck is a component that uses a specified layout to determine the arrangement of cards. See <a class="xref" href="t_usng_view_service.html#task_wzj_dvq_tv" title="View service tasks">Using View Service</a> for information on how cards and decks are used.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">View</dt>
+<dd class="dd">A view is the visual summary of the information that is displayed in a web application. A view can have different decks (cards and other components arranged in a specified order) that a user can select  at run time.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">Basics</dt>
+<dd class="dd">A basic component is a building block of user interface code. Simple, yet powerful, a basic component  can be used in isolation or combined to create more complex components.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">Template</dt>
+<dd class="dd">A template component is a layout of an entire screen or region of a screen. A template component focuses on the content structure or layout, not the actual content itself.</dd>
+</dl>
+<dl class="dl"><dt class="dt dlterm">Context</dt>
+<dd class="dd">Context is the environment and manner in which the object or system is being used by the user or by other parts of the system. It is represented by its own current state and the state of the system around it. It can take into account intent and history. An object or entity can have context, be part of context, or be context itself by meeting these requirements.<p class="p">A context-aware dashboard (contextual dashboard) can behave and look differently when you combine any of the following factors:</p>
+<ul class="ul" id="concept_nc4_5vg_qv__ul_102cc419-62f6-4c25-8560-6e85c94c2aec"><li class="li">User or persona.</li>
+<li class="li">Base object which can be represented by the dashboard, or on which the dashboard may be acting.</li>
+<li class="li">Time (such as weekday, AM/PM, year).</li>
+<li class="li">Device.</li>
+<li class="li">Roles and privileges.</li>
+<li class="li">User group.</li>
+<li class="li">State of the system, device, and user.</li>
+<li class="li">Personal preferences.</li>
+<li class="li">Sensory factors.</li>
+<li class="li">Environment.</li>
+<li class="li">Language.</li>
+<li class="li">Locale.</li>
+<li class="li">Writing system (such as phonetic, alphabetic, pictographic, or ideographic).</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

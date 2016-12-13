@@ -1,0 +1,161 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="To establish communication between the service instance that you have created and your application, you bind your application to the service instance. Deploy your application to Cloud Foundry. When ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Connecting Your Application to a Platform Service Instance"></meta><meta name="abstract" content="To establish communication between the service instance that you have created and your application, you bind your application to the service instance."></meta><meta name="description" content="To establish communication between the service instance that you have created and your application, you bind your application to the service instance."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f"></meta><meta name="DC.Language" content="en-US"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Connecting Your Application to a Platform Service Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Connecting Your Application to a Platform Service Instance</h1>
+<div class="body taskbody"><p class="shortdesc">To establish communication between the service instance that you have created and your application, you bind your application to the service instance.</p>
+<div class="section prereq p">
+            <p class="p">Deploy your application to Cloud Foundry. </p>
+
+        </div>
+<div class="section context">
+   <p class="p">When you bind your application to your service instance, Cloud Foundry provisions the service's connection details in the VCAP_SERVICES environment variable. Cloud Foundry runtime uses the VCAP_SERVICES environment variable to communicate with a deployed application about its environment.</p>
+
+            <p class="p">You can retrieve the following instance details from VCAP_SERVICES environment variable:</p>
+
+            <ul class="ul" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__ul_ysc_qkx_fs"><li class="li">An <samp class="ph codeph">instance_uri</samp> for your service instance. </li>
+<li class="li">A <samp class="ph codeph">instance_GUID</samp> is the <samp class="ph codeph">zoneID</samp> for your service instance. </li>
+<li class="li">HTTP header information to access your service instance. It includes:<ul class="ul" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__ul_00e9daf0-cea2-4ed8-a430-4eceeaca4b9e"><li class="li"><samp class="ph codeph">http-header-name</samp> as <samp class="ph codeph">Predix-Zone-Id</samp></li>
+<li class="li"><samp class="ph codeph">http-header-value</samp></li>
+</ul>
+</li>
+<li class="li">An <samp class="ph codeph">oauth-scope</samp> for your instance. The end-user token requires the scope to access the specific service instance.</li>
+</ul>
+
+            <p class="p">If you bind to a UAA service instance, you get the following information in addition to <samp class="ph codeph">instance_uri</samp> and <samp class="ph codeph">instance_GUID</samp>:</p>
+
+            <ul class="ul" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__ul_vzg_qjw_1x"><li class="li">
+                    <p class="p">A <samp class="ph codeph">uaa_instance_issuerId</samp> for your instance. The <samp class="ph codeph">issuerID</samp> is required when you create an instance of another service that uses your UAA instance for authentication.</p>
+
+                </li>
+</ul>
+
+  </div>
+<ol class="ol steps" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__steps_1d3586e1-77f5-404f-836a-55aa45e1b4d6"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                    <p class="p">The value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is available in the Predix welcome email that you receive when you register for a Predix.io user account. Depending on your Predix.io registration, the <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> value is one of the following:</p>
+
+                    <ul class="ul" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li">Predix US-West <p class="p"><samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix US-East <p class="p"><samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Japan<p class="p"><samp class="ph codeph">https://api.system.aws-jp01-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix UK<p class="p"><samp class="ph codeph">https://api.system.dc-uk01-pr.ice.predix.io</samp></p>
+</li>
+</ul>
+
+                    <p class="p">For example,</p>
+
+                    <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                </div><div class="itemgroup stepresult"> The command produces the following output: <pre class="pre codeblock">Email&gt; &lt;your_predix_login&gt; 
+Password&gt; &lt;your_predix_password&gt; 
+Authenticating...OK 
+Targeted org &lt;your_predix_org&gt; 
+Targeted space dev     
+API endpoint: https://api.system.aws-usw02-pr.ice.predix.io (API version: &lt;version&gt;)   
+User: &lt;your_predix_login&gt; 
+Org:  &lt;your_predix_org&gt;  
+Space: dev</pre>
+</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Bind your application to the service instance by entering the following command:</span><div class="itemgroup info">
+     <pre class="pre codeblock">cf bind-service &lt;your_app_name&gt; &lt;service_instance_name&gt;</pre>
+
+     <div class="p">Your application is bound to the <samp class="ph codeph">&lt;service_instance_name&gt;</samp> instance, and the following message is returned:<pre class="pre codeblock">Binding service &lt;service_instance_name&gt; to app &lt;your_app_name&gt; in org predix-platform / space predix as userx@ge.com...
+OK
+TIP: Use 'cf restage' to ensure your env variable changes take effect
+</pre>
+</div>
+
+    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Verify the binding by entering the following command:</span><div class="itemgroup info">
+     <pre class="pre codeblock">cf env &lt;your_app_name&gt;</pre>
+
+    </div></li>
+</ol>
+<div class="example">
+            <p class="p">If you bind an application, myApp, to a UAA instance, the following messages are returned:</p>
+
+            <pre class="pre codeblock">Getting env variables for app myApp in org predix-platform / space security as userx@ge.com...
+OK
+...
+  ],
+  "predix-uaa": [
+        {
+        "credentials":
+        {
+         "issuerId":
+          "https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+         "uri": 
+           "https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io",
+          "zone": {
+                    "http-header-name": "X-Identity-Zone-Id",
+                    "http-header-value": "ff27c315-d027-4d1d-a30c-64f49b369ed9"
+                   }
+        },
+        "label":
+        "predix-uaa",
+        "name":
+        "my_uaa_instance",
+        "plan":
+        "free",
+        "tags":
+        []
+        }
+        ],</pre>
+
+            <p class="p">In this example, the following values are displayed:</p>
+
+            <ul class="ul" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__ul_2645cf07-9edd-492f-b1dd-25effc830723"><li class="li"><samp class="ph codeph">uaa_instance_issuerId</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token</samp></li>
+<li class="li"><samp class="ph codeph">uaa_instance_uri</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io</samp></li>
+<li class="li"><samp class="ph codeph">uaa_instance_GUID</samp> = <samp class="ph codeph">ff27c315-d027-4d1d-a30c-64f49b369ed9</samp></li>
+</ul>
+
+            <p class="p">If you bind an application, myApp, to the ACS service instance, the following messages are returned:</p>
+
+            <pre class="pre codeblock">Getting env variables for app myApp in org predix-platform / space security as userx@ge.com...
+OK
+...
+  ],
+"predix-acs": [
+   {
+    "credentials": {
+     "uri": "https://predix-acs.run.aws-usw02-pr.ice.predix.io",
+     "zone": {
+      "http-header-name": "Predix-Zone-Id",
+      "http-header-value": "9615a95a-9275-4a82-926d-89f06cbe04e1",
+      "oauth-scope": "predix-acs.zones.9615a95a-9275-4a82-926d-89f06cbe04e1.user"
+     }
+    },
+    "label": "predix-acs",
+    "name": "acs-sample-instance",
+    "plan": "Tiered",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],</pre>
+
+            <p class="p">In this example, the following values are displayed:</p>
+
+            <ul class="ul" id="task_2e2b8b0f-9a72-41d2-be37-273f01f8e47f__ul_ufc_vlw_1x"><li class="li"><samp class="ph codeph">acs_instance_uri</samp> = <samp class="ph codeph">https://predix-acs.run.aws-usw02-pr.ice.predix.io</samp></li>
+<li class="li"><samp class="ph codeph">acs_instance_GUID</samp> = <samp class="ph codeph">9615a95a-9275-4a82-926d-89f06cbe04e1</samp></li>
+<li class="li"><samp class="ph codeph">http-header-name</samp> = <samp class="ph codeph">Predix-Zone-Id</samp></li>
+<li class="li"><samp class="ph codeph">http-header-value</samp> = <samp class="ph codeph">9615a95a-9275-4a82-926d-89f06cbe04e1</samp></li>
+<li class="li"><samp class="ph codeph">oauth-scope</samp> = <samp class="ph codeph">predix-acs.zones.9615a95a-9275-4a82-926d-89f06cbe04e1.user</samp></li>
+</ul>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The Predix UI CSS libraries ensure consistent design in a web applicaion that adapts the presentation to different devices. Refer to the API reference documentation for each Predix UI CSS library in ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Using a Predix UI CSS Library in a Web Application"></meta><meta name="abstract" content="The Predix UI CSS libraries ensure consistent design in a web applicaion that adapts the presentation to different devices."></meta><meta name="description" content="The Predix UI CSS libraries ensure consistent design in a web applicaion that adapts the presentation to different devices."></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_css_overview.html#concept_y5j_cdz_3v"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_css_visual_libraries.html#concept_egb_btf_nx"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_css_layout_libraries.html#concept_fmw_ywf_nx"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_css_utilities_libraries.html#concept_nsf_4yf_nx"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_rr4_rbp_qx"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Using a Predix UI CSS Library in a Web Application</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_rr4_rbp_qx">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Using a Predix UI CSS Library in a Web Application</h1>
+<div class="body taskbody"><p class="shortdesc">The <span class="ph">Predix UI CSS</span> libraries ensure consistent design in a web applicaion  that adapts the presentation to different devices. </p>
+<div class="section prereq p">
+            <div class="p">Refer to the API reference documentation for each <span class="ph">Predix UI CSS</span> library in the <span class="ph">Predix UI</span> library (<a class="xref" href="http://predixdev.github.io/predix-ui/" target="_blank">http://predixdev.github.io/predix-ui/</a>) for specific configuration information regarding:<ul class="ul" id="task_rr4_rbp_qx__ul_tyv_mfj_tx"><li class="li">Feature flags</li>
+<li class="li">Style variables</li>
+<li class="li">Import order</li>
+</ul>
+</div>
+
+            <div class="note note"><span class="notetitle">Note:</span> See <a class="xref" href="https://predixdev.github.io/predix-ui/?show=use_css&amp;type=local" target="_blank">https://predixdev.github.io/predix-ui/?show=use_css&amp;type=local</a> for more information on using a <span class="ph">Predix UI CSS</span> library in the <samp class="ph codeph">PredixDev</samp> public GitHub organization.</div>
+
+        </div>
+<div class="section context">
+            <p class="p">A cascading style sheet (CSS) contains style rules that are applied to elements in a HTML page. CSS styles define  how HTML  elements are displayed and where they are positioned on the page. </p>
+
+                                    <p class="p">Follow these steps to use a <span class="ph">Predix UI CSS</span> library in your web application (<samp class="ph codeph">px-buttons-design</samp> is used as an example):</p>
+
+                        </div>
+<ol class="ol steps" id="task_rr4_rbp_qx__steps_vjg_bq4_xv"><li class="li step stepexpand"><span class="ph cmd">Change to the project directory of your web application <samp class="ph codeph">&lt;app_proj&gt;</samp>:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cd &lt;app_proj&gt;</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">In the project SASS file<samp class="ph codeph">&lt;app_proj&gt;.scss</samp>, define the following order for importing the default <span class="ph">Predix UI CSS</span> library:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">// Settings
+   @import "px-colors-design/_settings.colors.scss";
+
+   // Tools
+
+   // Generic
+   @import "px-normalize-design/_generic.normalize.scss";
+   @import "px-box-sizing-design/_generic.box-sizing.scss";
+   @import "px-helpers-design/_generic.helpers.scss";
+
+   // Base
+   @import "px-flexbox-design/_base.flexbox.scss";
+   @import "px-viewport-design/_base.viewport.scss";
+   @import "px-typography-design/_base.typography.scss";
+
+   // Meta
+
+   // Objects
+
+   // Component
+   // Your css goes in here
+
+   // Trumps
+   @import "inuit-clearfix/_trumps.clearfix.scss";
+   @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+   @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
+
+</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Install the <samp class="ph codeph">px-buttons-design</samp> library by using the <samp class="ph codeph">bower</samp> package-management utility:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">bower install --save px-buttons-design</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">In the project SASS file, import the <samp class="ph codeph">px-buttons-design</samp> library he :</span><div class="itemgroup info">
+                    <pre class="pre codeblock">// Settings
+   @import "px-colors-design/_settings.colors.scss";
+
+   // Tools
+
+   // Generic
+   @import "px-normalize-design/_generic.normalize.scss";
+   @import "px-box-sizing-design/_generic.box-sizing.scss";
+   @import "px-helpers-design/_generic.helpers.scss";
+
+   // Base
+   @import "px-flexbox-design/_base.flexbox.scss";
+   @import "px-viewport-design/_base.viewport.scss";
+   @import "px-typography-design/_base.typography.scss";
+
+   // Meta
+
+   //Object
+   @import "px-buttons-design/_objects.buttons.scss";
+
+
+   // Component
+   // Your css goes in here
+
+   // Trumps
+   @import "inuit-clearfix/_trumps.clearfix.scss";
+   @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+   @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
+
+</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Enable <samp class="ph codeph">px-buttons-design</samp> library features. The following example enables the <samp class="ph codeph">$inuit-enable-btn--small</samp> feature by setting the feature flag to <samp class="ph codeph">true</samp> before the <samp class="ph codeph">px-buttons-design</samp> library <samp class="ph codeph">@import</samp> statement. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">//Object
+
+$inuit-enable-btn--small : true;
+@import "px-buttons-design/_objects.buttons.scss";</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Change a
+                    <span class="ph">Predix UI CSS</span> library style variable (if available) by setting a new value and inserting the style variable before the library <samp class="ph codeph">@import</samp> statement:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">//Object
+
+$inuit-btn-color : $black;
+@import "px-buttons-design/_objects.buttons.scss";</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd"> In your web application, add the appropriate <samp class="ph codeph">px-buttons-design</samp> call to  the desired element.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+         &lt;button class="btn btn--small"&gt;Small&lt;/button&gt;
+     &lt;/body&gt;
+  &lt;/html&gt;</pre>
+
+                    <p class="p">For more information, see the <samp class="ph codeph">px-buttons-design</samp> library API reference.</p>
+
+                </div></li>
+</ol>
+</div>
+<div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_css_overview.html#concept_y5j_cdz_3v" title="The Predix UI platform includes the Predix UI CSS libraries in the PredixDev public GitHub organization to create intricate user interactions in a web application.">Predix UI CSS Overview</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_css_visual_libraries.html#concept_egb_btf_nx" title="The PredixDev public GitHub organization stores a set of Predix UI CSS visual libraries to create base content design for a web application.">Predix UI CSS Visual Libraries</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_css_layout_libraries.html#concept_fmw_ywf_nx" title="The PredixDev public GitHub organization stores a set of Predix UI CSS layout libraries to create base layout design for a web application.">Predix UI CSS Layout Libraries</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_css_utilities_libraries.html#concept_nsf_4yf_nx" title="The PredixDev public GitHub organization stores a set of Predix UI CSS utilities libraries to ensure consistent design in a web application.">Predix UI CSS Utilities Libraries</a></div>
+</div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

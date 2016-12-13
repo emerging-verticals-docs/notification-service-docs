@@ -1,0 +1,114 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Use the bower task runner utility to import the correct version of other required Predix UI repositories. Set up the required services for Predix UI. See Setting Up the Predix UI Developer Environment ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Using a Predix UI Repository in a Web Application"></meta><meta name="abstract" content="Use the bower task runner utility to import the correct version of other required Predix UI repositories."></meta><meta name="description" content="Use the bower task runner utility to import the correct version of other required Predix UI repositories."></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_overview.html#concept_9ebdede3-1251-4b5e-85bb-9e31291d4573"></meta><meta name="DC.Relation" scheme="URI" content="c_application_development_with_predix_ui.html#concept_whc_5bk_wv"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_repository_overview.html#concept_jd2_qwk_wv"></meta><meta name="DC.Relation" scheme="URI" content="c_polymer_library.html#concept_zmt_h1l_yx"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_basics_repositories.html#concept_wth_m41_4v"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_components_repositories.html#concept_iqr_png_v5"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_templates_repositories.html#concept_pbj_t3z_3v"></meta><meta name="DC.Relation" scheme="URI" content="c_predix_ui_mobile.html#concept_jtz_z31_cx"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_jr3_nn4_xv"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Using a Predix UI Repository in a Web Application</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_jr3_nn4_xv">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Using a Predix UI Repository in a Web Application</h1>
+<div class="body taskbody"><p class="shortdesc">Use the <samp class="ph codeph">bower</samp> task runner utility to import the correct version of other required <span class="ph">Predix UI</span> repositories. </p>
+<div class="section prereq p">
+                                    <ul class="ul" id="task_jr3_nn4_xv__ul_gtm_cvv_xv"><li class="li">Set up the required services for Predix UI. See <a class="xref" href="t_setting_up_predix_ui_developer_environment.html#task_n4l_jnc_yv" title="Install Node.js and Bower.">Setting Up the Predix UI Developer Environment</a> for more information.</li>
+<li class="li">Name of your web application <samp class="ph codeph">&lt;web_app&gt;</samp></li>
+<li class="li">Locate the project directory of your web application <samp class="ph codeph">&lt;web_app_project&gt;</samp> where the following files will be installed:<ul class="ul" id="task_jr3_nn4_xv__ul_n5x_gw3_hw"><li class="li"><samp class="ph codeph">webcomponents-lite</samp> polyfill</li>
+<li class="li">Predix UI repository</li>
+</ul>
+</li>
+</ul>
+
+            <div class="note note"><span class="notetitle">Note:</span> For more information, see <a class="xref" href="https://predixdev.github.io/predix-ui/?show=getting_started&amp;type=local" target="_blank">https://predixdev.github.io/predix-ui/?show=getting_started&amp;type=local</a>.</div>
+
+                        </div>
+<div class="section context">
+            <p class="p">Each <span class="ph">Predix UI</span> repository includes a <samp class="ph codeph">bower.json</samp> file that lists other required repositories. This is displayed as a series of <samp class="ph codeph">@import</samp> declarations in the respective file. For more information, see <a class="xref" href="c_application_development_with_predix_ui.html#concept_whc_5bk_wv" title="As a developer, you should understand these web technologes before using Predix UI.">Application Development with Predix UI</a> for more information. </p>
+
+                        </div>
+<ol class="ol steps" id="task_jr3_nn4_xv__steps_vjg_bq4_xv"><li class="li step stepexpand"><span class="ph cmd">Change to the project directory of your web application <samp class="ph codeph">&lt;web_app_project&gt;</samp>:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cd &lt;web_app_project&gt;</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Install the <samp class="ph codeph">webcomponents-lite</samp> polyfill into your project directory by using the <samp class="ph codeph">bower</samp> package-management utility:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">bower install webcomponentsjs --save</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Add the <samp class="ph codeph">webcomponents-lite</samp> polyfill to your web application as the first line in the <samp class="ph codeph">&lt;head&gt;</samp> section of the HTML page . For example</span><div class="itemgroup info">
+                    <pre class="pre codeblock">&lt;!DOCTYPE html&gt;
+
+    &lt;html&gt;
+
+        &lt;head&gt;
+            &lt;script src="bower_components/webcomponentsjs/webcomponents.js"&gt;&lt;/script&gt;
+
+        &lt;/head&gt;
+
+     &lt;/html&gt;</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Install the Predix UI repository as a web component into the project directory by using the <samp class="ph codeph">bower</samp> package-management utility:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">bower install https://github.com/PredixDev/&lt;px-repository&gt; --save</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd"> Import the Predix UI repository as a web component into your web application by adding it to the <samp class="ph codeph">&lt;head&gt;</samp> section of the HTML page. For example:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">&lt;!DOCTYPE html&gt;
+
+    &lt;html&gt;
+
+        &lt;head&gt;
+
+            &lt;script src="bower_components/webcomponentsjs/webcomponents.js"&gt;&lt;/script&gt;
+
+  
+            &lt;link rel="import" href="/bower_components/&lt;px-repository&gt;/&lt;px-repository&gt;.html"/&gt;
+
+        &lt;/head&gt;
+
+     &lt;/html&gt;</pre>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">The <span class="ph">Predix UI</span> repository files are installed in the <samp class="ph codeph">bower_components</samp> directory.</p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Call the <span class="ph">Predix UI</span> repository in your web application by adding it to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page. For example:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">&lt;!DOCTYPE html&gt;
+
+    &lt;html&gt;
+    
+      &lt;head&gt;
+
+        &lt;script src="bower_components/webcomponentsjs/webcomponents.js"&gt;&lt;/script&gt;
+
+  
+        &lt;link rel="import" href="/bower_components/&lt;px-repository&gt;/&lt;px-repository&gt;.html"/&gt;
+
+
+     &lt;/head&gt;
+
+     &lt;body&gt;
+
+         &lt;px-repository&gt;&lt;/px-repository&gt;
+
+     &lt;/body&gt;
+
+
+  &lt;/html&gt;</pre>
+
+                </div></li>
+</ol>
+</div>
+<div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_overview.html#concept_9ebdede3-1251-4b5e-85bb-9e31291d4573" title="The Predix UI platform provides the ability to create modern web applications that run on top of Predix data and services..">Predix UI Overview</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_application_development_with_predix_ui.html#concept_whc_5bk_wv" title="As a developer, you should understand these web technologes before using Predix UI.">Application Development with Predix UI</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_repository_overview.html#concept_jd2_qwk_wv" title="Predix UI repository concepts">Predix UI Repository Overview</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_polymer_library.html#concept_zmt_h1l_yx" title="The Predix UI repositories are implemented using the Polymer library.">Polymer Library</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_basics_repositories.html#concept_wth_m41_4v" title="Predix UI Basics descriptions">Predix UI Basics Repositories</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_components_repositories.html#concept_iqr_png_v5" title="Predix UI Components descriptions">Predix UI Components Repositories</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_templates_repositories.html#concept_pbj_t3z_3v" title="Predix UI Templates descriptions">Predix UI Templates Repositories</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_predix_ui_mobile.html#concept_jtz_z31_cx" title="Predix UI Mobile Components descriptions">Predix UI Mobile Components</a></div>
+</div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

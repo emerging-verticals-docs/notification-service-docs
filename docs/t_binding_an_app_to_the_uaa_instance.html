@@ -1,0 +1,107 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You must bind your application to your UAA instance to provision its connection details in the VCAP_SERVICES environment variable. The Cloud Foundry runtime uses the VCAP_SERVICES environment variable ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Binding an Application to the UAA Instance"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_155dd0e5-ca06-45d3-833e-686a71f0ca98"></meta><meta name="DC.Language" content="en-US"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Binding an Application to the UAA Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Binding an Application to the UAA Instance</h1>
+<div class="body taskbody"><p class="shortdesc"></p>
+<div class="section context">
+            <p class="p">You must bind your application to your UAA instance to provision its connection details in the VCAP_SERVICES environment variable. The Cloud Foundry runtime uses the VCAP_SERVICES environment variable to communicate with a deployed application about its environment.</p>
+
+   <p class="p">You can retrieve the following UAA instance details from the VCAP_SERVICES environment variable:</p>
+
+   <ul class="ul" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__ul_ysc_qkx_fs"><li class="li">
+     <p class="p">A <samp class="ph codeph">uaa_instance_uri</samp> for your instance. </p>
+
+    </li>
+<li class="li">
+                    <p class="p">A <samp class="ph codeph">uaa_instance_issuerId</samp> for your instance. The <samp class="ph codeph">issuerID</samp> is required when you create an instance of another service that uses your UAA instance for authentication.</p>
+
+                </li>
+<li class="li">
+     <p class="p">A <samp class="ph codeph">uaa_instance_GUID</samp> is the <samp class="ph codeph">zoneID</samp> for your instance. </p>
+
+    </li>
+</ul>
+
+        </div>
+<ol class="ol steps" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__steps_1d3586e1-77f5-404f-836a-55aa45e1b4d6"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                    <p class="p">The value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is available in the Predix welcome email that you get when you register for an Predix.io user account. Depending on your Predix.io registration, the value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is one of the following:</p>
+
+                    <ul class="ul" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li"><p class="p">Predix Basic</p>
+
+                            <samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></li>
+<li class="li"><p class="p">Predix Select</p>
+
+                            <samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></li>
+</ul>
+
+                    <p class="p">For example,</p>
+
+                    <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Bind the application to the service instance by entering the following command:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf bind-service &lt;your_app_name&gt; &lt;uaa_instance_name&gt;</pre>
+
+                    <p class="p">The <samp class="ph codeph">&lt;uaa_instance_name&gt;</samp> instance is bound to your application, and the following message is returned:</p>
+
+                    <pre class="pre codeblock">Binding service &lt;uaa_instance_name&gt; to app &lt;your_app_name&gt; in org predix-platform / space predix as userx@ge.com...
+OK
+TIP: Use 'cf restage' to ensure your env variable changes take effect
+</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Verify the binding by entering the following command:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf env &lt;your_app_name&gt;</pre>
+
+                    <div class="p">Messages that are similar to the following messages are returned:<pre class="pre codeblock">Getting env variables for app myApp in org predix-platform / space security as userx@ge.com...
+OK
+...
+  ],
+  "predix-uaa": [
+        {
+        "credentials":
+        {
+         "issuerId":
+          "https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+         "uri": 
+           "https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io",
+          "zone": {
+                    "http-header-name": "X-Identity-Zone-Id",
+                    "http-header-value": "ff27c315-d027-4d1d-a30c-64f49b369ed9"
+                   }
+        },
+        "label":
+        "predix-uaa",
+        "name":
+        "my_uaa_instance",
+        "plan":
+        "free",
+        "tags":
+        []
+        }
+        ],</pre>
+</div>
+
+                    <p class="p">In this sample, the following values are displayed:</p>
+
+                    <ul class="ul" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__ul_2645cf07-9edd-492f-b1dd-25effc830723"><li class="li"><samp class="ph codeph">uaa_instance_issuerId</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token</samp></li>
+<li class="li"><samp class="ph codeph">uaa_instance_uri</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io</samp></li>
+<li class="li"><samp class="ph codeph">uaa_instance_GUID</samp> = <samp class="ph codeph">ff27c315-d027-4d1d-a30c-64f49b369ed9</samp></li>
+</ul>
+
+                </div></li>
+</ol>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

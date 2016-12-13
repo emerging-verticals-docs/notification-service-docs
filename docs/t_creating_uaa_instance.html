@@ -1,0 +1,165 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You can create up to 10 instances of the UAA service in your space. If you need additional instances, first delete any older unused instances before creating a new one. Sign into your Predix account ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating a UAA Service Instance"></meta><meta name="abstract" content="You can create up to 10 instances of the UAA service in your space."></meta><meta name="description" content="You can create up to 10 instances of the UAA service in your space."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_y1l_vms_2s"></meta><meta name="DC.Language" content="en-US"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating a UAA Service Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_y1l_vms_2s">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Creating a UAA Service Instance</h1>
+<div class="body taskbody"><p class="shortdesc">You can create up to 10 instances of the UAA service in your space.</p>
+<div class="section context">
+            <p class="p"> If you need additional instances, first delete any older unused instances before creating a new one.</p>
+
+            
+        </div>
+<ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Sign into your Predix account at https://www.predix.io.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Navigate to  <span class="ph menucascade"><span class="ph uicontrol">Catalog</span> &gt; <span class="ph uicontrol">Services</span></span>, then click the <span class="ph uicontrol">User Account and Authentication</span> tile.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Subscribe</span> on the required plan.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Complete the fields on the <span class="ph uicontrol">New Service Instance</span> page.</span><div class="itemgroup info">
+                    
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_y1l_vms_2s__table_qgg_kh5_zw" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25.70694087403599%" id="d16646e52">Field</th>
+<th class="entry" valign="top" width="74.293059125964%" id="d16646e54">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d16646e52 ">Org</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d16646e54 ">Select your organization.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d16646e52 ">Space</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d16646e54 ">Select the space for your application.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d16646e52 ">Service instance name</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d16646e54 ">Enter a unique name for this UAA service instance.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d16646e52 ">Service plan</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d16646e54 ">Select a plan.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d16646e52 ">Admin client secret</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d16646e54 ">Enter a client secret (this is the admin password for this UAA instance). The client secret can be any alphanumeric string.<div class="note note"><span class="notetitle">Note:</span> Record the client secret in a secure place for later use.</div>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d16646e52 ">Subdomain</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d16646e54 ">(Optional) Enter a subdomain you might need to use in addition to the domain created for UAA. You must not add special characters in the name of the subdomain. The value of sub-domain is case-insensitive.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Create Service</span>.</span></li>
+</ol>
+<div class="section result">
+            <p class="p">Your UAA instance is created with the following specifications:</p>
+
+            <ul class="ul" id="task_y1l_vms_2s__ul_ysc_qkx_fs"><li class="li">A client identifier (<samp class="ph codeph">admin</samp>). <div class="note note"><span class="notetitle">Note:</span> An <samp class="ph codeph">admin</samp> client is created for bootstrap purposes. You can create additional clients to use with your application.</div>
+</li>
+<li class="li">A client secret (that you specified while creating the service).</li>
+</ul>
+
+            <p class="p">To retrieve additional details of your instance, you can bind an application to your instance. </p>
+
+        </div>
+</div>
+<div class="topic task nested1" id="task_pg3_yf5_zw"><h2 class="title topictitle2">Using the Command Line to Create a UAA Service Instance</h2>
+<div class="body taskbody"><p class="shortdesc">Optional procedure for using the command line instead of the graphical user interface to create a UAA service instance.</p>
+<div class="section context">
+                <p class="p">You can create up to 10 instances of UAA service in your space. If you need additional instances, you must delete an older unused instance and create a new one.</p>
+
+            </div>
+<ol class="ol steps" id="task_pg3_yf5_zw__steps_jtm_gg5_zw"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                        <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                        <p class="p">The value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is available in the Predix welcome email that you get when you register for an Predix.io user account. Depending on your Predix.io registration, the value of <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> is one of the following:</p>
+
+                        <ul class="ul" id="task_pg3_yf5_zw__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li">Predix US-West <p class="p"><samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix US-East <p class="p"><samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Japan<p class="p"><samp class="ph codeph">https://api.system.aws-jp01-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix UK <p class="p"><samp class="ph codeph">https://api.system.dc-uk01-pr.ice.predix.io</samp></p>
+</li>
+</ul>
+
+                        <p class="p">For example,</p>
+
+                        <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">List the services in the Cloud Foundry marketplace by entering the following command.</span><div class="itemgroup info">
+                        <pre class="pre codeblock">cf marketplace</pre>
+
+                        <p class="p">The UAA service, <samp class="ph codeph">predix-uaa</samp>, is listed as one of the available services.</p>
+
+                    </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Create a UAA instance by entering the following command. </span><div class="itemgroup info">
+                        <pre class="pre codeblock">cf create-service predix-uaa &lt;plan&gt; &lt;my_uaa_instance&gt; -c '{"adminClientSecret":"&lt;my_secret&gt;","subdomain":"&lt;my_subdomain&gt;"}'</pre>
+
+                        <p class="p">where:</p>
+
+                        <ul class="ul" id="task_pg3_yf5_zw__ul_ktm_gg5_zw"><li class="li"><samp class="ph codeph">&lt;plan&gt;</samp> is the plan associated with a service. For example, you can use the <samp class="ph codeph">tiered</samp> plan for the <samp class="ph codeph">predix-uaa</samp> service.</li>
+<li class="li"><samp class="ph codeph">-c</samp> option is used to specify following additional parameters.<ul class="ul" id="task_pg3_yf5_zw__ul_ltm_gg5_zw"><li class="li"><samp class="ph codeph">adminClientSecret</samp> specifies the client secret.</li>
+<li class="li"><samp class="ph codeph">subdomain</samp> specifies a sub-domain you might need to use in addition to the domain created for UAA. This is an optional parameter. You must not add special characters in the name of the sub-domain. The value of sub-domain is case insensitive.</li>
+</ul>
+</li>
+</ul>
+
+                        <div class="note note"><span class="notetitle">Note:</span> Cloud Foundry CLI syntax can differ between Windows and Linux operating systems. See the Cloud Foundry help for the appropriate syntax for your operating system. For example, to see help for the <samp class="ph codeph">create service</samp> command, run <samp class="ph codeph">cf cs</samp>.</div>
+
+                    </div></li>
+</ol>
+<div class="section result">
+                <p class="p">Your UAA instance is created with the following specification:</p>
+
+                <ul class="ul" id="task_pg3_yf5_zw__ul_mtm_gg5_zw"><li class="li">
+                        <p class="p">A client identifier (<samp class="ph codeph">admin</samp>). </p>
+
+                        <div class="note note"><span class="notetitle">Note:</span> An <samp class="ph codeph">admin</samp> client is created for bootstrap purpose. You can create additional clients to use with your application.</div>
+
+                    </li>
+<li class="li">
+                        <p class="p">A client secret (that you specified while creating the service).</p>
+
+                    </li>
+</ul>
+
+                <p class="p">To retrieve additional details of your instance, you can bind an application to your instance. </p>
+
+            </div>
+<div class="example">
+                <p class="p">Create a predix-uaa service instance with client secret as admin and sub-domain as ge-digital:</p>
+
+                <pre class="pre codeblock">cf cs predix-uaa tiered test-1 -c '{"adminClientSecret":"admin","subdomain":"ge-digital"}'</pre>
+
+                <p class="p">This is how it appears in VCAP SERVICES:</p>
+
+                <pre class="pre codeblock">"VCAP_SERVICES": { 
+"predix-uaa": [
+   {
+    "credentials": {
+     "issuerId": "https://ge-digital.sb-uaa.grc-apps.svc.ice.ge.com/oauth/token",
+     "subdomain": "ge-digital",
+     "uri": "https://ge-digital.sb-uaa.grc-apps.svc.ice.ge.com",
+     "zone": {
+      "http-header-name": "X-Identity-Zone-Id",
+      "http-header-value": "011d56b9-831e-407d-98d0-da4c1c946862"
+     }
+    },
+    "label": "predix-uaa",
+    "name": "test-1",
+    "plan": "tiered",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": []
+   }
+  ],</pre>
+
+            </div>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

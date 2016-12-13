@@ -1,0 +1,93 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This service returns a tenant_uuid. METHOD GET URI GET /tenants/{tenant_uuid}/configurations Path Parameters Parameter Description Required? tenant_uuid UUID of the tenant. Yes Sample Response Payload ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Get Configurations by Tenant_UUID"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Helen Cheung"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_54d547ac-8a82-4f81-8774-a348e190f494"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Get Configurations by Tenant_UUID</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_54d547ac-8a82-4f81-8774-a348e190f494">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Get Configurations by Tenant_UUID</h1>
+<div class="body refbody"><p class="shortdesc"></p>
+<div class="section">
+            <p class="p">This service returns a tenant_uuid.</p>
+
+        </div>
+<div class="section">
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_54d547ac-8a82-4f81-8774-a348e190f494__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">GET /tenants/{tenant_uuid}/configurations</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Path Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_54d547ac-8a82-4f81-8774-a348e190f494__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.55102040816326%" id="d8347e50">Parameter</th>
+<th class="entry" valign="top" width="52.0408163265306%" id="d8347e52">Description</th>
+<th class="entry" valign="top" width="20.40816326530612%" id="d8347e54">Required?</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8347e50 ">tenant_uuid</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8347e52 ">UUID of the tenant.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8347e54 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Sample Response Payload</h2>
+            
+            <pre class="pre codeblock">"payload": [
+    {
+      "id": 243,
+      "uuid": "30465c06-7ab3-47f6-92f7-1deb8b1e2ec9",
+      "tenantUuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": 587,
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "timestamp": 1479326129361,
+      "lastUpdated": 1479326129382,
+      "mailReturnPath": null
+    },
+    {
+      "id": 244,
+      "uuid": "60aaa98c-4fda-4e5b-9f7d-b1af6acea4fa",
+      "tenantUuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": 587,
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "timestamp": 1481060519229,
+      "lastUpdated": 1481060519246,
+      "mailReturnPath": null
+    }
+  ],
+  "uuid": "ff40897f-6df9-410d-818e-c25761421907",
+  "status": 1000,
+  "message": "OK",
+  "timestamp": 1481060601465</pre>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="This service sends email notifications using the configuration. METHOD POST URI POST /tenants/{tenant_uuid}/email?configuration={configuration_uuid} Sample Request { &#34;body&#34;:&#34;Content of the email ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Send Email Using the Configuration"></meta><meta name="abstract" content=""></meta><meta name="description" content=""></meta><meta name="DC.Creator" content="Helen Cheung"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_ccb45f37-69c9-4fb3-8cd2-4e2fa7c03da7"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Send Email Using the Configuration</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_ccb45f37-69c9-4fb3-8cd2-4e2fa7c03da7">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Send Email Using the Configuration</h1>
+<div class="body refbody"><p class="shortdesc"></p>
+<div class="section">
+            <p class="p">This service sends email notifications using the configuration.</p>
+
+        </div>
+<div class="section">
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ccb45f37-69c9-4fb3-8cd2-4e2fa7c03da7__table_9cfacfb7-0b32-44c4-8730-549d1b8af8c1" class="table" frame="border" border="1" rules="all"><tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">METHOD</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">POST</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">URI</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">POST /tenants/{tenant_uuid}/email?configuration={configuration_uuid}</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="24.509803921568626%"><strong class="ph b">Sample Request</strong></td>
+<td class="entry" valign="top" width="75.49019607843137%">
+                                <pre class="pre codeblock">{
+  "body":"Content of the email message",
+  "subject":"Subject of the email",
+  "fromEmail":"from@recipient.com",
+  "fromName" :"From name",
+  "important" :false,
+  "recipients":
+  [ 
+    {
+      "email":"recipient@recipient.com",
+      "recipientName":"Recipient email",
+      "type":"to"
+    }
+  ],
+  "attachments":null
+}</pre>
+
+                            </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Path Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ccb45f37-69c9-4fb3-8cd2-4e2fa7c03da7__table_97758611-3a70-444f-8345-229838e65bff" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.55102040816326%" id="d8994e59">Parameter</th>
+<th class="entry" valign="top" width="52.0408163265306%" id="d8994e61">Description</th>
+<th class="entry" valign="top" width="20.40816326530612%" id="d8994e63">Required?</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e59 ">tenant_uuid</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e61 ">UUID of the tenant.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e63 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e59 ">configuration_uuid</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e61 ">UUID of the configuration.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e63 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Request Body JSON Parameters</h2>
+            
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ccb45f37-69c9-4fb3-8cd2-4e2fa7c03da7__table_953eead5-e3ce-4d1f-9479-b163f9255f7c" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.55102040816326%" id="d8994e93">Parameter</th>
+<th class="entry" valign="top" width="52.0408163265306%" id="d8994e95">Description</th>
+<th class="entry" valign="top" width="20.40816326530612%" id="d8994e97">Required?</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">body</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">Content of the email message.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">subject</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">The subject of the email.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Optional</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">fromEmail</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">From email address.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">fromName</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">From name.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">important</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">Email importance flag.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Optional</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">recipient</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">List of recipients.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">recipient.email</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">Email address of the recipient.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">recipient.recipientName</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">Name of the recipient.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="27.55102040816326%" headers="d8994e93 ">recipient.type</td>
+<td class="entry" valign="top" width="52.0408163265306%" headers="d8994e95 ">type of the recipient. Options are: to, cc, bcc.</td>
+<td class="entry" valign="top" width="20.40816326530612%" headers="d8994e97 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Sample Response</h2>
+            
+            <pre class="pre codeblock">{
+  "payload": 
+  {
+    "errors": [],
+    "notificationReferenceUuid": "c89c202b-921f-4086-b27d-abc8b700e156"
+  },
+  "uuid": "d8d26f97-4778-4af3-8312-bfc63477be46",
+  "status": 1013,
+  "message": "Email message is queued.",
+  "timestamp": 1481060912518
+}</pre>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

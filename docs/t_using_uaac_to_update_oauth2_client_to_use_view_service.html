@@ -1,0 +1,93 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Procedure for using UAAC to update user access to View service. This procedure uses the UAA Command Line Interface (UAAC). For more information on installing UAAC, see ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Using UAAC to Update the Oauth2 Client to Use View Service"></meta><meta name="abstract" content="Procedure for using UAAC to update user access to View service."></meta><meta name="description" content="Procedure for using UAAC to update user access to View service."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_djb_x5v_q5"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Using UAAC to Update the Oauth2 Client to Use View Service</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_djb_x5v_q5">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Using UAAC to Update the Oauth2 Client to Use View Service</h1>
+<div class="body taskbody"><p class="shortdesc">Procedure for using UAAC to update user access to View service.</p>
+<div class="section prereq p">
+            <p class="p">This procedure uses the UAA Command Line Interface (UAAC). For more information on installing UAAC, see <a class="xref" href="https://github.com/cloudfoundry/cf-uaac" target="_blank">https://github.com/cloudfoundry/cf-uaac</a>.</p>
+
+            <p class="p">You need the following information to update the OAuth2 client to manage users for View service:</p>
+
+            <ul class="ul" id="task_djb_x5v_q5__ul_iz4_h3q_15"><li class="li">
+                    <p class="p"><samp class="ph codeph">uaa_instance_url</samp> is the URL to your trusted issuer (for example, <samp class="ph codeph">https://11fa0273-9e2a-37e2-9d06-2c95a1f4f5ea.predix-uaa.run.aws-usw02-pr.ice.predix.io</samp>). </p>
+
+                    <p class="p">You can retrieve this URL from the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable after binding your UAA instance to an application (see <a class="xref" href="t_binding_an_app_to_the_uaa_instance.html#task_155dd0e5-ca06-45d3-833e-686a71f0ca98">Binding an Application to the UAA Instance</a>).. </p>
+
+                </li>
+<li class="li">UAA administrative client <samp class="ph codeph">uaa_client_secret</samp> that you specified when you created the UAA instance. See <a class="xref" href="t_creating_uaa_instance.html#task_y1l_vms_2s" title="You can create up to 10 instances of the UAA service in your space.">Creating a UAA Service Instance</a>. </li>
+<li class="li">OAuth2 <samp class="ph codeph">oauth2_client_name</samp> (see <a class="xref" href="t_using_uaac_to_create_oauth2_client_for_view_service.html#task_r53_nvv_q5" title="Procedure using UAAC to manage user access to View service">Using UAAC to Create an OAuth2 Client for View Service</a>).</li>
+<li class="li">View service <samp class="ph codeph">instanceId</samp> (see <a class="xref" href="t_using_command_line_to_create_a_view_service_instance.html#task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64" title="Procedure for using the Cloud Foundry CLI to create a View service instance">Creating a View Service Instance</a>). </li>
+</ul>
+
+        </div>
+<div class="section context">
+            <p class="p">You need to update the OAuth2 client to manage users with the User Account and Authentication (UAA) web service. The following client scopes define user access to the View service:</p>
+
+            <table cellpadding="4" cellspacing="0" summary="" id="task_djb_x5v_q5__simpletable_svq_s21_t5" border="1" class="simpletable"><tr class="sthead"><th valign="bottom" align="left" id="d22911e93" class="stentry">Client Scope</th>
+<th valign="bottom" align="left" id="d22911e95" class="stentry">Description</th>
+</tr>
+<tr class="strow"><td valign="top" headers="d22911e93" class="stentry"><samp class="ph codeph">views.zones.&lt;instanceId&gt;.user</samp>
+                    </td>
+<td valign="top" headers="d22911e95" class="stentry">A user has permission to access the View service <samp class="ph codeph">instanceId</samp></td>
+</tr>
+<tr class="strow"><td valign="top" headers="d22911e93" class="stentry"><samp class="ph codeph">views.admin.user</samp></td>
+<td valign="top" headers="d22911e95" class="stentry">User role can perform all CRUD operations on <a class="xref" href="c_cards.html#concept_b1d48da2-ba0a-4711-9108-877eece4d662">card</a> and <a class="xref" href="c_decks.html#concept_66f824ef-8aec-498d-8a9e-843b426f2c92">deck</a> objects using the View Service APIs.</td>
+</tr>
+<tr class="strow"><td valign="top" headers="d22911e93" class="stentry"><samp class="ph codeph">views.power.user</samp></td>
+<td valign="top" headers="d22911e95" class="stentry">User role like <samp class="ph codeph">views.admin.user</samp>, but cannot perform DELETE operations on card and deck objects using the View service APIs.</td>
+</tr>
+<tr class="strow"></tr>
+<tr class="strow"></tr>
+</table>
+
+            <p class="p">For more information about these APIs, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
+
+            <div class="note note"><span class="notetitle">Note:</span> Without any assignment, a user can only perform GET operations on card and deck objects using the View service APIs. The View service generates an HTTP 403 error message indicating that access is forbidden..</div>
+
+        </div>
+<ol class="ol steps" id="task_djb_x5v_q5__steps_71715224-6ecf-4d65-bc96-5d71f3b50420"><li class="li step stepexpand"><span class="ph cmd">Specify your UAA trusted issuer <samp class="ph codeph">&lt;uaa_instance_url&gt;</samp> as the intended target.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac target &lt;uaa_instance_url&gt; </pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Log into UAAC using the UAA administrative client.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac token client get admin</pre>
+
+                    <p class="p">Specify the <samp class="ph codeph">uaa_client_secret</samp> when prompted.</p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Create groups in your UAA instance.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac group add views.zones.&lt;instanceId&gt;.user
+uaac group add views.admin.user
+uaac group add views.power.user
+</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Create a new user.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac user add &lt;my-user&gt; --emails &lt;my-user&gt;-user@ge.com --password &lt;my-password&gt;
+  </pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Add the user you created to the desired groups. For example:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">
+uaac member add views.zones.&lt;instanceId&gt;.user &lt;my-user&gt; 
+uaac member add views.power.user &lt;my-user&gt;
+</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Update the OAuth2 client with the client scopes required for View Service.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac client update &lt;oauth2_client_name&gt; --scope "views.zones.&lt;instanceId&gt;.user views.admin.user views.power.user" </pre>
+
+                </div></li>
+</ol>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>
