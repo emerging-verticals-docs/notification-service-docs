@@ -7,7 +7,6 @@ The Predix Notification Service is a notification service that notifies list of 
 ## Table of Contents
   - [Usage](#usage)
     - [Creating service instance](#creating-service-instance)
-    - [Auto archive](#auto-archive)
     - [UAA configuration](#uaa-configuration)
         - [Client credentials](#client-credentials)
   - [Notication service](#notification-service)
