@@ -15,26 +15,26 @@
 <p class="p">You specify a filter on the View service database by using the following format:</p>
 <pre class="pre codeblock">?filter[&lt;filterType&gt;]=[&lt;filter inputs&gt;]</pre>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_wtz_nvr_35__table_nrx_yvr_35" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Supported Filters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d6292e33">Filter Type</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d6292e35">Description</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d6292e37">Example</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_wtz_nvr_35__table_nrx_yvr_35" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Supported Filters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d6249e33">Filter Type</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d6249e35">Description</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d6249e37">Example</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "><samp class="ph codeph">include</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Allow related data models to be included in the result set</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph">/decks?filter[include]=cards</samp></td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6249e33 "><samp class="ph codeph">include</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e35 ">Allow related data models to be included in the result set</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e37 "><samp class="ph codeph">/decks?filter[include]=cards</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "><samp class="ph codeph">order</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Allow result set to be return in order that is specified </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph"> /decks?filter[order]=createTimeStamp DESC</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6249e33 "><samp class="ph codeph">order</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e35 ">Allow result set to be return in order that is specified </td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e37 "><samp class="ph codeph"> /decks?filter[order]=createTimeStamp DESC</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "> </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Get a deck with ordered cards</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph">decks?filter[cards] &amp;filter[order]=cards</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6249e33 "> </td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e35 ">Get a deck with ordered cards</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e37 "><samp class="ph codeph">decks?filter[cards] &amp;filter[order]=cards</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "><samp class="ph codeph">where</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Filter the result set by field value</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph">/decks?filter[where][title]=Overview</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6249e33 "><samp class="ph codeph">where</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e35 ">Filter the result set by field value</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6249e37 "><samp class="ph codeph">/decks?filter[where][title]=Overview</samp></td>
 </tr>
 </tbody>
 </table>

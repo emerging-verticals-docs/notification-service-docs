@@ -16,28 +16,29 @@
 <li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Subscribe</span> on the required plan.</span></li>
 <li class="li step stepexpand"><span class="ph cmd">Complete the fields on the <span class="ph uicontrol">New Service Instance</span> page.</span><div class="itemgroup info">
                                                             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_45f2e938-720e-41fc-878d-8cca720a8967__table_qgg_kh5_zw" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25.70694087403599%" id="d14960e49">Field</th>
-<th class="entry" valign="top" width="74.293059125964%" id="d14960e51">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_45f2e938-720e-41fc-878d-8cca720a8967__table_qgg_kh5_zw" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="25.70694087403599%" id="d14917e53">Field</th>
+<th class="entry" valign="top" width="74.293059125964%" id="d14917e55">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14960e49 ">Org</td>
-<td class="entry" valign="top" width="74.293059125964%" headers="d14960e51 ">Select your organization.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14917e53 ">Org</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d14917e55 ">Select your organization.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14960e49 ">Space</td>
-<td class="entry" valign="top" width="74.293059125964%" headers="d14960e51 ">Select the space for your <span class="ph">Predix UI Seed</span> web application.</td>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14917e53 ">Space</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d14917e55 ">Select the space for your <span class="ph">Predix UI Seed</span> web application.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14960e49 ">Service instance name</td>
-<td class="entry" valign="top" width="74.293059125964%" headers="d14960e51 ">Enter a unique name<samp class="ph codeph">&lt;uaa_instance&gt;</samp> for this UAA service instance .</td>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14917e53 ">Service instance name</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d14917e55 ">Enter a unique name
+                                                                                                                        <samp class="ph codeph">&lt;uaa_instance&gt;</samp> for this UAA service instance .</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14960e49 ">Service plan</td>
-<td class="entry" valign="top" width="74.293059125964%" headers="d14960e51 ">Select a plan.</td>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14917e53 ">Service plan</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d14917e55 ">Select a plan.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14960e49 ">Administrative client secret</td>
-<td class="entry" valign="top" width="74.293059125964%" headers="d14960e51 ">Enter an administrative client secret <samp class="ph codeph">&lt;admin_client_secret&gt;</samp> that is the password for this UAA service instance. The <samp class="ph codeph">admin_client_secret</samp> can be any alphanumeric string.<div class="note note"><span class="notetitle">Note:</span> Record the <samp class="ph codeph">admin_client_secret</samp> in a secure place for later use.</div>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14917e53 ">Administrative client secret</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d14917e55 ">Enter an administrative client secret <samp class="ph codeph">&lt;admin_client_secret&gt;</samp> that serves as the password for this UAA service instance. The <samp class="ph codeph">admin_client_secret</samp> can be any alphanumeric string.<div class="note note"><span class="notetitle">Note:</span> Record the <samp class="ph codeph">admin_client_secret</samp> in a secure place for later use.</div>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14960e49 ">Subdomain</td>
-<td class="entry" valign="top" width="74.293059125964%" headers="d14960e51 ">(Optional) Enter a subdomain you might need to use in addition to the domain created for UAA. You must not add special characters in the name of the subdomain. The value of sub-domain is case insensitive.</td>
+<tr class="row"><td class="entry" valign="top" width="25.70694087403599%" headers="d14917e53 ">Subdomain</td>
+<td class="entry" valign="top" width="74.293059125964%" headers="d14917e55 ">(Optional) Enter a subdomain you might need to use in addition to the domain created for UAA. Do not use special characters in the name of the subdomain. The value of <samp class="ph codeph"></samp> sub-domain is case insensitive.</td>
 </tr>
 </tbody>
 </table>
@@ -49,16 +50,9 @@
 <div class="section result">
                                     <p class="p">Your UAA service instance <samp class="ph codeph">&lt;uaa_instance&gt;</samp> is created with the following specification:</p>
 
-                                    <ul class="ul" id="task_45f2e938-720e-41fc-878d-8cca720a8967__ul_ysc_qkx_fs"><li class="li">
-                                                            <p class="p">Administrative client <samp class="ph codeph">admin</samp>. </p>
-
-                                                            <div class="note note"><span class="notetitle">Note:</span> The administrative client <samp class="ph codeph">admin</samp> is created for bootstrap purposes. You can create additional clients to use with your <span class="ph">Predix UI Seed</span> web application. Fore more information, see <a class="xref" href="t_creating_an_oauth_client.html#task_79a81b74-552e-4f74-abfc-bd37e6adac87" title="You can create OAuth2 clients with specific permissions for your application to work with Predix Platform services. Often this is the first step after creating an instance of a service.">Creating an OAuth2 Client</a>.</div>
-
-                                                </li>
-<li class="li">
-                                                            <p class="p">Administrative client secret <samp class="ph codeph">&lt;admin_client_secret&gt;</samp> that you specified while creating the UAA service instance.</p>
-
-                                                </li>
+                                    <ul class="ul" id="task_45f2e938-720e-41fc-878d-8cca720a8967__ul_ysc_qkx_fs"><li class="li">Administrative client <samp class="ph codeph">admin</samp>.<div class="note note"><span class="notetitle">Note:</span> The administrative client <samp class="ph codeph">admin</samp> is created for bootstrap purposes. You can create additional clients to use with your <span class="ph">Predix UI Seed</span> web application. For more information, see <a class="xref" href="t_creating_an_oauth_client.html#task_79a81b74-552e-4f74-abfc-bd37e6adac87" title="You can create OAuth2 clients with specific permissions for your application to work with Predix Platform services. Often this is the first step after creating an instance of a service.">Creating an OAuth2 Client</a>.</div>
+</li>
+<li class="li">Administrative client secret <samp class="ph codeph">&lt;admin_client_secret&gt;</samp> that you specified while creating the UAA service instance.</li>
 </ul>
 
                         </div>
