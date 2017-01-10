@@ -15,26 +15,26 @@
 <p class="p">You specify a filter on the View service database by using the following format:</p>
 <pre class="pre codeblock">?filter[&lt;filterType&gt;]=[&lt;filter inputs&gt;]</pre>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_wtz_nvr_35__table_nrx_yvr_35" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Supported Filters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d6292e33">Filter Type</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d6292e35">Description</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d6292e37">Example</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_wtz_nvr_35__table_nrx_yvr_35" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Supported Filters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d6153e33">Filter Type</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d6153e35">Description</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d6153e37">Example</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "><samp class="ph codeph">include</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Allow related data models to be included in the result set</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph">/decks?filter[include]=cards</samp></td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "><samp class="ph codeph">include</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Allow related data models to be included in the result set</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph">/decks?filter[include]=cards</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "><samp class="ph codeph">order</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Allow result set to be return in order that is specified </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph"> /decks?filter[order]=createTimeStamp DESC</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "><samp class="ph codeph">order</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Allow result set to be return in order that is specified </td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph"> /decks?filter[order]=createTimeStamp DESC</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "> </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Get a deck with ordered cards</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph">decks?filter[cards] &amp;filter[order]=cards</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "> </td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Get a deck with ordered cards</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph">decks?filter[cards] &amp;filter[order]=cards</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6292e33 "><samp class="ph codeph">where</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e35 ">Filter the result set by field value</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6292e37 "><samp class="ph codeph">/decks?filter[where][title]=Overview</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "><samp class="ph codeph">where</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Filter the result set by field value</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph">/decks?filter[where][title]=Overview</samp></td>
 </tr>
 </tbody>
 </table>
@@ -42,11 +42,11 @@
 <div class="note note"><span class="notetitle">Note:</span> See the StrongLoop documentation for more infromation about querying data with filters (<a class="xref" href="https://docs.strongloop.com/display/public/LB/Querying+data" target="_blank">https://docs.strongloop.com/display/public/LB/Querying+data</a>).</div>
 </div>
 <div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="View service overview">About the View Service</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="The View service stores the visual information available in a web application.">About View Service</a></div>
 </div>
 <div class="relinfo relref"><strong>Related reference</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">View Service Database Operations</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">View Service Database Operations</a></div>
 </div>
-</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

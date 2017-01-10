@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Procedure for setting up a web application to display a deck with two cards Select a REST client (such as Postman ) that can execute API requests to use the View service. See Using View Service for ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Displaying a Multi-Card Deck"></meta><meta name="abstract" content="Procedure for setting up a web application to display a deck with two cards"></meta><meta name="description" content="Procedure for setting up a web application to display a deck with two cards"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_274cefdb-fc52-4746-9fa2-a477e9d954f2"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Displaying a Multi-Card Deck</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="This example web application illustrates how the View service database is used to control the visual summary of user information in a web application. See View Service Database Setup for information ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Displaying a Multi-Card Deck"></meta><meta name="abstract" content="This example web application illustrates how the View service database is used to control the visual summary of user information in a web application."></meta><meta name="description" content="This example web application illustrates how the View service database is used to control the visual summary of user information in a web application."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_274cefdb-fc52-4746-9fa2-a477e9d954f2"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Displaying a Multi-Card Deck</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -10,10 +10,10 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Displaying a Multi-Card Deck</h1>
-<div class="body taskbody"><p class="shortdesc">Procedure for setting up a web application to display a deck with two cards</p>
+<div class="body taskbody"><p class="shortdesc">This example web application illustrates how the View service database is used to control the visual summary of user information in a web application. </p>
 <div class="section prereq p">
-            
-            <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_bv4_ydp_1w"><li class="li">Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to use the View service. See <a class="xref" href="t_usng_view_service.html#task_wzj_dvq_tv" title="View service tasks">Using View Service</a> for more information.<p class="p">For more information about these APIs, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
+            <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_bv4_ydp_1w"><li class="li">See <a class="xref" href="r_view_service_database_setup.html#reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82" title="You can use the View service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances.">View Service Database Setup</a> for information about configuring the View service database to manage card and deck objects.</li>
+<li class="li">Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to use the View service. See <a class="xref" href="r_view_service_database_setup.html#reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82" title="You can use the View service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances.">View Service Database Setup</a> for more information.<p class="p">For more information about these APIs, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
 </li>
 <li class="li">Set up the required services for the Predix UI platform. See <a class="xref" href="t_setting_up_predix_ui_developer_environment.html#task_n4l_jnc_yv" title="Install Node.js and Bower.">Setting Up the Predix UI Developer Environment</a> for more information.</li>
 <li class="li">Locate the project directory of your web application <samp class="ph codeph">&lt;web_app_project&gt;</samp> where the following files will be installed:<ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_n5x_gw3_hw"><li class="li"><samp class="ph codeph">webcomponents-lite</samp> polyfill</li>
@@ -23,21 +23,11 @@
 </ul>
 
         </div>
-<div class="section context">
-            <p class="p">This example shows how to set up a web application with components from the <samp class="ph codeph">px-card</samp> repository (part of the <samp class="ph codeph">PredixDev</samp> public GitHub organization) and View service to display a <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">deck</a> with two <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">cards</a>. </p>
-
-            <p class="p">See <a class="xref" href="t_usng_view_service.html#task_wzj_dvq_tv" title="View service tasks">Using View Service</a> for more information about using the View service database to manage card and deck objects.</p>
-
-            <div class="fig fignone" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__fig_ey2_rlq_fx"><img class="image" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__image_w21_wlq_fx" src="card_and_deck_display_20151215.png"></img><p class="figcap">Example Web Application of a Deck Displaying Two Cards</p></div>
-
-            
-        </div>
 <ol class="ol steps" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__steps_457ee270-f07c-44cd-be37-c05258252234"><li class="li step stepexpand"><span class="ph cmd">Change to the project directory of your web application:</span><div class="itemgroup info">
                     <pre class="pre codeblock">cd &lt;web_app_project&gt;</pre>
 
                 </div></li>
-<li class="li step stepexpand"><span class="ph cmd">Install the <samp class="ph codeph">webcomponents-lite</samp>
-                    polyfill (to support the Predix UI repository features) by using the <samp class="ph codeph">bower</samp> package-management utility:</span><div class="itemgroup info">
+<li class="li step stepexpand"><span class="ph cmd">Install the <samp class="ph codeph">webcomponents-lite</samp> polyfill (to support the Predix UI repository features) by using the <samp class="ph codeph">bower</samp> package-management utility:</span><div class="itemgroup info">
                     <pre class="pre codeblock">bower install webcomponentsjs --save</pre>
 
                 </div></li>
@@ -80,7 +70,6 @@
                 </div><div class="itemgroup stepresult">
                     <p class="p">The component files are installed in the <samp class="ph codeph">bower_components</samp> directory.</p>
 
-                    
                 </div></li>
 <li class="li step stepexpand"><span class="ph cmd">Call the <samp class="ph codeph">px-card</samp> repository in your web application by adding it to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page. For example:</span><div class="itemgroup info">
                     <pre class="pre codeblock">&lt;!DOCTYPE html&gt;
@@ -328,7 +317,7 @@
 
                 </div></li>
 </ol>
-<div class="section postreq">See <a class="xref" href="c_predix_ui_seed_overview.html#concept_e3fc1fd8-b1db-4ad1-b9b0-2d6c98920ddd" title="The Predix UI Seed uses the Predix UI platform to deploy to your local development environment or Cloud Foundry.">Predix UI Seed Overview</a> that demonstrates the use of the <span class="ph">Predix UI</span> platform to configure a basic web application to implement these features: <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_qcc_js3_rw"><li class="li">Application Navigation</li>
+<div class="section postreq">See the <a class="xref" href="https://www.predix.io/resources/tutorials/journey.html#2100" target="_blank">Predix UI Seed</a> guide that demonstrates the use of <span class="ph">Predix UI Seed</span> web application starter kit to implement these features: <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_qcc_js3_rw"><li class="li">Application Navigation</li>
 <li class="li">Responsive Layout</li>
 <li class="li">Routing</li>
 <li class="li">Data Binding</li>
@@ -339,6 +328,6 @@
 </ul>
 </div>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

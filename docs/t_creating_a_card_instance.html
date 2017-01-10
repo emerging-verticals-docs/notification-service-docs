@@ -19,7 +19,7 @@
         </div>
 <div class="section context">A <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">card</a> is a <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">component</a> that provides a composable user interface object. If you have access to the public Github repository, consider cloning or forking one of the sample cards in the <samp class="ph codeph">px-sample-cards</samp> repository rather than building one from scratch.<div class="note note"><span class="notetitle">Note:</span> The code in this repository depends upon commercial software provided by Highsoft. GE does not provides licensing to use the Highcharts and Highstock code. Your organization must obtain its own development and distribution license from Highcharts to use the code. For pricing and to purchase, visit <a class="xref" href="http://shop.highsoft.com" target="_blank">http://shop.highsoft.com</a></div>
 </div>
-<ol class="ol steps" id="task_vg3_zyt_d5__steps_bh3_zyt_d5"><li class="li step"><span class="ph cmd"><a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">Create a card instance</a> in the View service database. For example:</span><ol type="a" class="ol substeps" id="task_vg3_zyt_d5__substeps_nhz_xbx_mx"><li class="li substep substepexpand"><span class="ph cmd">Add a card to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application. For example:</span><div class="itemgroup info">
+<ol class="ol steps" id="task_vg3_zyt_d5__steps_bh3_zyt_d5"><li class="li step"><span class="ph cmd"><a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">Create a card instance</a> in the View service database. For example:</span><ol type="a" class="ol substeps" id="task_vg3_zyt_d5__substeps_nhz_xbx_mx"><li class="li substep substepexpand"><span class="ph cmd">Add a card to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application. For example:</span><div class="itemgroup info">
                             <pre class="pre codeblock">&lt;!-- a card that can display temperature of a city --&gt;
 &lt;my-temperature-card id="card-1" title="San Ramon Temperature"postal="94582" unit="F"&gt;&lt;/my-temperature-card&gt;
 </pre>
@@ -42,7 +42,7 @@
                         </div></li>
 </ol>
 </li>
-<li class="li step"><span class="ph cmd">In a REST client, <a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">retrieve a card instance</a> in JSON format from the database. For example:</span><ol type="a" class="ol substeps" id="task_vg3_zyt_d5__substeps_u5q_4tc_dx"><li class="li substep substepexpand"><span class="ph cmd">In a REST client, enter the following GET request:</span><div class="itemgroup info">
+<li class="li step"><span class="ph cmd">In a REST client, <a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">retrieve a card instance</a> in JSON format from the database. For example:</span><ol type="a" class="ol substeps" id="task_vg3_zyt_d5__substeps_u5q_4tc_dx"><li class="li substep substepexpand"><span class="ph cmd">In a REST client, enter the following GET request:</span><div class="itemgroup info">
                             <pre class="pre codeblock">[GET] /api/cards</pre>
 
                         </div></li>
@@ -64,11 +64,11 @@
 </ol>
 </div>
 <div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="View service overview">About the View Service</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="The View service stores the visual information available in a web application.">About View Service</a></div>
 </div>
 <div class="relinfo relref"><strong>Related reference</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">View Service Database Operations</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">View Service Database Operations</a></div>
 </div>
-</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

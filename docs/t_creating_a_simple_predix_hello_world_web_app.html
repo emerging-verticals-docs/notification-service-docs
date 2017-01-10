@@ -2,23 +2,23 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Create and deploy a simple web application. Use the Cloud Foundry CLI to log into Cloud Foundry. cf login -a &lt;API_Endpoint&gt; The value of &lt;API_Endpoint&gt; is available in the Predix welcome email that ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating a Simple Predix Hello World Web App"></meta><meta name="abstract" content="Create and deploy a simple web application."></meta><meta name="description" content="Create and deploy a simple web application."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_d16f72c1-0f07-452d-b4a1-b5f606dc5cf8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating a Simple Predix Hello World Web App</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry. Use the Cloud Foundry CLI to log into Cloud Foundry. cf ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Creating a Simple Predix Hello World Web App"></meta><meta name="abstract" content="To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry."></meta><meta name="description" content="To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_xwn_lvb_vx"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Creating a Simple Predix Hello World Web App</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
           --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
-<body onload="highlightSearchTerm()" class="frmBody" id="task_d16f72c1-0f07-452d-b4a1-b5f606dc5cf8">
+<body onload="highlightSearchTerm()" class="frmBody" id="task_xwn_lvb_vx">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Creating a Simple Predix Hello World Web App</h1>
-<div class="body taskbody"><p class="shortdesc">Create and deploy a simple web application.</p>
-<ol class="ol steps" id="task_d16f72c1-0f07-452d-b4a1-b5f606dc5cf8__steps_yvq_p11_xw"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+<div class="body taskbody"><p class="shortdesc">To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry.</p>
+<ol class="ol steps" id="task_xwn_lvb_vx__steps_yvq_p11_xw"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
                     <pre class="pre codeblock">cf login -a <var class="keyword varname">&lt;API_Endpoint&gt;</var></pre>
 
-                    <p class="p">The value of <samp class="ph codeph"><var class="keyword varname">&lt;API_Endpoint&gt;</var></samp> is available in the Predix welcome email that you receive when you register for an Predix.io user account. Your <samp class="ph codeph"><var class="keyword varname">&lt;API_Endpoint&gt;</var></samp> corresponds to your Predix.io registration.</p>
+                    <p class="p">Depending on your Predix.io registration, the value of <samp class="ph codeph"><var class="keyword varname">&lt;API_Endpoint&gt;</var></samp> is one of the following:</p>
 
-                    <ul class="ul" id="task_d16f72c1-0f07-452d-b4a1-b5f606dc5cf8__ul_nsb_z2f_bx"><li class="li">Predix Basic <p class="p">manifest.yml</p>
+                    <ul class="ul" id="task_xwn_lvb_vx__ul_nsb_z2f_bx"><li class="li">Predix US-West <p class="p">https://api.system.aws-usw02-pr.ice.predix.io</p>
 </li>
-<li class="li">Predix Select <p class="p">https://api.system.asv-pr.ice.predix.io</p>
+<li class="li">Predix US-East <p class="p">https://api.system.asv-pr.ice.predix.io</p>
 </li>
 <li class="li">Predix Japan<p class="p">https://api.system.aws-jp01-pr.ice.predix.io</p>
 </li>
@@ -31,7 +31,7 @@
                     <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
 
                 </div></li>
-<li class="li step stepexpand"><span class="ph cmd">Clone a copy of the Predix Hello World web application to create a Predix Hello World project. Enter the following at the command prompt:</span><div class="itemgroup info">
+<li class="li step stepexpand"><span class="ph cmd">Clone a copy of the Predix Hello World web app to create a Predix Hello World project. At the command prompt, enter:</span><div class="itemgroup info">
                     <pre class="pre codeblock">git clone https://github.com/PredixDev/Predix-HelloWorld-WebApp</pre>
 
                 </div><div class="itemgroup stepresult">The command produces the following output: <pre class="pre codeblock">Cloning into
@@ -46,7 +46,7 @@ Unpacking objects: 100% (7/7),
     done.
 Checking connectivity... done.</pre>
 </div></li>
-<li class="li step stepexpand"><span class="ph cmd">Edit the <span class="ph filepath">manifest.yml</span> file in the <span class="ph filepath">Predix-HelloWorld-WebApp</span> directory to update the name of the web application to <span class="ph filepath">Predix-HelloWorld-WebApp-<var class="keyword varname">&lt;YourAppName&gt;</var></span>. For example:</span><div class="itemgroup info">
+<li class="li step stepexpand"><span class="ph cmd">Edit the <span class="ph filepath">manifest.yml</span> file in the <span class="ph filepath">Predix-HelloWorld-WebApp</span> directory to update the name of the web app to <span class="ph filepath">Predix-HelloWorld-WebApp-<var class="keyword varname">&lt;YourAppName&gt;</var></span>. For example:</span><div class="itemgroup info">
                     <pre class="pre codeblock"># 
 applications:
   - name:
@@ -59,22 +59,20 @@ applications:
     </pre>
 
                 </div></li>
-<li class="li step stepexpand"><span class="ph cmd">Make sure that you are in the <samp class="ph codeph">Predix-HelloWorld-WebApp</samp> directory.
-                    </span></li>
-<li class="li step stepexpand"><span class="ph cmd">Push your Predix web application to Cloud Foundry. Enter the following at the command prompt:</span><div class="itemgroup info">
+<li class="li step stepexpand"><span class="ph cmd">Make sure that you are in the <samp class="ph codeph">Predix-HelloWorld-WebApp</samp> directory. From the directory, push your Predix web application to Cloud Foundry. At the command prompt, enter:</span><div class="itemgroup info">
                     <pre class="pre codeblock">cf push</pre>
 
                 </div></li>
-<li class="li step stepexpand"><span class="ph cmd">See your Predix web application run: </span><div class="itemgroup info">
-                    <ol class="ol" type="a" id="task_d16f72c1-0f07-452d-b4a1-b5f606dc5cf8__ol_icy_wtz_gv"><li class="li">Use the Cloud Foundry CLI to see your web application in your Cloud Foundry space:<pre class="pre codeblock">cf apps</pre>
-</li>
-<li class="li">Enter the web application URL into your web browser. Make sure to use your app name. For example:<pre class="pre codeblock"> https://Predix-HelloWorld-WebApp-<strong class="ph b">&lt;YourAppName&gt;</strong>.run.aws-usw02-pr.ice.predix.io</pre>
-</li>
-</ol>
+<li class="li step stepexpand"><span class="ph cmd">See your web app listed in your Cloud Foundry space: </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf apps</pre>
 
-                </div><div class="itemgroup stepresult">Your Predix Hello World web application displays in a web browser. </div></li>
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Enter your web app URL in a browser, including your app name. For example:</span><div class="itemgroup info">
+                    <pre class="pre codeblock"> https://Predix-HelloWorld-WebApp-<strong class="ph b">&lt;YourAppName&gt;</strong>.run.aws-usw02-pr.ice.predix.io</pre>
+
+                </div><div class="itemgroup stepresult">Your  Predix Hello World web app displays in the web browser. </div></li>
 </ol>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

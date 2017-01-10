@@ -36,12 +36,12 @@
 <li class="li step stepexpand"><span class="ph cmd">In the <span class="ph uicontrol">Client Management</span> tab, click the edit icon corresponding to the client added in the previous step.</span></li>
 <li class="li step stepexpand"><span class="ph cmd">Complete the <span class="ph uicontrol">Edit Client</span> form.</span><div class="itemgroup info">
                     
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_k3h_k2c_1x__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d20360e133">Field</th>
-<th class="entry" valign="top" width="72.29916897506925%" id="d20360e135">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_k3h_k2c_1x__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d20186e133">Field</th>
+<th class="entry" valign="top" width="72.29916897506925%" id="d20186e135">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Authorized Grant Types</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">Choose one or more of the following grant types:<ul class="ul" id="task_k3h_k2c_1x__ul_pyf_jnq_rw"><li class="li"><span class="ph uicontrol">authorization_code</span><p class="p">When you use the authorization code grant type, the client directs the resource owner to UAA, which in turn directs the resource owner back to the client with the authorization code. </p>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Authorized Grant Types</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">Choose one or more of the following grant types:<ul class="ul" id="task_k3h_k2c_1x__ul_pyf_jnq_rw"><li class="li"><span class="ph uicontrol">authorization_code</span><p class="p">When you use the authorization code grant type, the client directs the resource owner to UAA, which in turn directs the resource owner back to the client with the authorization code. </p>
 </li>
 <li class="li"><span class="ph uicontrol">client_credentials</span><p class="p">When you use the client credentials grant type, the OAuth2 endpoint in UAA accepts the client ID and client secret and provides Access Tokens.</p>
 </li>
@@ -55,33 +55,33 @@
 <p class="p">For more information on grant types, see <a class="xref" href="https://tools.ietf.org/html/rfc6749" target="_blank">RFC 6749</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Redirect URI</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">Specify a redirect URI to redirect the client after login (for example, <samp class="ph codeph">http://example-app.com/welcome</samp>).<p class="p">This URI is used when you start using UAA as service provider for your external Identify provider.</p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Redirect URI</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">Specify a redirect URI to redirect the client after login (for example, <samp class="ph codeph">http://example-app.com/welcome</samp>).<p class="p">This URI is used when you start using UAA as service provider for your external Identify provider.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Scopes</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">By default, the client is assigned a few required scopes. For a new client, an administrator can select the scopes to be added based on the selected grant type.<p class="p">If you select the <samp class="ph codeph">authorization_code</samp>, <samp class="ph codeph">password</samp> and <samp class="ph codeph">implicit</samp> grant type, you must update the scopes with service specific scopes.</p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Scopes</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">By default, the client is assigned a few required scopes. For a new client, an administrator can select the scopes to be added based on the selected grant type.<p class="p">If you select the <samp class="ph codeph">authorization_code</samp>, <samp class="ph codeph">password</samp> and <samp class="ph codeph">implicit</samp> grant type, you must update the scopes with service specific scopes.</p>
 <p class="p">For a complete list of required scopes, see <a class="xref" href="r_authorities_or_scopes_required_for_services.html#reference_ec1_t3d_bx">Authorities or Scopes Required for Platform Services</a>.</p>
 <p class="p">For a list of available UAA scopes, see <a class="xref" href="https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst#scopes-authorized-by-the-uaa" target="_blank">Scopes Authorized by the UAA</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Authorities</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">By default, the client is assigned a few required authorities. For a new client, an administrator can select the authorities to be added based on the selected grant type.<p class="p">If you select the <samp class="ph codeph">client_credentials</samp> grant type, you must update the authorities with service specific authorities.</p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Authorities</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">By default, the client is assigned a few required authorities. For a new client, an administrator can select the authorities to be added based on the selected grant type.<p class="p">If you select the <samp class="ph codeph">client_credentials</samp> grant type, you must update the authorities with service specific authorities.</p>
 <p class="p">For a complete list of scopes to be added for each service, see <a class="xref" href="r_authorities_or_scopes_required_for_services.html#reference_ec1_t3d_bx">Authorities or Scopes Required for Platform Services</a>.</p>
 <p class="p">For a list of available UAA authorities, see <a class="xref" href="https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst#scopes-authorized-by-the-uaa" target="_blank">Scopes Authorized by the UAA</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Auto Approved Scopes</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">Specify scopes that can be approved automatically for the client without explicit approval from the resource owner.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Auto Approved Scopes</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">Specify scopes that can be approved automatically for the client without explicit approval from the resource owner.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Allowed Providers</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">Specify the names of the external identity providers, if any. This field is required if you are using external identity providers with UAA as a service provider.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Allowed Providers</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">Specify the names of the external identity providers, if any. This field is required if you are using external identity providers with UAA as a service provider.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Access Token Validity</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">Specifies the access token expiration time in ms. </td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Access Token Validity</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">Specifies the access token expiration time in ms. </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20360e133 "><span class="ph uicontrol">Refresh Token Validity</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d20360e135 ">Specifies the refresh token expiration time in ms.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d20186e133 "><span class="ph uicontrol">Refresh Token Validity</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d20186e135 ">Specifies the refresh token expiration time in ms.</td>
 </tr>
 </tbody>
 </table>
@@ -101,6 +101,6 @@
 
         </div>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

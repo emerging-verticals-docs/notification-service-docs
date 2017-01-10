@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="View service API operations on card and deck objects You store the state of card or deck objects in the View service database. You can also create the following relationships between card and deck ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="View Service Database Operations"></meta><meta name="abstract" content="View service API operations on card and deck objects"></meta><meta name="description" content="View service API operations on card and deck objects"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>View Service Database Operations</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="Store the state of card and deck objects in a database. You can also create the following relationships between card and deck objects in the View service database: Associate a card with a deck. Tag a ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="View Service Database Operations"></meta><meta name="abstract" content="Store the state of card and deck objects in a database."></meta><meta name="description" content="Store the state of card and deck objects in a database."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>View Service Database Operations</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -10,9 +10,9 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">View Service Database Operations</h1>
-<div class="body refbody"><p class="shortdesc">View service API operations on card and deck objects</p>
+<div class="body refbody"><p class="shortdesc">Store the state of card and deck objects in a database.</p>
 <div class="section">
-            <div class="p">You store the state of <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">card</a> or <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">deck</a> objects in the View service database. You can also create the following relationships between card and deck objects in the View service database:<ul class="ul" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__ul_s32_zlh_q5"><li class="li">Associate a card with a deck.</li>
+            <div class="p">You can also create the following relationships between card and deck objects in the View service database:<ul class="ul" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__ul_s32_zlh_q5"><li class="li">Associate a card with a deck.</li>
 <li class="li">Tag a card or deck to create categories.</li>
 </ul>
 </div>
@@ -23,26 +23,26 @@
 <div class="section"><h2 class="title sectiontitle">Card CRUD Operations</h2>
             
             <div class="p">The following View service API supports operations on card objects.
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_vt2_3nh_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10296e68">HTTP Method</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e70">Path</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e72">Description </th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_vt2_3nh_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10157e48">HTTP Method</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e50">Path</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e52">Description </th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e68 ">GET</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e70 ">/api/cards</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e72 ">Get all cards.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e48 ">GET</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e50 ">/api/cards</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e52 ">Get all cards.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e68 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e70 ">/api/cards</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e72 ">Create cards.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e48 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e50 ">/api/cards</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e52 ">Create cards.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e68 ">PUT</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e70 ">/api/cards/<var class="keyword varname">Id</var></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e72 ">Update card <var class="keyword varname">Id</var>.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e48 ">PUT</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e50 ">/api/cards/<var class="keyword varname">Id</var></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e52 ">Update card <var class="keyword varname">Id</var>.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e68 ">DELETE</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e70 ">/api/cards/<var class="keyword varname">Id</var></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e72 ">Delete card <var class="keyword varname">Id</var>.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e48 ">DELETE</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e50 ">/api/cards/<var class="keyword varname">Id</var></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e52 ">Delete card <var class="keyword varname">Id</var>.</td>
 </tr>
 </tbody>
 </table>
@@ -55,26 +55,26 @@
 
         </div>
 <div class="section"><h2 class="title sectiontitle">Deck CRUD Operations</h2>The following View service API supports operations on deck objects.
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_qzr_p4h_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10296e142">HTTP Method</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e144">Path</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e146">Description </th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_qzr_p4h_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10157e122">HTTP Method</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e124">Path</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e126">Description </th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e142 ">GET</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e144 ">/api/decks</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e146 ">Get all decks.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e122 ">GET</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e124 ">/api/decks</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e126 ">Get all decks.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e142 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e144 ">/api/decks</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e146 ">Create decks.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e122 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e124 ">/api/decks</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e126 ">Create decks.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e142 ">PUT</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e144 ">/api/decks/<var class="keyword varname">Id</var></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e146 ">Update specified deck.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e122 ">PUT</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e124 ">/api/decks/<var class="keyword varname">Id</var></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e126 ">Update specified deck.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e142 ">DELETE</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e144 ">/api/decks/<var class="keyword varname">Id</var></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e146 ">Delete specified deck.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e122 ">DELETE</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e124 ">/api/decks/<var class="keyword varname">Id</var></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e126 ">Delete specified deck.</td>
 </tr>
 </tbody>
 </table>
@@ -85,26 +85,26 @@
 <div class="section"><h2 class="title sectiontitle">Associating Cards and Decks </h2>
             
             <div class="p">The following View service API associates card and deck objects.
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_x4b_5ph_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10296e210">HTTP Method</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e212">Path</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e214">Description </th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_x4b_5ph_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10157e190">HTTP Method</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e192">Path</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e194">Description </th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e210 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e212 ">/api/decks/<var class="keyword varname">Id</var>/cards/add</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e214 ">Associate a card <var class="keyword varname">Id</var> with a deck.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e190 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e192 ">/api/decks/<var class="keyword varname">Id</var>/cards/add</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e194 ">Associate a card <var class="keyword varname">Id</var> with a deck.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e210 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e212 ">/api/decks/<var class="keyword varname">Id</var>/cards/remove</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e214 ">Detach a card <var class="keyword varname">Id</var> from a deck.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e190 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e192 ">/api/decks/<var class="keyword varname">Id</var>/cards/remove</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e194 ">Detach a card <var class="keyword varname">Id</var> from a deck.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e210 ">GET</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e212 ">/api/decks/<var class="keyword varname">Id</var>/cards</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e214 ">Get all cards in a deck.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e190 ">GET</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e192 ">/api/decks/<var class="keyword varname">Id</var>/cards</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e194 ">Get all cards in a deck.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e210 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e212 ">/api/decks/<var class="keyword varname">Id</var>/cards/ordered</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e214 ">Set the card order in a deck.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e190 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e192 ">/api/decks/<var class="keyword varname">Id</var>/cards/ordered</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e194 ">Set the card order in a deck.</td>
 </tr>
 </tbody>
 </table>
@@ -119,26 +119,26 @@
 <div class="section"><h2 class="title sectiontitle">Tagging Cards and Decks</h2>
             
             <div class="p">The following View service API tags card or deck objects to create categories.
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_kn2_5sh_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10296e295">HTTP Method</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e297">Path</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d10296e299">Description </th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b__table_kn2_5sh_q5" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d10157e275">HTTP Method</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e277">Path</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d10157e279">Description </th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e295 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e297 ">/api/cards/<var class="keyword varname">Id</var>/tag</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e299 ">Tag a card.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e275 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e277 ">/api/cards/<var class="keyword varname">Id</var>/tag</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e279 ">Tag a card.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e295 ">POST</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e297 ">/api/decks/<var class="keyword varname">Id</var>/tag</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e299 ">Tag a deck.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e275 ">POST</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e277 ">/api/decks/<var class="keyword varname">Id</var>/tag</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e279 ">Tag a deck.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e295 ">GET</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e297 ">/api/cards/tag?values={comma delimited tag strings}</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e299 ">Get all cards with tag strings.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e275 ">GET</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e277 ">/api/cards/tag?values={comma delimited tag strings}</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e279 ">Get all cards with tag strings.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10296e295 ">GET</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e297 ">/api/decks/tag?values={comma delimited tag strings}</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d10296e299 ">Get all decks with tag strings.</td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d10157e275 ">GET</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e277 ">/api/decks/tag?values={comma delimited tag strings}</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d10157e279 ">Get all decks with tag strings.</td>
 </tr>
 </tbody>
 </table>
@@ -151,6 +151,6 @@
 
         </div>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

@@ -25,15 +25,15 @@
 <li class="li step stepexpand"><span class="ph cmd">Click <span class="ph uicontrol">Create Client</span> to open the <span class="ph uicontrol">Create Client</span> form.</span></li>
 <li class="li step stepexpand"><span class="ph cmd">Complete the <span class="ph uicontrol">Create Client</span> form.</span><div class="itemgroup info">
                     
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_79a81b74-552e-4f74-abfc-bd37e6adac87__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d15318e77">Field</th>
-<th class="entry" valign="top" width="72.29916897506925%" id="d15318e79">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_79a81b74-552e-4f74-abfc-bd37e6adac87__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d15143e77">Field</th>
+<th class="entry" valign="top" width="72.29916897506925%" id="d15143e79">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Client ID</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specify a name for the OAuth2 client you are creating.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Client ID</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specify a name for the OAuth2 client you are creating.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Authorized Grant Types</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Choose one or more of the following grant types:<ul class="ul" id="task_79a81b74-552e-4f74-abfc-bd37e6adac87__ul_pyf_jnq_rw"><li class="li"><span class="ph uicontrol">authorization_code</span><p class="p">When you use the authorization code grant type, the client directs the resource owner to UAA, which in turn directs the resource owner back to the client with the authorization code. </p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Authorized Grant Types</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Choose one or more of the following grant types:<ul class="ul" id="task_79a81b74-552e-4f74-abfc-bd37e6adac87__ul_pyf_jnq_rw"><li class="li"><span class="ph uicontrol">authorization_code</span><p class="p">When you use the authorization code grant type, the client directs the resource owner to UAA, which in turn directs the resource owner back to the client with the authorization code. </p>
 </li>
 <li class="li"><span class="ph uicontrol">client_credentials</span><p class="p">When you use the client credentials grant type, the OAuth2 endpoint in UAA accepts the client ID and client secret and provides Access Tokens.</p>
 </li>
@@ -47,24 +47,24 @@
 <p class="p">For more information on grant types, see <a class="xref" href="https://tools.ietf.org/html/rfc6749" target="_blank">RFC 6749</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Client Secret</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specify the password. It is important that you keep a note of this password. If lost, this password cannot be retrieved.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Client Secret</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specify the password. It is important that you keep a note of this password. If lost, this password cannot be retrieved.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Confirm Client Secret</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Reenter the client secret.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Confirm Client Secret</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Reenter the client secret.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Redirect URI</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specify a redirect URI to redirect the client after login (for example, <samp class="ph codeph">http://example-app.com/welcome</samp>).<p class="p">Use this URI when you start using UAA as the service provider for your external Identify provider.</p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Redirect URI</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specify a redirect URI to redirect the client after login (for example, <samp class="ph codeph">http://example-app.com/welcome</samp>).<p class="p">Use this URI when you start using UAA as the service provider for your external Identify provider.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Scopes</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Scopes are permissions associated with an OAuth Client to determine user acces to a resource through an application. The user permissions are for authorization grant types <samp class="ph codeph">authorization_code</samp>, <samp class="ph codeph">password</samp> and <samp class="ph codeph">implicit</samp>..<p class="p">By default, the admin client is assigned all required scopes. For a new client, an administrator can select the scopes to be added based on client requirements.</p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Scopes</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Scopes are permissions associated with an OAuth Client to determine user acces to a resource through an application. The user permissions are for authorization grant types <samp class="ph codeph">authorization_code</samp>, <samp class="ph codeph">password</samp> and <samp class="ph codeph">implicit</samp>..<p class="p">By default, the admin client is assigned all required scopes. For a new client, an administrator can select the scopes to be added based on client requirements.</p>
 <p class="p">For a list of available scopes, see <a class="xref" href="https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst#scopes-authorized-by-the-uaa" target="_blank">Scopes Authorized by the UAA</a>.</p>
 <p class="p">To use an OAuth2 client for your Predix Platform service instance, you must <a class="xref" href="t_updating_oauth2_client.html#task_k3h_k2c_1x" title="To use an OAuth2 client for secure access to your Predix Platform service instance from your application, you must update your OAuth2 client to add additional authorities or scopes that are specific to each service.">update your OAuth2 client</a> to add <a class="xref" href="r_authorities_or_scopes_required_for_services.html#reference_ec1_t3d_bx">scopes that are specific to each service</a> after adding the client to the service instance. </p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Authorities</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Authorities are permissions associated with the OAuth Client when an application or API is acting on its own behalf to access a resource with its own credentials, without user involvement. The permissions are for the <samp class="ph codeph">client_credentials</samp> authorization grant type.<p class="p">By default, the admin client is assigned all required authorities. For a new client, an administrator can select the authorities to be added based on client requirements.</p>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Authorities</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Authorities are permissions associated with the OAuth Client when an application or API is acting on its own behalf to access a resource with its own credentials, without user involvement. The permissions are for the <samp class="ph codeph">client_credentials</samp> authorization grant type.<p class="p">By default, the admin client is assigned all required authorities. For a new client, an administrator can select the authorities to be added based on client requirements.</p>
 <p class="p">The list of authorities matches the list of scopes. For a list of available UAA scopes, see <a class="xref" href="https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst#scopes-authorized-by-the-uaa" target="_blank">Scopes Authorized by the UAA</a>.</p>
 <p class="p">To use an OAuth2 client for your Predix Platform service instance, you must <a class="xref" href="t_updating_oauth2_client.html#task_k3h_k2c_1x" title="To use an OAuth2 client for secure access to your Predix Platform service instance from your application, you must update your OAuth2 client to add additional authorities or scopes that are specific to each service.">update your OAuth2 client</a> to add <a class="xref" href="r_authorities_or_scopes_required_for_services.html#reference_ec1_t3d_bx">authorities that are specific to each service</a> after adding the client to the service instance.</p>
 <div class="note note"><span class="notetitle">Note:</span> 
@@ -73,17 +73,17 @@
                                         </div>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Auto Approved Scopes</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specify scopes that can be approved automatically for the client without explicit approval from a resource owner.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Auto Approved Scopes</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specify scopes that can be approved automatically for the client without explicit approval from a resource owner.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Allowed Providers</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specifies the names of the external identity providers, if any. This field is required if you are using external identity providers with UAA as a service provider.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Allowed Providers</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specifies the names of the external identity providers, if any. This field is required if you are using external identity providers with UAA as a service provider.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Access Token Validity</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specifies the access-token expiration time in ms. </td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Access Token Validity</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specifies the access-token expiration time in ms. </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15318e77 "><span class="ph uicontrol">Refresh Token Validity</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15318e79 ">Specifies the refresh-token expiration time in ms.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15143e77 "><span class="ph uicontrol">Refresh Token Validity</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d15143e79 ">Specifies the refresh-token expiration time in ms.</td>
 </tr>
 </tbody>
 </table>
@@ -128,6 +128,6 @@
 </ol>
 </div>
 </div>
-<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>

@@ -18,7 +18,7 @@
 
         </div>
 <div class="section context">A <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">deck</a> is a container that determines the layout of cards. </div>
-<ol class="ol steps" id="task_fh5_drt_d5__steps_kh5_drt_d5"><li class="li step"><span class="ph cmd"><a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">Create a deck instance</a> in the View service database. For example:</span><ol type="a" class="ol substeps" id="task_fh5_drt_d5__substeps_bwq_5dx_mx"><li class="li substep substepexpand"><span class="ph cmd">Add a deck to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application:</span><div class="itemgroup info">
+<ol class="ol steps" id="task_fh5_drt_d5__steps_kh5_drt_d5"><li class="li step"><span class="ph cmd"><a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">Create a deck instance</a> in the View service database. For example:</span><ol type="a" class="ol substeps" id="task_fh5_drt_d5__substeps_bwq_5dx_mx"><li class="li substep substepexpand"><span class="ph cmd">Add a deck to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application:</span><div class="itemgroup info">
                             <pre class="pre codeblock">&lt;!-- a deck with 2 cards --&gt;
 &lt;px-deck id="deck-1"&gt;
     &lt;my-temperature-card id="card-1" title="San Ramon Temperature"postal="94582" unit="F"&gt;&lt;/my-temperature-card&gt;
@@ -56,7 +56,7 @@
                         </div></li>
 </ol>
 </li>
-<li class="li step"><span class="ph cmd">In a REST client, <a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">retrieve a deck instance</a> in JSON format from the database. For example:</span><ol type="a" class="ol substeps" id="task_fh5_drt_d5__substeps_wm5_tcw_cx"><li class="li substep substepexpand"><span class="ph cmd">Enter the following GET request:</span><div class="itemgroup info">
+<li class="li step"><span class="ph cmd">In a REST client, <a class="xref" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">retrieve a deck instance</a> in JSON format from the database. For example:</span><ol type="a" class="ol substeps" id="task_fh5_drt_d5__substeps_wm5_tcw_cx"><li class="li substep substepexpand"><span class="ph cmd">Enter the following GET request:</span><div class="itemgroup info">
                             <pre class="pre codeblock">[GET] /api/decks</pre>
 
                         </div></li>
@@ -71,11 +71,11 @@
 </ol>
 </div>
 <div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="View service overview">About the View Service</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="The View service stores the visual information available in a web application.">About View Service</a></div>
 </div>
 <div class="relinfo relref"><strong>Related reference</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="View service API operations on card and deck objects">View Service Database Operations</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">View Service Database Operations</a></div>
 </div>
-</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2016 General Electric Company. All rights reserved.</span></a></div>
+</div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
 </html>
