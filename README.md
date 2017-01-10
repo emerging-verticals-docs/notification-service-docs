@@ -2,9 +2,7 @@
 
 The Predix Notification Service is a notification service that notifies list of recipient(s) via email. The service provides a simple and scalable way to provide notification services for user applications. The Predix Notification service is available as a service tile in the Predix Cloud and allows users to create, update and delete tenant and also related configurations through a REST interface.
 
-**Please Note** - **Data at rest is *NOT* encrypted.  Please use discretion when storing sensitive data**
 
-## Table of Contents
   - [Usage](#usage)
     - [Creating service instance](#creating-service-instance)
     - [UAA configuration](#uaa-configuration)

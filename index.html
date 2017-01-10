@@ -1,0 +1,561 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Notification-service-docs</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Notification-service-docs</h1>
+    </header>
+    <div id="container">
+      <p class="tagline"></p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/emerging-verticals-docs/notification-service-docs/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/emerging-verticals-docs/notification-service-docs/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/emerging-verticals-docs/notification-service-docs" class="code">View Notification-service-docs on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="notification-service" class="anchor" href="#notification-service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notification Service</h1>
+
+<p>The Predix Notification Service is a notification service that notifies list of recipient(s) via email. The service provides a simple and scalable way to provide notification services for user applications. The Predix Notification service is available as a service tile in the Predix Cloud and allows users to create, update and delete tenant and also related configurations through a REST interface.</p>
+
+<p><strong>Please Note</strong> - <strong>Data at rest is <em>NOT</em> encrypted.  Please use discretion when storing sensitive data</strong></p>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
+
+<ul>
+<li>
+<a href="#usage">Usage</a>
+
+<ul>
+<li><a href="#creating-service-instance">Creating service instance</a></li>
+<li>
+<a href="#uaa-configuration">UAA configuration</a>
+
+<ul>
+<li><a href="#client-credentials">Client credentials</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#notification-service">Notication service</a>
+
+<ul>
+<li><a href="#get-configurations-by-tenant-uuid">Get configurations by tenant_uuid</a></li>
+<li><a href="#get-configuration-by-uuid">Get configuration by uuid</a></li>
+<li><a href="#add-configuration">Add configuration</a></li>
+<li><a href="#update-configuration">Update configuration</a></li>
+<li><a href="#delete-configuration">Delete configuration</a></li>
+<li><a href="#send-email-using-configuration">Send email using configuration</a></li>
+<li><a href="#get-tenant">Get Tenant</a></li>
+</ul>
+</li>
+<li><a href="#response-codes">Response codes</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="creating-service-instance" class="anchor" href="#creating-service-instance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating service instance</h3>
+
+<p>To create an instance of the Predix Notification Service, please use the <a href="https://github.com/cloudfoundry/cli">Cloud Foundry CLI tool</a> to run the following command:</p>
+
+<pre><code>cf create-service notification-service &lt;plan&gt; &lt;service_instance_name&gt; -c '{“trustedIssuerId”: “&lt;predix uaa instance url&gt;/oauth/token”}'
+</code></pre>
+
+<p>Once a service instance is created , you will be issued a tenant uuid for the created service instance.  You can obtain this tenant uuid by binding an application to
+the service instance.  You can bind an application to the service instance with the following command:</p>
+
+<pre><code>cf bind-service &lt;app_name&gt; &lt;service_instance_name&gt;
+</code></pre>
+
+<p>The application's <em>VCAP SERVICES</em> will contain the following variables:</p>
+
+<pre><code>"notification-service": [
+   {
+    "credentials": {
+     "catalogUri": "&lt;service url&gt;",
+     "tenantUuid": "&lt;tenant uuid&gt;",
+     "version": "1",
+     "trustedIssuerIds": "&lt;trusted issuers&gt;",
+     "zoneOauthScope": "notification.zone.&lt;tenant uuid&gt;.user"
+    },
+    "label": "notification-service",
+    "name": "&lt;service_instance_name&gt;",
+    "plan": "&lt;plan&gt;",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "notification",
+     "email",
+     "audit",
+     "event",
+     "trail"
+    ]
+   }
+</code></pre>
+
+<p><strong>Note</strong> - Please update your <a href="https://github.com/cloudfoundry/cli">Cloud Foundry CLI tool</a> to the lastest version.</p>
+
+<h4>
+<a id="uaa-configuration" class="anchor" href="#uaa-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UAA configuration</h4>
+
+<p>Once a tenant uuid has been issued to your instance you will need to add the <strong>zone-oath-scope</strong> to your UAA instance clients.</p>
+
+<h5>
+<a id="client-credentials" class="anchor" href="#client-credentials" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client credentials</h5>
+
+<p>To use the notification service with the client credentials flow (the SDK requires this), then you need to add the <strong>zone-oath-scope</strong> to your client authorities.  You can do this using the UAA cli with the following command:</p>
+
+<pre><code>uaac client update &lt;client_name&gt; --authorities "&lt;list_of_authorities&gt; notification.zone.&lt;tenant uuid&gt;.user"
+</code></pre>
+
+<p>Tokens issue by this client will now be authorized to use the notification service instance.</p>
+
+<h2>
+<a id="notication-service" class="anchor" href="#notication-service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notication service</h2>
+
+<h3>
+<a id="get-configurations-by-tenant_uuid" class="anchor" href="#get-configurations-by-tenant_uuid" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get configurations by tenant_uuid.</h3>
+
+<ul>
+<li>
+<p>GET /tenants/{tenant_uuid}/configurations</p>
+
+<ul>
+<li>parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sample Response Payload</p></li>
+</ul>
+
+<pre><code>  "payload": [
+    {
+      "id": 243,
+      "uuid": "30465c06-7ab3-47f6-92f7-1deb8b1e2ec9",
+      "tenantUuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": 587,
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "timestamp": 1479326129361,
+      "lastUpdated": 1479326129382,
+      "mailReturnPath": null
+    },
+    {
+      "id": 244,
+      "uuid": "60aaa98c-4fda-4e5b-9f7d-b1af6acea4fa",
+      "tenantUuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": 587,
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "timestamp": 1481060519229,
+      "lastUpdated": 1481060519246,
+      "mailReturnPath": null
+    }
+  ],
+  "uuid": "ff40897f-6df9-410d-818e-c25761421907",
+  "status": 1000,
+  "message": "OK",
+  "timestamp": 1481060601465
+</code></pre>
+
+<h3>
+<a id="get-configuration-by-uuid" class="anchor" href="#get-configuration-by-uuid" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get configuration by uuid</h3>
+
+<ul>
+<li>
+<p>GET /tenants/{tenant_uuid}/configurations/{uuid}</p>
+
+<ul>
+<li>parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant</li>
+<li>uuid - uuid of the configuration (REQUIRED)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sample Response Payload</p></li>
+</ul>
+
+<pre><code>  "payload": {
+    "id": 243,
+    "uuid": "30465c06-7ab3-47f6-92f7-1deb8b1e2ec9",
+    "tenantUuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+    "protocol": "smtp",
+    "host": "smtp.sparkpostmail.com",
+    "port": 587,
+    "smtpAuth": "true",
+    "smtpStarttlsEnable": "true",
+    "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+    "mailUsername": "SMTP_Injection",
+    "mailPassword": "password",
+    "timestamp": 1479326129361,
+    "lastUpdated": 1479326129382,
+    "mailReturnPath": null
+  },
+  "uuid": "f9532152-31e2-4e9e-b9a4-8ccb66957023",
+  "status": 1000,
+  "message": "OK",
+  "timestamp": 1481060706326
+</code></pre>
+
+<h3>
+<a id="add-configuration" class="anchor" href="#add-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add configuration</h3>
+
+<ul>
+<li>
+<p>POST /tenants/{tenant_uuid}/configurations</p>
+
+<ul>
+<li>URI path parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant</li>
+</ul>
+</li>
+<li>Request Body JSON parameters
+
+<ul>
+<li>protocol - protocol of mail server (REQUIRED)</li>
+<li>host - host of mail server (REQUIRED)</li>
+<li>smtpAuth - smtp auth for mail server (REQUIRED)</li>
+<li>smtpStarttlsEnable - smtp starttls enable for mail server (REQUIRED)</li>
+<li>mailFrom - From email address (REQUIRED)</li>
+<li>mailUsername - mail server user name for authetication (REQUIRED)</li>
+<li>mailPassword - mail server user password for authetication (REQUIRED)</li>
+<li>mailReturnPath - mail return path (OPTIONAL)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sample Request</p></li>
+</ul>
+
+<pre><code>[
+    {
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": "587",
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "mailReturnPath": null
+    }
+  ]
+</code></pre>
+
+<h3>
+<a id="update-configuration" class="anchor" href="#update-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update configuration</h3>
+
+<ul>
+<li>PUT tenants/{tenant_uuid}/configurations/{uuid}
+
+<ul>
+<li>URI path parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant</li>
+<li>uuid - uuid of the configuration (REQUIRED)</li>
+</ul>
+</li>
+<li>Request Body JSON parameters - Configuration will be over-ridden.
+
+<ul>
+<li>protocol - protocol of mail server (OPTIONAL)</li>
+<li>host - host of mail server (OPTIONAL)</li>
+<li>smtpAuth - smtp auth for mail server (OPTIONAL)</li>
+<li>smtpStarttlsEnable - smtp starttls enable for mail server (OPTIONAL)</li>
+<li>mailFrom - From email address (OPTIONAL)</li>
+<li>mailUsername - mail server user name for authetication (OPTIONAL)</li>
+<li>mailPassword - mail server user password for authetication (OPTIONAL)</li>
+<li>mailReturnPath - mail return path (OPTIONAL)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sample Request</li>
+</ul>
+
+<pre><code>  "payload": [
+    {
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": "587",
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "mailReturnPath": null
+    },
+  ]
+</code></pre>
+
+<h3>
+<a id="delete-configuration" class="anchor" href="#delete-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delete configuration</h3>
+
+<ul>
+<li>
+<p>DELETE tenants/{tenant_uuid}/configuration/{uuid}</p>
+
+<ul>
+<li>parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant</li>
+<li>uuid - uuid of the configuration (REQUIRED)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sample Response Payload</p></li>
+</ul>
+
+<pre><code>  "payload": [
+    {
+      "protocol": "smtp",
+      "host": "smtp.sparkpostmail.com",
+      "port": "587",
+      "smtpAuth": "true",
+      "smtpStarttlsEnable": "true",
+      "mailFrom": "clarity-notifications@engagement.digital.ge.com",
+      "mailUsername": "SMTP_Injection",
+      "mailPassword": "password",
+      "mailReturnPath": null
+    },
+  ]
+  "uuid": "ddc7f50a-6883-45aa-a823-b70e47d2a05c",
+  "status": 1000,
+  "message": "OK",
+  "timestamp": 1459470908881
+</code></pre>
+
+<h3>
+<a id="send-email-using-configuration" class="anchor" href="#send-email-using-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Send email using configuration</h3>
+
+<ul>
+<li>POST /tenants/{tenant_uuid}/email?configuration={configuration_uuid}
+
+<ul>
+<li>parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant </li>
+<li>configuration_uuid - uuid of configuration</li>
+</ul>
+</li>
+<li>Request Body JSON parameters
+
+<ul>
+<li>body - Content of the email message (REQUIRED)</li>
+<li>subject - Email subject (OPTIONAL)</li>
+<li>fromEmail - Email address from email should be sent. (REQUIRED)</li>
+<li>fromName - From name (REQUIRED)</li>
+<li>important - Email importance flag (OPTIONAL)</li>
+<li>recipient - List of recipients (REQUIRED)</li>
+<li>recipient.email - email address of the recipient. (REQUIRED)</li>
+<li>recipient.recipientName - name of the recipient. (REQUIRED)</li>
+<li>recipient.type - type of the recipient. (REQUIRED) (OPTIONS: to, cc, bcc)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sample Request</li>
+</ul>
+
+<pre><code>{
+  "body":"Content of the email message",
+  "subject":"Subject of the email",
+  "fromEmail":"from@recipient.com",
+  "fromName" :"From name",
+  "important" :false,
+  "recipients":
+  [ 
+    {
+      "email":"recipient@recipient.com",
+      "recipientName":"Recipient email",
+      "type":"to"
+    }
+  ],
+  "attachments":null
+}
+</code></pre>
+
+<ul>
+<li>Sample Response Payload</li>
+</ul>
+
+<pre><code>{
+  "payload": 
+  {
+    "errors": [],
+    "notificationReferenceUuid": "c89c202b-921f-4086-b27d-abc8b700e156"
+  },
+  "uuid": "d8d26f97-4778-4af3-8312-bfc63477be46",
+  "status": 1013,
+  "message": "Email message is queued.",
+  "timestamp": 1481060912518
+}
+</code></pre>
+
+<h3>
+<a id="get-tenant" class="anchor" href="#get-tenant" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Tenant</h3>
+
+<ul>
+<li>
+<p>GET tenant/{tenant_uuid}</p>
+
+<ul>
+<li>parameters
+
+<ul>
+<li>tenant_uuid - uuid of tenant to retrieve</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sample Response Payload</p></li>
+</ul>
+
+<pre><code>{
+  "payload": {
+    "id": 20,
+    "bindingId": "a114e44e-225b-4701-b5e4-5465730e2f63",
+    "uuid": "7a18ef3f-c95c-4a89-b9c8-a49d8e3ff37c",
+    "planId": "03863586-9484-430d-ab26-aa050aa3e222",
+    "timestamp": 1476989584771,
+    "trustedIssuers": "https://8ec6f31a-4084-4951-ad9e-cc7d1501c440.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+    "eatUuid": "0fc5b8ff-ab39-4a16-aad6-311c74862cf6",
+    "eatStatus": 1,
+    "defaultConfigurationUuid": "dde8596d-b1b2-4bd4-9f74-294cb8c97b6d",
+    "dailyLimit": 2000,
+    "monthlyLimit": 5000,
+    "successWebhook": null,
+    "failWebhook": null
+  },
+  "uuid": "0fe5f384-56ff-4118-bf85-edbd98392735",
+  "status": 1000,
+  "message": "OK",
+  "timestamp": 1481593852500
+}
+</code></pre>
+
+<h2>
+<a id="response-codes" class="anchor" href="#response-codes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Response codes</h2>
+
+<p>These are the service-specific responses embedded in service responses</p>
+
+<ul>
+<li>
+<strong>1000</strong> - OK</li>
+<li>
+<strong>1001</strong> - Notification configuration does not exist</li>
+<li>
+<strong>1002</strong> - Notification Tenant does not exist</li>
+<li>
+<strong>1003</strong> - Encountered exception sending notifications</li>
+<li>
+<strong>1004</strong> - Tenant ID mismatch</li>
+<li>
+<strong>1005</strong> - Tenant is missing or blank</li>
+<li>
+<strong>1006</strong> - Search query is missing or blank</li>
+<li>
+<strong>1007</strong> - Invalid search query string</li>
+<li>
+<strong>1008</strong> - Encountered exception adding Configurations</li>
+<li>
+<strong>1009</strong> - Configurations payload has exceeded the set limit</li>
+<li>
+<strong>1010</strong> - Configuration Tenant ID mismatch</li>
+<li>
+<strong>1011</strong> - Email message validation failed</li>
+<li>
+<strong>1012</strong> - Email message validation failed</li>
+<li>
+<strong>1013</strong> - Email message is queued</li>
+<li>
+<strong>1014</strong> - Daily email limit reached</li>
+<li>
+<strong>1015</strong> - Monthly email limit reached</li>
+<li>
+<strong>1016</strong> - General failure</li>
+<li>
+<strong>1017</strong> - Email attachment(s) validation failed</li>
+</ul>
+
+<h2>
+<a id="resources" class="anchor" href="#resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resources</h2>
+
+<ul>
+<li><p><a href="https://github.build.ge.com/emerging-verticals/notification-sdk">Notification Service SDK</a> - The accompanying SDK for the notification-service.</p></li>
+<li><p><a href="https://github.build.ge.com/emerging-verticals/notification-service-sample">Notification Service Sample Application</a> - A sample application which utilizes the Notification Service.</p></li>
+</ul>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/emerging-verticals-docs" class="avatar"><img src="https://avatars3.githubusercontent.com/u/20443916?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/emerging-verticals-docs">emerging-verticals-docs</a> maintains <a href="https://github.com/emerging-verticals-docs/notification-service-docs">Notification-service-docs</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/emerging-verticals-docs/notification-service-docs/tarball/master" class="tar">tar</a><a href="https://github.com/emerging-verticals-docs/notification-service-docs/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
