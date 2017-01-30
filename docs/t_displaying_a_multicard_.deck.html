@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="This example web application illustrates how the View service database is used to control the visual summary of user information in a web application. See View Service Database Setup for information ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Displaying a Multi-Card Deck"></meta><meta name="abstract" content="This example web application illustrates how the View service database is used to control the visual summary of user information in a web application."></meta><meta name="description" content="This example web application illustrates how the View service database is used to control the visual summary of user information in a web application."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_274cefdb-fc52-4746-9fa2-a477e9d954f2"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Displaying a Multi-Card Deck</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="This example web application illustrates how the Views service database is used to control the visual summary of user information in a web application. See Views Service Database Setup for information ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Displaying a Multi-Card Deck"></meta><meta name="abstract" content="This example web application illustrates how the Views service database is used to control the visual summary of user information in a web application."></meta><meta name="description" content="This example web application illustrates how the Views service database is used to control the visual summary of user information in a web application."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_274cefdb-fc52-4746-9fa2-a477e9d954f2"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Displaying a Multi-Card Deck</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -10,10 +10,10 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Displaying a Multi-Card Deck</h1>
-<div class="body taskbody"><p class="shortdesc">This example web application illustrates how the View service database is used to control the visual summary of user information in a web application. </p>
+<div class="body taskbody"><p class="shortdesc">This example web application illustrates how the Views service database is used to control the visual summary of user information in a web application. </p>
 <div class="section prereq p">
-            <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_bv4_ydp_1w"><li class="li">See <a class="xref" href="r_view_service_database_setup.html#reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82" title="You can use the View service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances.">View Service Database Setup</a> for information about configuring the View service database to manage card and deck objects.</li>
-<li class="li">Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to use the View service. See <a class="xref" href="r_view_service_database_setup.html#reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82" title="You can use the View service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances.">View Service Database Setup</a> for more information.<p class="p">For more information about these APIs, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
+            <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_bv4_ydp_1w"><li class="li">See <a class="xref" href="r_views_service_database_setup.html#reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82" title="You can use the Views service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances.">Views Service Database Setup</a> for information about configuring the Views service database to manage card and deck objects.</li>
+<li class="li">Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to use the Views service. See <a class="xref" href="r_views_service_database_setup.html#reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82" title="You can use the Views service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances.">Views Service Database Setup</a> for more information.<p class="p">For more information about these APIs, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
 </li>
 <li class="li">Set up the required services for the Predix UI platform. See <a class="xref" href="t_setting_up_predix_ui_developer_environment.html#task_n4l_jnc_yv" title="Install Node.js and Bower.">Setting Up the Predix UI Developer Environment</a> for more information.</li>
 <li class="li">Locate the project directory of your web application <samp class="ph codeph">&lt;web_app_project&gt;</samp> where the following files will be installed:<ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_n5x_gw3_hw"><li class="li"><samp class="ph codeph">webcomponents-lite</samp> polyfill</li>
@@ -97,7 +97,7 @@
   &lt;/html&gt;</pre>
 
                 </div></li>
-<li class="li step stepexpand"><span class="ph cmd">Create card instance objects in View service. </span><ul class="ul choices" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__choices_kt2_14v_cx"><li class="li choice">Add cards to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page. For example:<pre class="pre codeblock">&lt;!DOCTYPE html&gt;
+<li class="li step stepexpand"><span class="ph cmd">Create card instance objects in Views service. </span><ul class="ul choices" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__choices_kt2_14v_cx"><li class="li choice">Add cards to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page. For example:<pre class="pre codeblock">&lt;!DOCTYPE html&gt;
 
     &lt;html&gt;
     
@@ -147,7 +147,7 @@
 </li>
 </ul>
 </li>
-<li class="li step stepexpand"><span class="ph cmd">Create a deck instance object in View service.</span><ul class="ul choices" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__choices_i21_svv_cx"><li class="li choice">Add a deck to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page. For example:<pre class="pre codeblock">&lt;!DOCTYPE html&gt;
+<li class="li step stepexpand"><span class="ph cmd">Create a deck instance object in Views service.</span><ul class="ul choices" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__choices_i21_svv_cx"><li class="li choice">Add a deck to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page. For example:<pre class="pre codeblock">&lt;!DOCTYPE html&gt;
 
     &lt;html&gt;
     
@@ -268,7 +268,7 @@
                         </div></li>
 </ol>
 </li>
-<li class="li step stepexpand"><span class="ph cmd">Add the <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">px-dashboard</a> component to retrieve all cards in a deck stored in View service by adding it to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application. This component can traverse the JSON blocks, create DOM objects and append them to an web application. For example: </span><div class="itemgroup info">
+<li class="li step stepexpand"><span class="ph cmd">Add the <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">px-dashboard</a> component to retrieve all cards in a deck stored in Views service by adding it to the <samp class="ph codeph">&lt;body&gt;</samp> section of the HTML page of your web application. This component can traverse the JSON blocks, create DOM objects and append them to an web application. For example: </span><div class="itemgroup info">
                     <pre class="pre codeblock">&lt;!DOCTYPE html&gt;
 
     &lt;html&gt;
@@ -317,7 +317,7 @@
 
                 </div></li>
 </ol>
-<div class="section postreq">See the <a class="xref" href="https://www.predix.io/resources/tutorials/journey.html#2100" target="_blank">Predix UI Seed</a> guide that demonstrates the use of <span class="ph">Predix UI Seed</span> web application starter kit to implement these features: <ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_qcc_js3_rw"><li class="li">Application Navigation</li>
+<div class="section postreq">See the <a class="xref" href="c_predix_ui_seed_overview.html#concept_e3fc1fd8-b1db-4ad1-b9b0-2d6c98920ddd" title="The Predix UI Seed web application starter kit uses the Predix UI platform to deploy to your local development environment or Cloud Foundry.">Predix UI Seed Overview</a> for information on a <a class="xref" href="https://www.predix.io/services/starter-pack.html?id=1225" target="_blank">starter kit</a> that you can use to deploy as a web application to a local developer environment and Cloud Foundry. The <span class="ph">Predix UI Seed</span> provides you with the following features and services:<ul class="ul" id="task_274cefdb-fc52-4746-9fa2-a477e9d954f2__ul_qcc_js3_rw"><li class="li">Application Navigation</li>
 <li class="li">Responsive Layout</li>
 <li class="li">Routing</li>
 <li class="li">Data Binding</li>

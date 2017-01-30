@@ -1,0 +1,38 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You can configure a script to run in the following modes: pre-processing, post-processing, or custom. Pre-processing scripts A script with @execution pre-processing runs before the scripting engine ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Script Execution Modes"></meta><meta name="abstract" content="You can configure a script to run in the following modes: pre-processing, post-processing, or custom."></meta><meta name="description" content="You can configure a script to run in the following modes: pre-processing, post-processing, or custom."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_88eb1f6e-d749-4fcf-8511-607f807a4f35"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Script Execution Modes</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_88eb1f6e-d749-4fcf-8511-607f807a4f35">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Script Execution Modes</h1>
+<div class="body refbody"><p class="shortdesc">You can configure a script to run in the following  modes: pre-processing, post-processing, or custom.</p>
+<div class="section">
+            <dl class="dl"><dt class="dt dlterm"><strong class="ph b">Pre-processing scripts</strong></dt>
+<dd class="dd">
+                        <p class="p">A script with <samp class="ph codeph">@execution pre-processing</samp> runs before the scripting engine forwards a request to the Asset service. The script can modify the body of the request or cancel the request altogether. A pre-processing script can also issue <samp class="ph codeph">GET</samp> requests to the Asset service if more information is needed to process the request.</p>
+
+                    </dd>
+<dt class="dt dlterm">Post-processing scripts</dt>
+<dd class="dd">
+                        <p class="p">A script with <samp class="ph codeph">@execution post-processing</samp> runs after a request has been processed by the Asset service and had its response sent to the client. A post-processing script can issue additional <samp class="ph codeph">GET</samp>, <samp class="ph codeph">PUT</samp>, <samp class="ph codeph">POST</samp>, <samp class="ph codeph">DELETE</samp>, and <samp class="ph codeph">PATCH</samp> requests to the Asset service. Since post-processing scripts are executed after a response has been sent to the client, there is no way to alert the client directly should a failure occur. Instead, the Scripting Engine creates a <a class="xref" href="https://github.com/PredixDev/predix-asset-scripting-engine/blob/master/docs/script-sdk.md" target="_blank">system message</a> containing the reason for the failure. Clients should actively monitor their system messages for post-processing failures.</p>
+
+                    </dd>
+<dt class="dt dlterm"><strong class="ph b">Custom-endpoint scripts</strong></dt>
+<dd class="dd">
+                        <p class="p">A script with <samp class="ph codeph">@execution custom</samp> runs when a request is sent to a custom endpoint (such as <samp class="ph codeph">/custom/my-logic</samp>). A custom-endpoint script can issue <samp class="ph codeph">GET</samp>, <samp class="ph codeph">PUT</samp>, <samp class="ph codeph">POST</samp>, <samp class="ph codeph">DELETE</samp>, and <samp class="ph codeph">PATCH</samp> requests to the Asset service. Custom-endpoint scripts can send a custom response back to the client.</p>
+
+                    </dd>
+</dl>
+
+            <p class="p">See also  <a class="xref" href="r_as_script_and_trigger_examples.html#reference_e5904e42-b9dc-48b2-b13e-388eeacfb484" title="End-to-end examples of how to use the scripting engine.">Script and Trigger Examples</a>.</p>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

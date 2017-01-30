@@ -1,0 +1,92 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Use the Cloud Foundry CLI to deploy your version of the Predix UI Seed to Cloud Foundry. This procedure uses the Cloud Foundry Command Interface (CLI). To configure the Cloud Foundry CLI, see ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Deploying the Predix UI Seed to Cloud Foundry"></meta><meta name="abstract" content="Use the Cloud Foundry CLI to deploy your version of the Predix UI Seed to Cloud Foundry."></meta><meta name="description" content="Use the Cloud Foundry CLI to deploy your version of the Predix UI Seed to Cloud Foundry."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_u35_kvh_qw"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Deploying the Predix UI Seed to Cloud Foundry</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_u35_kvh_qw">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Deploying the Predix UI Seed to Cloud Foundry</h1>
+<div class="body taskbody"><p class="shortdesc">Use the Cloud Foundry CLI to deploy your version of the <span class="ph">Predix UI Seed</span> to Cloud Foundry.</p>
+<div class="section prereq p">
+            <p class="p">This procedure uses the Cloud Foundry Command Interface (CLI). To configure the Cloud Foundry CLI, see <a class="xref" href="https://docs.cloudfoundry.org/cf-cli/getting-started.html" target="_blank">https://docs.cloudfoundry.org/cf-cli/getting-started.html</a> for more information . </p>
+
+            <p class="p">Obtain the pathname of the <samp class="ph codeph">predix-seed</samp> directory where the <span class="ph">Predix UI Seed</span> project files are located. See <a class="xref" href="t_installing_the_predix_ui_seed.html#task_kfg_b5j_mw" title="Install the Predix UI Seed to the local developer environment.">Installing the Predix UI Seed</a>. </p>
+
+        </div>
+<div class="section context">Follow these steps to deploy your version of the <span class="ph">Predix UI Seed</span> to Cloud Foundry:</div>
+<ol class="ol steps" id="task_u35_kvh_qw__steps_t2c_41w_jv"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                    <p class="p">Depending on your Predix.io registration, the <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> uses one of the following values:</p>
+
+                    <ul class="ul" id="task_u35_kvh_qw__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li">Predix US-West <p class="p"><samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix US-East<p class="p"><samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Japan<p class="p"><samp class="ph codeph">https://api.system.aws-jp01-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix UK <p class="p"><samp class="ph codeph">https://api.system.dc-uk01-pr.ice.predix.io</samp></p>
+</li>
+</ul>
+
+                    <p class="p">For example,</p>
+
+                    <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                </div><div class="itemgroup stepresult"> The command generates the following output: <pre class="pre codeblock">Email&gt; &lt;your_predix_login&gt; 
+Password&gt; &lt;your_predix_password&gt; 
+Authenticating...OK 
+Targeted org &lt;your_predix_org&gt; 
+Targeted space dev     
+API endpoint: https://api.system.aws-usw02-pr.ice.predix.io (API version: 2.28.0)   
+User: &lt;your_predix_login&gt; 
+Org:  &lt;your_predix_org&gt;  
+Space: dev</pre>
+</div></li>
+<li class="li step stepexpand"><span class="ph cmd">To change to the <samp class="ph codeph">predix-seed</samp> project directory, at a command prompt, enter:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cd predix-seed</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Edit the <samp class="ph codeph">manifest.yml</samp> file in the <samp class="ph codeph">predix-seed</samp> directory to update the placeholder value <samp class="ph codeph">predix-ui-seed</samp> to your desired application name <samp class="ph codeph">&lt;app_name&gt;</samp></span><div class="itemgroup stepresult">Record <samp class="ph codeph">&lt;app_name&gt;</samp> for later use.</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Use <samp class="ph codeph">gulp</samp> to create a distribution version of your <span class="ph">Predix UI Seed</span> web application. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">
+gulp dist</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to deploy your <span class="ph">Predix UI Seed</span> web application <samp class="ph codeph">-&lt;app_name&gt;</samp> to Cloud Foundry:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">
+cf push</pre>
+
+                    <div class="note note"><span class="notetitle">Note:</span>  During normal development, run the <samp class="ph codeph">gulp dist</samp> command each time before you perform the <samp class="ph codeph">cf push</samp> operation to deploy your <span class="ph">Predix UI Seed</span> web application to Cloud Foundry. </div>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">The command deploys your <span class="ph">Predix UI Seed</span> web application, <samp class="ph codeph">&lt;app_name&gt;</samp>, to Cloud Foundry. </p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">See your <span class="ph">Predix UI Seed</span>web application run: </span><div class="itemgroup info">
+                    <ol class="ol" type="a" id="task_u35_kvh_qw__ol_icy_wtz_gv"><li class="li">Use the Cloud Foundry CLI to see your <span class="ph">Predix UI Seed</span> web application in Cloud Foundry:<pre class="pre codeblock">cf apps</pre>
+</li>
+<li class="li">Enter your <span class="ph">Predix UI Seed</span> web application URL into a web browser. using HTTPS For example:<pre class="pre codeblock">https://&lt;app_name&gt;.run.aws-usw02-pr.ice.predix.io</pre>
+</li>
+</ol>
+
+                </div><div class="itemgroup stepresult">Your web browser displays your <span class="ph">Predix UI Seed</span> web application. </div></li>
+</ol>
+<div class="section postreq">See the <a class="xref" href="https://www.predix.io/resources/tutorials/journey.html#2100" target="_blank">Predix UI Seed</a> guide that demonstrates the use of <span class="ph">Predix UI Seed</span> web application starter kit to implement these features: <ul class="ul" id="task_u35_kvh_qw__ul_qcc_js3_rw"><li class="li">Application Navigation</li>
+<li class="li">Responsive Layout</li>
+<li class="li">Routing</li>
+<li class="li">Data Binding</li>
+<li class="li">View Switching</li>
+<li class="li">Data Visualization</li>
+<li class="li">Data and Time Input</li>
+<li class="li">Service Integration</li>
+</ul>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

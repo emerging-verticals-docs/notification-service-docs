@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Bind an application to a Views service uinstance using the Cloud Foundry CLI. Your application &lt;app_name&gt; must be deployed to Cloud Foundry. To learn about deploying your application to Cloud Foundry, ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Using Command Line to Bind an Application to Views Service"></meta><meta name="abstract" content="Bind an application to a Views service uinstance using the Cloud Foundry CLI."></meta><meta name="description" content="Bind an application to a Views service uinstance using the Cloud Foundry CLI."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_48d483f8-310b-4043-b842-e984604bf441"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Using Command Line to Bind an Application to Views Service</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_48d483f8-310b-4043-b842-e984604bf441">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Using Command Line to Bind an Application to Views Service</h1>
+<div class="body taskbody"><p class="shortdesc"> Bind an application to a Views service uinstance using the Cloud Foundry CLI.</p>
+<div class="section prereq p">
+            <p class="p">Your application <samp class="ph codeph">&lt;app_name&gt;</samp> must be deployed to Cloud Foundry. To learn about deploying your application to Cloud Foundry, see <a class="xref" href="t_creating_a_simple_predix_hello_world_web_app.html#task_xwn_lvb_vx" title="To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry.">Creating a Simple Predix Hello World Web App</a>. </p>
+
+            <p class="p">You need the <samp class="ph codeph">instanceID</samp> of the Views service instance that you created (see <a class="xref" href="t_using_command_line_to_create_a_views_service_instance.html#task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64" title="Procedure for using the Cloud Foundry CLI to create a Views service instance">Creating a View Service Instance</a>).</p>
+
+        </div>
+<div class="section context">
+            <p class="p">You bind your application <samp class="ph codeph">&lt;app_name&gt;</samp> to the Views service to provision connection details for your View Service instance in the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable (see <a class="xref" href="t_binding_to_a_service_instance.html#task_mgr_qqv_15">Binding Your Application to a Service Instance</a>). </p>
+
+            <p class="p">The Cloud Foundry runtime uses the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable to communicate with a deployed application about its environment.</p>
+
+            <p class="p">You can retrieve the following View Service instance details from the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable:</p>
+
+            <ul class="ul" id="task_48d483f8-310b-4043-b842-e984604bf441__ul_igz_53n_q5"><li class="li">
+                    <p class="p">A <samp class="ph codeph">views_instance_uri</samp> for your instance. </p>
+
+                </li>
+<li class="li">
+                    <p class="p">HTTP header information to access your Views service instance. It includes:</p>
+
+                    <ul class="ul" id="task_48d483f8-310b-4043-b842-e984604bf441__ul_fhz_53n_q5"><li class="li"><samp class="ph codeph">http-header-name</samp> as <samp class="ph codeph">Predix-Zone-Id</samp></li>
+<li class="li"><samp class="ph codeph">http-header-value</samp></li>
+</ul>
+
+                </li>
+<li class="li">
+                    <p class="p">An <samp class="ph codeph">oauth-scope</samp> for your instance. The end-user token requires the scope to access the specific service instance.</p>
+
+                </li>
+</ul>
+
+        </div>
+<ol class="ol steps" id="task_48d483f8-310b-4043-b842-e984604bf441__steps_dd050bde-45fb-4a96-8d61-76a34f0ed138"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                    <p class="p">Depending on your Predix.io registration, the <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> uses one of the following values:</p>
+
+                    <ul class="ul" id="task_48d483f8-310b-4043-b842-e984604bf441__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li">Predix Basic <p class="p"><samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Select <p class="p"><samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Japan<p class="p"><samp class="ph codeph">https://api.system.aws-jp01-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix UK <p class="p"><samp class="ph codeph">https://api.system.dc-uk01-pr.ice.predix.io</samp></p>
+</li>
+</ul>
+
+                    <p class="p">For example,</p>
+
+                    <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                </div><div class="itemgroup stepresult"> The command generates the following output: <pre class="pre codeblock">Email&gt; &lt;your_predix_login&gt; 
+Password&gt; &lt;your_predix_password&gt; 
+Authenticating...OK 
+Targeted org &lt;your_predix_org&gt; 
+Targeted space dev     
+API endpoint: https://api.system.aws-usw02-pr.ice.predix.io (API version: 2.28.0)   
+User: &lt;your_predix_login&gt; 
+Org:  &lt;your_predix_org&gt;  
+Space: dev</pre>
+</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Find your application <samp class="ph codeph">&lt;app_name&gt;</samp>  in Cloud Foundry. For example:</span>
+                    <pre class="pre codeblock">cf apps</pre>
+
+                </li>
+<li class="li step stepexpand"><span class="ph cmd">Bind the deployed application <samp class="ph codeph">&lt;app_name&gt;</samp> to the Views service instance that you created.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf bind-service &lt;app_name&gt; &lt;instanceId&gt;</pre>
+
+                    <div class="p">Your application <samp class="ph codeph">&lt;app_name&gt;</samp> is bound to the Views service <samp class="ph codeph">instanceId&gt;</samp>, and the following message is returned:<pre class="pre codeblock">Binding service &lt;instanceId&gt; to app &lt;app_name&gt; in org predix-platform / space predix as userx@ge.com...
+OK
+TIP: Use 'cf restage' to ensure your env variable changes take effect
+</pre>
+</div>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Verify the binding.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf env &lt;app_name&gt;</pre>
+
+                </div></li>
+</ol>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

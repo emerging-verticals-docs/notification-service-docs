@@ -12,7 +12,7 @@
 <h1 class="title topictitle1">Creating Groups in a UAA Instance</h1>
 <div class="body taskbody"><p class="shortdesc">If you design your application to authorize using specific scopes, you can create groups corresponding to those scopes in UAA and assign users to those groups. When the users log into your web application, the application redirects them to UAA. If a user is in the specified group and you chose to authorize the web application with that scope, the web application gets a signed token that contains that scope.</p>
 <div class="section context">
-            <p class="p">Predix platform services have scopes specific to each service. When you create users for these services, you must create groups corresponding to these scopes. After creating groups, you can assign users to the required groups. </p>
+            <p class="p">Predix platform services have scopes specific to each service. When you create users for these services, you can create groups corresponding to these scopes to provide permissions specific to a service. After creating groups, you can assign users to the required groups. </p>
 
             <p class="p">For example, if you use the Time Series service, you must create the t<samp class="ph codeph">imeseries.zones.&lt;instance_id&gt;.user</samp> and <samp class="ph codeph">timeseries.zones.&lt;instance_id&gt;.ingest</samp> groups for users with data ingestion permission.</p>
 
@@ -29,15 +29,15 @@
 <li class="li step stepexpand"><span class="ph cmd">Click on the <span class="ph uicontrol">Add Group</span> button to open the <span class="ph uicontrol">New Group</span> form.</span></li>
 <li class="li step stepexpand"><span class="ph cmd">Specify the following values in the <span class="ph uicontrol">New Group</span> form:</span><div class="itemgroup info">
                     
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_vgj_vcy_1x__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d15939e99">Field</th>
-<th class="entry" valign="top" width="72.29916897506925%" id="d15939e101">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="task_vgj_vcy_1x__table_ehl_3rb_1x" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="27.70083102493075%" id="d19479e99">Field</th>
+<th class="entry" valign="top" width="72.29916897506925%" id="d19479e101">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15939e99 "><span class="ph uicontrol">Display Name</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15939e101 ">Specify the name of the group.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d19479e99 "><span class="ph uicontrol">Display Name</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d19479e101 ">Specify the name of the group.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d15939e99 "><span class="ph uicontrol">Description</span></td>
-<td class="entry" valign="top" width="72.29916897506925%" headers="d15939e101 ">Specify the description of the group.</td>
+<tr class="row"><td class="entry" valign="top" width="27.70083102493075%" headers="d19479e99 "><span class="ph uicontrol">Description</span></td>
+<td class="entry" valign="top" width="72.29916897506925%" headers="d19479e101 ">Specify the description of the group.</td>
 </tr>
 </tbody>
 </table>

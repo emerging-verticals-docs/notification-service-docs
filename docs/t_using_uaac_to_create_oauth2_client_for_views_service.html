@@ -1,0 +1,84 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Procedure using UAAC to manage user access to Views service This procedure uses the UAA Command Line Interface (UAAC). For more information on installing UAAC, see ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Using UAAC to Create an OAuth2 Client for Views Service"></meta><meta name="abstract" content="Procedure using UAAC to manage user access to Views service"></meta><meta name="description" content="Procedure using UAAC to manage user access to Views service"></meta><meta name="DC.Creator" content=""></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_r53_nvv_q5"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Using UAAC to Create an OAuth2 Client for Views Service</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_r53_nvv_q5">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Using UAAC to Create an OAuth2 Client for Views Service</h1>
+<div class="body taskbody"><p class="shortdesc">Procedure using UAAC to manage user access to Views service</p>
+<div class="section prereq p">
+            <p class="p">This procedure uses the UAA Command Line Interface (UAAC). For more information on installing UAAC, see <a class="xref" href="https://github.com/cloudfoundry/cf-uaac" target="_blank">https://github.com/cloudfoundry/cf-uaac</a>.</p>
+
+            <p class="p">You need the following information to create an OAuth2 client to manage users for Views service:</p>
+
+            <ul class="ul" id="task_r53_nvv_q5__ul_qtx_3yv_4v"><li class="li">
+                    <p class="p"><samp class="ph codeph">uaa_instance_url</samp> is the URL to your trusted issuer (for example, <samp class="ph codeph">https://11fa0273-9e2a-37e2-9d06-2c95a1f4f5ea.predix-uaa.run.aws-usw02-pr.ice.predix.io</samp>).  </p>
+
+                    <p class="p">You can retrieve this URL from the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable after binding your UAA instance to an application (see <a class="xref" href="t_binding_an_app_to_the_uaa_instance.html#task_155dd0e5-ca06-45d3-833e-686a71f0ca98">Binding an Application to the UAA Instance</a>).. </p>
+
+                </li>
+<li class="li">UAA administrative client <samp class="ph codeph">uaa_client_secret</samp> that you specified when you created the UAA instance. See . </li>
+</ul>
+
+        </div>
+<div class="section context">
+            <p class="p"><span class="keyword option">(Optional)</span> You will create an OAuth2 client for authentication to Views service using the User Account and Authentication (UAA) web service. See <a class="xref" href="c_security_integration_with_platform_services.html#concept_2b5dbd77-4870-4417-8268-2fc4ae40597e">Understanding Platform Services</a> for more information.</p>
+
+            <p class="p">You will record the following information for later use:</p>
+
+            <ul class="ul" id="task_r53_nvv_q5__ul_fpg_hyp_mv"><li class="li">OAuth2 client name <samp class="ph codeph">oauth2_client_name</samp>
+                </li>
+<li class="li">OAuth2 client secret <samp class="ph codeph">oauth2_client_secret</samp></li>
+</ul>
+
+        </div>
+<ol class="ol steps" id="task_r53_nvv_q5__steps_d96c0d10-3495-4ca4-a63a-eb624f9c2d66"><li class="li step stepexpand"><span class="ph cmd">Specify your UAA trusted issuer <samp class="ph codeph">uaa_instance_url</samp> as the intended target.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac target &lt;uaa_instance_url&gt; </pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Log into UAAC using the administrative client.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac token client get admin</pre>
+
+                    <p class="p">Specify the <samp class="ph codeph">uaa_client_secret</samp> when prompted.</p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Use a random number generator such as <samp class="ph codeph">rand </samp>to create a unique OAuth2  client secret <samp class="ph codeph">oauth2_client_secret</samp>. </span><div class="itemgroup info">
+                    <div class="p">For example:<pre class="pre codeblock">openssl rand -base64 32</pre>
+</div>
+
+                </div><div class="itemgroup stepresult">Record the OAuth2 client secret <samp class="ph codeph">oauth2_client_secret</samp> that you created.</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Use the following command to create the OAuth2 client:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">uaac client add &lt;oauth2_client_name&gt; --authorized_grant_types "refresh_token, authorization_code" -i
+New client secret:  &lt;oauth2_client_secret&gt;
+Verify new client secret:  &lt;oauth2_client_secret&gt;
+scope (list):  openid scim.me
+authorities (list):  openid scim.me uaa.resource
+access token validity (seconds):  
+refresh token validity (seconds):  
+redirect uri (list):  
+autoapprove (list):  openid scim.me
+signup redirect url (url):  
+</pre>
+
+                    <p class="p">Specify the OAuth2 client secret <samp class="ph codeph">oauth2_client_secret</samp> when prompted.</p>
+
+                    <div class="note note"><span class="notetitle">Note:</span> For more information on UAA options such as <samp class="ph codeph">scopes</samp> and <samp class="ph codeph">authorized_grant_types</samp>, see the UAA documentation at <a class="xref" href="https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst" target="_blank">https://github.com/GESoftware-CF/uaa/blob/master/docs/UAA-APIs.rst</a>.</div>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">Record the OAuth2 client name <samp class="ph codeph">oauth2_client_name</samp>.</p>
+
+                </div></li>
+</ol>
+<div class="section postreq">
+            <p class="p">See <a class="xref" href="t_using_uaac_to_update_oauth2_client_to_use_views_service.html#task_djb_x5v_q5" title="Procedure for using UAAC to update user access to Views service.">Using UAAC to Update the Oauth2 Client to Use Views Service</a>.</p>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

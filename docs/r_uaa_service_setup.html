@@ -17,42 +17,42 @@
 <div class="section"><h2 class="title sectiontitle">Task Roadmap</h2>
             
             
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_kcb_tsl_bw__table_0f739b03-3b32-410c-86c3-c0d8f7c23660" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="4.391743522178305%" id="d9355e29">#</th>
-<th class="entry" valign="top" width="43.82960035133949%" id="d9355e31">Task</th>
-<th class="entry" valign="top" width="51.77865612648221%" id="d9355e33">Description</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_kcb_tsl_bw__table_0f739b03-3b32-410c-86c3-c0d8f7c23660" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="4.391743522178305%" id="d12699e29">#</th>
+<th class="entry" valign="top" width="43.82960035133949%" id="d12699e31">Task</th>
+<th class="entry" valign="top" width="51.77865612648221%" id="d12699e33">Description</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">1</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">(Optional) Configure your proxy settings if necessary.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 ">Depending on your location and network configuration, you may need to configure your proxy settings to access remote resources. See <a class="xref" href="t_defining_proxy_connections_to_remote_resources.html#task_97cc6304-e168-459d-9952-a45708ff8361" title="If traffic between your corporate network and the internet is monitored, access to certain tools (cURL, Maven, Git, Eclipse, and so on) may be blocked by the proxy.">Defining Proxy Connections to Remote Resources</a>.</td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">1</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">(Optional) Configure your proxy settings if necessary.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 ">Depending on your location and network configuration, you may need to configure your proxy settings to access remote resources. See <a class="xref" href="t_defining_proxy_connections_to_remote_resources.html#task_97cc6304-e168-459d-9952-a45708ff8361" title="If traffic between your corporate network and the internet is monitored, access to certain tools (cURL, Maven, Git, Eclipse, and so on) may be blocked by the proxy.">Defining Proxy Connections to Remote Resources</a>.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">2</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">(Optional) Deploy a Predix Hello World Web application.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 "><a class="xref" href="t_creating_a_simple_predix_hello_world_web_app.html#task_xwn_lvb_vx" title="To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry.">Creating a Simple Predix Hello World Web App</a>.</td>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">2</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">(Optional) Deploy a Predix Hello World Web application.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 "><a class="xref" href="t_creating_a_simple_predix_hello_world_web_app.html#task_xwn_lvb_vx" title="To create and deploy a simple web application, you can clone a copy of the Predix Hello World web application and deploy it to Cloud Foundry.">Creating a Simple Predix Hello World Web App</a>.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">3</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">Create the UAA service instance.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 ">See <a class="xref" href="t_creating_uaa_instance.html#task_y1l_vms_2s" title="You can create up to 10 instances of the UAA service in your space.">Creating a UAA Service Instance</a>.</td>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">3</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">Create the UAA service instance.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 ">See <a class="xref" href="t_creating_uaa_instance.html#task_y1l_vms_2s" title="You can create up to 10 instances of the UAA service in your space.">Creating a UAA Service Instance</a>.</td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">4</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">Create OAuth2 clients to setup access to your service authenticated using UAA.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 ">When you create a UAA instance, an admin client is automatically created for you to access UAA for additional configuration. You can create a new client for your service instance with specific scopes. If an Oauth2 client already exists, you can update the client to add your service instance. <p class="p">See <a class="xref" href="t_creating_an_oauth_client.html#task_79a81b74-552e-4f74-abfc-bd37e6adac87" title="You can create OAuth2 clients with specific permissions for your application to work with Predix Platform services. Often this is the first step after creating an instance of a service.">Creating an OAuth2 Client</a>.</p>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">4</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">Create OAuth2 clients to setup access to your service authenticated using UAA.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 ">When you create a UAA instance, an admin client is automatically created for you to access UAA for additional configuration. You can create a new client for your service instance with specific scopes. If an Oauth2 client already exists, you can update the client to add your service instance. <p class="p">See <a class="xref" href="t_creating_an_oauth_client.html#task_79a81b74-552e-4f74-abfc-bd37e6adac87" title="You can create OAuth2 clients with specific permissions for your application to work with Predix Platform services. Often this is the first step after creating an instance of a service.">Creating an OAuth2 Client</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">5</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">Create Groups to set up the required permissions for the users.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 ">A group represents the privileges of a user.<p class="p">See <a class="xref" href="t_creating_groups_in_uaa_instance.html#task_vgj_vcy_1x" title="If you design your application to authorize using specific scopes, you can create groups corresponding to those scopes in UAA and assign users to those groups. When the users log into your web application, the application redirects them to UAA. If a user is in the specified group and you chose to authorize the web application with that scope, the web application gets a signed token that contains that scope.">Creating Groups in a UAA Instance</a>.</p>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">5</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">Create Groups to set up the required permissions for the users.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 ">A group represents the privileges of a user.<p class="p">See <a class="xref" href="t_creating_groups_in_uaa_instance.html#task_vgj_vcy_1x" title="If you design your application to authorize using specific scopes, you can create groups corresponding to those scopes in UAA and assign users to those groups. When the users log into your web application, the application redirects them to UAA. If a user is in the specified group and you chose to authorize the web application with that scope, the web application gets a signed token that contains that scope.">Creating Groups in a UAA Instance</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">6</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">Create Users in the UAA instance.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 ">For UAA to authenticate the users, the users must first be created in UAA. You can either create users locally within UAA or federate to an external identity provider.<p class="p">For creating users locally, see <a class="xref" href="t_creating_users_in_uaa_instance.html#task_lrr_n5w_fs" title="You can create users locally in UAA for authentication and assign them to the required groups.">Creating Users in a UAA Instance</a>.</p>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">6</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">Create Users in the UAA instance.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 ">For UAA to authenticate the users, the users must first be created in UAA. You can either create users locally within UAA or federate to an external identity provider.<p class="p">For creating users locally, see <a class="xref" href="t_creating_users_in_uaa_instance.html#task_lrr_n5w_fs" title="You can create users locally in UAA for authentication and assign them to the required groups.">Creating Users in a UAA Instance</a>.</p>
 <p class="p">To set up federated identity with UAA, see <a class="xref" href="c_saml_federation_using_uaa.html#concept_pl1_4b1_cw">Managing Identity Providers</a>.</p>
 </td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d9355e29 ">7</td>
-<td class="entry" valign="top" width="43.82960035133949%" headers="d9355e31 ">Bind your application to the service instance.</td>
-<td class="entry" valign="top" width="51.77865612648221%" headers="d9355e33 ">See <a class="xref" href="t_binding_an_app_to_the_uaa_instance.html#task_155dd0e5-ca06-45d3-833e-686a71f0ca98">Binding an Application to the UAA Instance</a>.</td>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d12699e29 ">7</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d12699e31 ">Bind your application to the service instance.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d12699e33 ">See <a class="xref" href="t_binding_an_app_to_the_uaa_instance.html#task_155dd0e5-ca06-45d3-833e-686a71f0ca98">Binding an Application to the UAA Instance</a>.</td>
 </tr>
 </tbody>
 </table>

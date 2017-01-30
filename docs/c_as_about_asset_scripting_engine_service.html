@@ -1,0 +1,55 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Use the Asset Scripting Engine service to bind custom business logic to the Asset service REST API. Scripts and triggers are REST resources that allow clients to define and apply their business logic. ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="About the Asset Scripting Engine Service"></meta><meta name="abstract" content="Use the Asset Scripting Engine service to bind custom business logic to the Asset service REST API."></meta><meta name="description" content="Use the Asset Scripting Engine service to bind custom business logic to the Asset service REST API."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_azf_4vj_mw"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>About the Asset Scripting Engine Service</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="concept_azf_4vj_mw">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">About the Asset Scripting Engine Service</h1>
+<div class="body conbody"><p class="shortdesc">Use the Asset Scripting Engine service to bind custom business logic to the Asset service REST API.</p>
+<p class="p"><a class="xref" href="r_as_script_execution_modes.html#reference_88eb1f6e-d749-4fcf-8511-607f807a4f35" title="You can configure a script to run in the following modes: pre-processing, post-processing, or custom.">Scripts</a> and <a class="xref" href="r_as_trigger_rest_api.html#reference_5f21adc9-d637-4e22-bbb9-919c987f5af9" title="A trigger is a REST resource that binds a script to an asset endpoint.">triggers</a> are REST resources that allow clients to define and apply their business logic. Developers first write a set of scripts containing the business logic and then define one or more triggers to bind that business logic to either the Asset REST interface or a custom endpoint such as <samp class="ph codeph">/custom/my-logic</samp>. </p>
+<div class="p">Typical examples of business logic that can be triggered to execute:<ul class="ul" id="concept_azf_4vj_mw__ul_ddc1203b-a40a-40ef-ab83-e7db0e01fa15"><li class="li">Validate, accept, and reject requests, or modify the contents of incoming requests.</li>
+<li class="li">Perform additional operations after a request has been processed.</li>
+<li class="li">Create a custom endpoint that can issue one or more requests to the Asset service, perform ad-hoc processing, and return a custom response.</li>
+</ul>
+</div>
+<div class="p">The scripting engine allows clients to <a class="xref" href="https://sourcemaking.com/design_patterns/decorator" target="_blank">decorate</a> the Predix Asset REST interface with their own custom business logic. This logic can, for example: <ul class="ul" id="concept_azf_4vj_mw__ul_8313da9f-7339-4ed6-bd66-3f0f0934627c"><li class="li">Reject requests containing resources that do not match a schema. </li>
+<li class="li">Prevent resources from being created, read, updated, or deleted.</li>
+<li class="li">Create, update, or delete resources after processing a request.</li>
+<li class="li">Read from multiple Predix Asset resources and generate a report. </li>
+</ul>
+</div>
+<p class="p">Once bound to the Asset Service, client applications can access the scripting engine and then send their requests to either the scripting engine or directly to Asset service. When a request is sent to the scripting engine, the engine checks for configured business logic to be executed for that request. If no business logic needs to be executed, the scripting engine issues an <a class="xref" href="https://en.wikipedia.org/wiki/HTTP_302" target="_blank">HTTP redirect</a>, telling the client application to send its request directly to the Asset service. </p>
+<div class="p">If the script contains business logic that needs to be executed, the scripting engine does the following:<ul class="ul" id="concept_azf_4vj_mw__ul_a150ae31-3bdc-488d-84e9-00dd32ee701b"><li class="li">Executes any pre-processing logic that has been configured to execute. </li>
+<li class="li">Forwards the client request to the Asset service and sends the result back to the client.</li>
+<li class="li">Executes any post-processing logic that has been configured to execute.</li>
+</ul>
+</div>
+<div class="p">Upon binding to the Asset service, a client application receives the URL of the scripting engine using the <a class="xref" href="https://docs.run.pivotal.io/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES" target="_blank">VCAP_SERVICES</a> environment variable. Client applications issue requests to the scripting engine using the same credentials that are required by the Asset service.<pre class="pre codeblock">
+"VCAP_SERVICES": {
+  "predix-asset-dev": [{
+    "credentials": {
+      "scriptEngine_uri": "http://predix-script-engine.grc-apps.svc.ice.ge.com"
+    }
+  }]
+}</pre>
+</div>
+<p class="p">The scripting engine accepts any request that can be handled by Predix Asset. In addition, the scripting engine provides the <samp class="ph codeph">/system/scripts</samp> and <samp class="ph codeph">/system/triggers</samp> endpoints for CRUD processing.</p>
+<div class="p">The scripting engine includes: <ul class="ul" id="concept_azf_4vj_mw__ul_b21a5e11-6b9b-4c64-b30d-2c58b54d076a"><li class="li"><a class="xref" href="r_as_script_rest_api.html#reference_2488faff-01b2-480d-a04b-65faf6b51e4a" title="Use the Script REST API to create, delete, and retrieve a script or a list of scripts.">Script REST API</a></li>
+<li class="li"><a class="xref" href="r_as_utility_methods.html#reference_42b83706-5519-4352-bcfd-4b7aa002f074" title="The scripting engine provides utility methods that your script can invoke when running.">Utility methods</a></li>
+<li class="li"><a class="xref" href="r_as_global_variables.html#reference_00c44fc6-3bf3-48fb-974a-78a319239e3a" title="Global variables are injected into every script at runtime.">Global variables</a></li>
+<li class="li"><a class="xref" href="r_as_system_messages_rest_api.html#reference_26652eaa-1c12-478f-9ec8-ec00a150b878" title="A system message is a REST resource containing information about the scripts run for a particular request.">System Messages REST API</a></li>
+<li class="li"><a class="xref" href="r_as_trigger_rest_api.html#reference_5f21adc9-d637-4e22-bbb9-919c987f5af9" title="A trigger is a REST resource that binds a script to an asset endpoint.">Trigger REST API</a></li>
+<li class="li">
+          <a class="xref" href="r_as_ecmascript_support.html#reference_0b836118-77bc-47c4-aa68-2464bd622962" title="The scripting engine provides support for the ECMAScript language.">ECMAScript</a> language support</li>
+<li class="li">End-to-end <a class="xref" href="r_as_script_and_trigger_examples.html#reference_e5904e42-b9dc-48b2-b13e-388eeacfb484" title="End-to-end examples of how to use the scripting engine.">script and trigger examples</a> that show you how to use the feature.</li>
+</ul>
+</div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

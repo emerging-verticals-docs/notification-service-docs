@@ -1,0 +1,88 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Procedure for using the Cloud Foundry CLI to create a Views service instance You need the UAA service instance issuerID that you created. See Creating a UAA Service Instance . Use the Cloud Foundry ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Using Command Line to Create a Views Service Instance"></meta><meta name="abstract" content="Procedure for using the Cloud Foundry CLI to create a Views service instance"></meta><meta name="description" content="Procedure for using the Cloud Foundry CLI to create a Views service instance"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Using Command Line to Create a Views Service Instance</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Using Command Line to Create a Views Service Instance </h1>
+<div class="body taskbody"><p class="shortdesc">Procedure for using the Cloud Foundry CLI to create a Views service instance</p>
+<div class="section prereq p">
+            <p class="p">You need the UAA service instance <samp class="ph codeph">issuerID</samp> that you created. See <a class="xref" href="t_creating_uaa_instance.html#task_y1l_vms_2s" title="You can create up to 10 instances of the UAA service in your space.">Creating a UAA Service Instance</a>.</p>
+
+        </div>
+<ol class="ol steps" id="task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64__steps_e39a6e18-a524-4832-8909-bde109b3800f"><li class="li step stepexpand"><span class="ph cmd">Use the Cloud Foundry CLI to log into Cloud Foundry. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf login -a &lt;API_Endpoint&gt;</pre>
+
+                    <p class="p">Depending on your Predix.io registration, the <samp class="ph codeph">&lt;API_Endpoint&gt;</samp> uses one of the following values:</p>
+
+                    <ul class="ul" id="task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64__ul_a92b357c-adfd-45a4-aa8b-90b60b7ca848"><li class="li">Predix US-West <p class="p"><samp class="ph codeph">https://api.system.aws-usw02-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix US-East<p class="p"><samp class="ph codeph">https://api.system.asv-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix Japan<p class="p"><samp class="ph codeph">https://api.system.aws-jp01-pr.ice.predix.io</samp></p>
+</li>
+<li class="li">Predix UK <p class="p"><samp class="ph codeph">https://api.system.dc-uk01-pr.ice.predix.io</samp></p>
+</li>
+</ul>
+
+                    <p class="p">For example,</p>
+
+                    <pre class="pre codeblock">cf login -a https://api.system.aws-usw02-pr.ice.predix.io</pre>
+
+                </div><div class="itemgroup stepresult"> The command generates the following output: <pre class="pre codeblock">Email&gt; &lt;your_predix_login&gt; 
+Password&gt; &lt;your_predix_password&gt; 
+Authenticating...OK 
+Targeted org &lt;your_predix_org&gt; 
+Targeted space dev     
+API endpoint: https://api.system.aws-usw02-pr.ice.predix.io (API version: 2.28.0)   
+User: &lt;your_predix_login&gt; 
+Org:  &lt;your_predix_org&gt;  
+Space: dev</pre>
+</div></li>
+<li class="li step stepexpand"><span class="ph cmd">View the list of services available in the Cloud Foundry marketplace.</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf marketplace</pre>
+
+                    <p class="p">The Views service, <samp class="ph codeph">predix-views</samp>, is listed as one of the available services.</p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">Create an instance of the Views service (see <a class="xref" href="t_creating_a_platform_service_instance.html#task_486d337a-4349-a80c-b4447d267f9912345" title="You are required to set up a trusted issuer (UAA) before creating a platform service instance.">Creating a Platform Service Instance</a>). </span><div class="itemgroup info">
+                    <pre class="pre codeblock">cf create-service predix-views &lt;plan&gt; &lt;view__instanceID&gt; -c '{"trustedIssuerIds":["&lt;uaainstance1host&gt;/oauth/token", "&lt;uaainstance2_host&gt;/oauth/token"]}'</pre>
+
+                    <p class="p">Where:</p>
+
+                    <ul class="ul" id="task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64__ul_opp_nt4_1s"><li class="li">
+                            <p class="p"><samp class="ph codeph">&lt;plan&gt;</samp> is the plan associated with a service. For example, you can use <samp class="ph codeph">Standard</samp> for the <samp class="ph codeph">predix-views</samp> service.</p>
+
+                        </li>
+<li class="li">
+                            <p class="p"><samp class="ph codeph">&lt;view_instanceID&gt;</samp> is the Views service <samp class="ph codeph">instanceID</samp>.</p>
+
+                        </li>
+<li class="li">
+                            <p class="p"><samp class="ph codeph">&lt;uaa_instance_issuerID&gt;</samp> is the <samp class="ph codeph">issuerID</samp> of your trusted issuer (UAA instance). For example, <samp class="ph codeph">https://13fa0384-9e2a-48e2-9d06-2c95a1f4f5ea.predix-uaa.grc-apps.svc.ice.ge.com/oauth/token</samp>. You can use a comma-separated list to specify multiple trusted issuers. You can retrieve this URL from the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable after <a class="xref" href="t_binding_an_app_to_the_uaa_instance.html#task_155dd0e5-ca06-45d3-833e-686a71f0ca98">binding your application to a UAA Service instance</a>. </p>
+
+                        </li>
+</ul>
+
+                    <div class="note note"><span class="notetitle">Note:</span> Cloud Foundry CLI syntax can differ between Windows and Linux operating systems. See the Cloud Foundry help for the appropriate syntax for your operating system. For example, to see help for the <samp class="ph codeph">create service</samp> command, run <samp class="ph codeph">cf cs</samp>.</div>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">The message on the screen indicates that the Views service instance has been created. </p>
+
+                </div></li>
+</ol>
+<div class="section postreq">
+            <ul class="ul" id="task_7d917fe1-156b-4dea-9bcf-97ae62cd4f64__ul_ydy_4z3_1v"><li class="li">Record the Views service <samp class="ph codeph">instanceID</samp>.</li>
+<li class="li">Retrieve the URI of this instance from the <samp class="ph codeph">VCAP_SERVICES</samp> environment variable after binding it to an application (see <a class="xref" href="t_using_command_line_to_bind_an_application_to_a_views_service_instance.html#task_48d483f8-310b-4043-b842-e984604bf441" title="Bind an application to a Views service uinstance using the Cloud Foundry CLI.">Binding an Application to the View Service</a>).</li>
+</ul>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

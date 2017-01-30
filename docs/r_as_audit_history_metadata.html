@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="If you add the x-audit-metadata header to an Asset request, you can later query the audit history of the values included in the header. The results of the request include system-generated and ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Audit History Metadata"></meta><meta name="abstract" content="If you add the x-audit-metadata header to an Asset request, you can later query the audit history of the values included in the header. The results of the request include system-generated and user-defined metadata."></meta><meta name="description" content="If you add the x-audit-metadata header to an Asset request, you can later query the audit history of the values included in the header. The results of the request include system-generated and user-defined metadata."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_259d90dc-f54b-4953-b186-faf86792f915"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Audit History Metadata</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_259d90dc-f54b-4953-b186-faf86792f915">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Audit History Metadata</h1>
+<div class="body refbody"><p class="shortdesc">If you add the <samp class="ph codeph">x-audit-metadata</samp> header to an Asset request, you can later query the audit history of the values included in the header. The results of the request include system-generated and user-defined metadata.</p>
+<div class="section" id="reference_259d90dc-f54b-4953-b186-faf86792f915__metadata_best_practice"><h2 class="title sectiontitle">Audit History Metadata Headers</h2>
+            
+            <ul class="ul" id="reference_259d90dc-f54b-4953-b186-faf86792f915__ul_c91fb4b2-7cab-4ce3-be81-9d9fd7ec0ef0"><li class="li">Header name: <p class="p"><samp class="ph codeph">x-audit-metadata</samp></p>
+</li>
+<li class="li">Example header value:  <pre class="pre codeblock">{"userId":"abc","reason"."xxx","evenTimestamp":"2016-03-25T06:10:36.661+05:30".eventId"."new equip2","masterEventId":new asset","otherInfo":"blue"}</pre>
+</li>
+</ul>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">System-Generated Metadata Attributes</h2>
+            
+            <p class="p">Predix Asset service provides the following system-generated attributes: </p>
+
+            <div class="p">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_259d90dc-f54b-4953-b186-faf86792f915__table_k3l_2n3_mw" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="50%" id="d8014e45">Attribute</th>
+<th class="entry" valign="top" width="50%" id="d8014e47">Attribute Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e45 "><samp class="ph codeph">timestamp</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e47 ">Indicates the date and time the request was submitted. </td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e45 "><samp class="ph codeph">action</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e47 ">Indicates the operation (CRUD) used in the request.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e45 "><samp class="ph codeph">elementOldValue</samp><p class="p"><samp class="ph codeph">elementNewValue</samp></p>
+</td>
+<td class="entry" valign="top" width="50%" headers="d8014e47 ">Indicates the value of the element before the update and the new value after the change.</td>
+</tr>
+</tbody>
+</table>
+</div>
+These attributes are optional and are tagged as metadata and indexed so they will return meaningful results if used in queries.</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">User-defined Metadata Attributes</h2>
+            
+            <div class="p">You can define your own audit history metadata and use it in your headers:
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_259d90dc-f54b-4953-b186-faf86792f915__table_qvk_gy3_hx" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="50%" id="d8014e86">Attribute</th>
+<th class="entry" valign="top" width="50%" id="d8014e88">Attribute Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e86 "><samp class="ph codeph">userId</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e88 ">Identifies the <samp class="ph codeph">userID</samp> as you have defined it. For example, you might define <samp class="ph codeph">userID</samp> as the person who updated the record, or track the person who performed the physical work.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e86 "><samp class="ph codeph">eventTimestamp</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e88 ">Tracks the date and time a submitted change to an asset actually occurs.<p class="p">For example, a maintenance event might be entered into the system at a given date and time, but the actual maintenance might have been performed before the data was updated. The<samp class="ph codeph"> eventTimestamp</samp> allows users to track when the actual change was made.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e86 "><samp class="ph codeph">reason</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e88 ">Indicates the purpose of the request by a text string or a predefined set of codes defined for the business.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e86 "><samp class="ph codeph">eventId</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e88 ">Customers can create separate change events that track  metadata about a change. If a separate event is part of the asset model, then <samp class="ph codeph">eventId</samp> can be used to link the change on the asset to the details found in the event.<p class="p">Alternately, customers could use this as a descriptor of the type of change that has taken place, such as <span class="q">"Scheduled Maintenance"</span> or <span class="q">"Annual Inspection"</span>.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e86 "><samp class="ph codeph">masterEventId</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e88 ">The <samp class="ph codeph">masterEventId</samp> can be used to tie smaller changes into a larger overarching change.<p class="p">For example, an engine overhaul master event would include many smaller, discrete events such as change the oil, replace valve stem seals, replace cylinders, and so on. Each of these individual changes would be recorded as part of the larger engine overhaul event.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="50%" headers="d8014e86 "><samp class="ph codeph">otherInfo</samp></td>
+<td class="entry" valign="top" width="50%" headers="d8014e88 ">Other info to be determined by the user.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

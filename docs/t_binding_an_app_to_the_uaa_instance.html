@@ -17,6 +17,14 @@
    <p class="p">You can retrieve the following UAA instance details from the VCAP_SERVICES environment variable:</p>
 
    <ul class="ul" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__ul_ysc_qkx_fs"><li class="li">
+                    <p class="p">A <samp class="ph codeph">dashboard_url</samp> for your instance. You can use this URL to access the dashboard for managing this instance of UAA.</p>
+
+                </li>
+<li class="li">
+                    <p class="p">A <samp class="ph codeph">subdomain</samp> that specifies a sub-domain you can use in addition to the domain created for UAA. </p>
+
+                </li>
+<li class="li">
      <p class="p">A <samp class="ph codeph">uaa_instance_uri</samp> for your instance. </p>
 
     </li>
@@ -73,8 +81,10 @@ OK
         {
         "credentials":
         {
+         "dashboardUrl": "https://uaa-dashboard.run.asv-pr.ice.predix.io/#/login/ff27c315-d027-4d1d-a30c-64f49b369ed9",
          "issuerId":
           "https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token",
+         "subdomain": "ff27c315-d027-4d1d-a30c-64f49b369ed9",
          "uri": 
            "https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io",
           "zone": {
@@ -96,7 +106,9 @@ OK
 
                     <p class="p">In this sample, the following values are displayed:</p>
 
-                    <ul class="ul" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__ul_2645cf07-9edd-492f-b1dd-25effc830723"><li class="li"><samp class="ph codeph">uaa_instance_issuerId</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token</samp></li>
+                    <ul class="ul" id="task_155dd0e5-ca06-45d3-833e-686a71f0ca98__ul_2645cf07-9edd-492f-b1dd-25effc830723"><li class="li"><samp class="ph codeph">dashboard_url</samp> = <samp class="ph codeph">https://uaa-dashboard.run.asv-pr.ice.predix.io/#/login/ff27c315-d027-4d1d-a30c-64f49b369ed9</samp></li>
+<li class="li"><samp class="ph codeph">uaa_instance_issuerId</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token</samp></li>
+<li class="li"><samp class="ph codeph">subdomain</samp> = 04187eb1-e0cf-4874-8218-9fb77a8b4ed9</li>
 <li class="li"><samp class="ph codeph">uaa_instance_uri</samp> = <samp class="ph codeph">https://ff27c315-d027-4d1d-a30c-64f49b369ed9.predix-uaa.run.aws-usw02-pr.ice.predix.io</samp></li>
 <li class="li"><samp class="ph codeph">uaa_instance_GUID</samp> = <samp class="ph codeph">ff27c315-d027-4d1d-a30c-64f49b369ed9</samp></li>
 </ul>

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="A system message is a REST resource containing information about the scripts run for a particular request. The scripting engine generates a system message when the following events occur during a ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="System Messages REST API"></meta><meta name="abstract" content="A system message is a REST resource containing information about the scripts run for a particular request."></meta><meta name="description" content="A system message is a REST resource containing information about the scripts run for a particular request."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_26652eaa-1c12-478f-9ec8-ec00a150b878"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>System Messages REST API</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_26652eaa-1c12-478f-9ec8-ec00a150b878">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">System Messages REST API</h1>
+<div class="body refbody"><p class="shortdesc">A system message is a REST resource containing information about the scripts run for a particular request.</p>
+<div class="section">
+            <div class="p">The scripting engine generates a system message when the following events occur during a script run:a script: <ul class="ul" id="reference_26652eaa-1c12-478f-9ec8-ec00a150b878__ul_91650b18-a41a-4252-b616-74e0fdaf2cbc"><li class="li">Cancels or modifies an incoming request.</li>
+<li class="li">Encounters an unhandled exception.</li>
+<li class="li">Exceeds its time or memory usage limits.</li>
+<li class="li">Invokes the <samp class="ph codeph">$.log</samp> method.</li>
+</ul>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">System Messages REST API</h2>
+            
+            <div class="p">Clients can read and delete system messages by sending requests to the <samp class="ph codeph">/system/messages</samp> endpoint. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_26652eaa-1c12-478f-9ec8-ec00a150b878__table_2aa814c6-4a4f-40e2-a5d4-b9497b9c8125" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" align="left" valign="top" width="33.33333333333333%" id="d9436e45">Method</th>
+<th class="entry" align="left" valign="top" width="33.33333333333333%" id="d9436e47">Path</th>
+<th class="entry" align="left" valign="top" width="33.33333333333333%" id="d9436e49">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e45 "><samp class="ph codeph">GET</samp></td>
+<td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e47 "><samp class="ph codeph">/system/messages</samp>
+                </td>
+<td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e49 ">Retrieves a list of system messages.</td>
+</tr>
+<tr class="row"><td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e45 "><samp class="ph codeph">GET</samp></td>
+<td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e47 "><samp class="ph codeph">/system/messages:id</samp>
+                </td>
+<td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e49 ">Retrieves a system message.</td>
+</tr>
+<tr class="row"><td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e45 "><samp class="ph codeph">DELETE</samp></td>
+<td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e47 "><samp class="ph codeph">/system/messages:id</samp>
+                </td>
+<td class="entry" align="left" valign="top" width="33.33333333333333%" headers="d9436e49 ">Deletes a system message</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Example</h2>
+            
+            <div class="p">The following pre-processing script use the <samp class="ph codeph">/system/scripts/abc</samp> URI:<pre class="pre codeblock">```javascript
+/**
+ * Logs two messages.
+ * @execution pre-processing
+ */
+$.log("Hello post-processing script!");
+$.log("How was your day?");   
+```</pre>
+</div>
+
+            <div class="p">The following post-processing script uses the <samp class="ph codeph">/system/scripts/xyz</samp>URI: <pre class="pre codeblock">```javascript
+/**
+ * Logs a message and throws an error.
+ * @execution post-processing
+ */
+$.log("Not so good pre-processing Script.");
+throw new Error("I have a bug");
+```</pre>
+</div>
+
+            <div class="p">The following triggers bind the two scripts to <samp class="ph codeph">GET /assets</samp>:<pre class="pre codeblock">```json
+[
+  {
+    "uri":           "/system/triggers/abc",
+    "onReferenceTo": "/assets",
+    "methods":       ["GET"],
+    "disabled":      false,
+    "script":        "/system/scripts/abc"
+  },
+  {
+    "uri":           "/system/triggers/xyz",
+    "onReferenceTo": "/assets",
+    "methods":       ["GET"],
+    "disabled":      false,
+    "script":        "/system/scripts/xyz"
+  }
+]
+```</pre>
+</div>
+
+            <div class="p">When combined, <samp class="ph codeph">GET /assets</samp> a request produces the following system message: <pre class="pre codeblock">```json
+[
+  {
+    "uri": "/system/messages/733b3ccd-53f5-4c12-b6ab-0be0da5eef59",
+    "type": "Script Engine Execution Report",
+    "datetime": "2016-05-02T23:03:54.931Z",
+    "request": {
+      "id": "0e32247e-d663-4806-a7ec-0e677e25e6f7",
+      "method": "GET",
+      "url": "/assets"
+    },
+    "reports": {
+      "preProcessing": [
+        {
+          "trigger": "/system/triggers/abc",
+          "script": "/system/scripts/abc",
+          "timeElapsedMs": 378,
+          "messages": [
+            "Hello post-processing script!",
+            "How was your day?"
+          ]
+        }
+      ],
+      "postProcessing": [
+        {
+          "trigger": "/system/triggers/xyz",
+          "script": "/system/scripts/xyz",
+          "timeElapsedMs": 244,
+          "messages": [
+            "Not so good pre-processing Script.",
+            "I have a bug"
+          ]
+        }
+      ]
+    }
+  }
+]
+```</pre>
+</div>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="A trigger is a REST resource that binds a script to an asset endpoint. REST API Client apps can create, read, update, and delete triggers by sending requests to the /system/triggers endpoint. Method ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Trigger REST API"></meta><meta name="abstract" content="A trigger is a REST resource that binds a script to an asset endpoint."></meta><meta name="description" content="A trigger is a REST resource that binds a script to an asset endpoint."></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_5f21adc9-d637-4e22-bbb9-919c987f5af9"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Trigger REST API</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_5f21adc9-d637-4e22-bbb9-919c987f5af9">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Trigger REST API</h1>
+<div class="body refbody"><p class="shortdesc">A trigger is a REST resource that binds a script to an asset endpoint. </p>
+<div class="section"><h2 class="title sectiontitle">REST API</h2>
+            
+            <div class="p">Client apps can create, read, update, and delete triggers by sending requests to the <samp class="ph codeph">/system/triggers</samp> endpoint.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_5f21adc9-d637-4e22-bbb9-919c987f5af9__table_c1d765fc-1320-42c7-9722-ce5f6e714ec4" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" align="left" valign="top" width="16.666666666666664%" id="d9721e29">Method</th>
+<th class="entry" align="left" valign="top" width="16.666666666666664%" id="d9721e31">Path</th>
+<th class="entry" align="left" valign="top" width="16.666666666666664%" id="d9721e33">Content Type</th>
+<th class="entry" align="left" valign="top" width="50%" id="d9721e35">Description</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e29 "><samp class="ph codeph">POST</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e31 "><samp class="ph codeph">/system/triggers</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e33 "><samp class="ph codeph">application/json</samp></td>
+<td class="entry" align="left" valign="top" width="50%" headers="d9721e35 ">Creates one or more triggers.</td>
+</tr>
+<tr class="row"><td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e29 "><samp class="ph codeph">PUT</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e31 "><samp class="ph codeph">/system/triggers/:id</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e33 ">application/json</td>
+<td class="entry" align="left" valign="top" width="50%" headers="d9721e35 ">Creates a trigger.</td>
+</tr>
+<tr class="row"><td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e29 "><samp class="ph codeph">DELETE</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e31 "><samp class="ph codeph">/system/triggers/:id</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e33 "> </td>
+<td class="entry" align="left" valign="top" width="50%" headers="d9721e35 ">Deletes a trigger.</td>
+</tr>
+<tr class="row"><td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e29 "><samp class="ph codeph">GET</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e31 "><samp class="ph codeph">/system/triggers/:id</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e33 "> </td>
+<td class="entry" align="left" valign="top" width="50%" headers="d9721e35 ">Retrieves a trigger.</td>
+</tr>
+<tr class="row"><td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e29 "><samp class="ph codeph">GET</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e31 "><samp class="ph codeph">/system/triggers</samp></td>
+<td class="entry" align="left" valign="top" width="16.666666666666664%" headers="d9721e33 "> </td>
+<td class="entry" align="left" valign="top" width="50%" headers="d9721e35 ">Retrieves a list of triggers.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">Trigger Properties</h2>
+            
+            <div class="p">You can append trigger properties to your REST requests.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_5f21adc9-d637-4e22-bbb9-919c987f5af9__table_8468f972-793a-49b2-9311-4ad00fbf0403" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="20%" id="d9721e107">Property</th>
+<th class="entry" valign="top" width="20%" id="d9721e109">Type</th>
+<th class="entry" valign="top" width="20%" id="d9721e111">Example</th>
+<th class="entry" valign="top" width="40%" id="d9721e113">Descripion</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="20%" headers="d9721e107 "><samp class="ph codeph">uri</samp></td>
+<td class="entry" valign="top" width="20%" headers="d9721e109 ">string</td>
+<td class="entry" valign="top" width="20%" headers="d9721e111 "><samp class="ph codeph">/system/triggers/001</samp></td>
+<td class="entry" valign="top" width="40%" headers="d9721e113 ">Unique resource identifier.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d9721e107 "><samp class="ph codeph">onReferenceTo</samp></td>
+<td class="entry" valign="top" width="20%" headers="d9721e109 ">string</td>
+<td class="entry" valign="top" width="20%" headers="d9721e111 "><samp class="ph codeph">/assets</samp><p class="p"><samp class="ph codeph">/custom/my-logic</samp></p>
+</td>
+<td class="entry" valign="top" width="40%" headers="d9721e113 ">REST collection or custom endpoint that triggers a script run.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d9721e107 "><samp class="ph codeph">methods</samp></td>
+<td class="entry" valign="top" width="20%" headers="d9721e109 ">array</td>
+<td class="entry" valign="top" width="20%" headers="d9721e111 "><samp class="ph codeph">["POST", "PUT"]</samp></td>
+<td class="entry" valign="top" width="40%" headers="d9721e113 ">HTTP methods that trigger a script run when sent to <samp class="ph codeph">onReferenceTo</samp>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d9721e107 "><samp class="ph codeph">disabled</samp></td>
+<td class="entry" valign="top" width="20%" headers="d9721e109 ">Boolean</td>
+<td class="entry" valign="top" width="20%" headers="d9721e111 "><samp class="ph codeph">false</samp></td>
+<td class="entry" valign="top" width="40%" headers="d9721e113 ">Enables or disables the trigger.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d9721e107 "><samp class="ph codeph">script</samp></td>
+<td class="entry" valign="top" width="20%" headers="d9721e109 ">string</td>
+<td class="entry" valign="top" width="20%" headers="d9721e111 "><samp class="ph codeph">/system/scripts/001</samp></td>
+<td class="entry" valign="top" width="40%" headers="d9721e113 ">URI of the script to execute.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="20%" headers="d9721e107 "><samp class="ph codeph">scriptParameters</samp></td>
+<td class="entry" valign="top" width="20%" headers="d9721e109 ">object</td>
+<td class="entry" valign="top" width="20%" headers="d9721e111 "><samp class="ph codeph">{"param1": "foo"}</samp></td>
+<td class="entry" valign="top" width="40%" headers="d9721e113 ">Object map containing required configuration parameters for the script (optional).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

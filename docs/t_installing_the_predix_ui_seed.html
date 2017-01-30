@@ -1,0 +1,71 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="Install the Predix UI Seed to the local developer environment. This procedure uses the following developer tools to install the Predix UI Seed : Node.js npm package-management utility. See ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="task"></meta><meta name="DC.Title" content="Installing the Predix UI Seed"></meta><meta name="abstract" content="Install the Predix UI Seed to the local developer environment."></meta><meta name="description" content="Install the Predix UI Seed to the local developer environment."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="task_kfg_b5j_mw"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Installing the Predix UI Seed</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="task_kfg_b5j_mw">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Installing the Predix UI Seed</h1>
+<div class="body taskbody"><p class="shortdesc">Install the <span class="ph">Predix UI Seed</span> to the local developer environment.</p>
+<div class="section context">
+            <div class="p">This procedure uses the following developer tools to install the <span class="ph">Predix UI Seed</span>:<ul class="ul" id="task_kfg_b5j_mw__ul_yhv_htq_y5"><li class="li">Node.js <samp class="ph codeph">npm</samp> package-management utility. See <a class="xref" href="https://www.npmjs.com/" target="_blank">https://www.npmjs.com/</a> for more information.</li>
+<li class="li"><samp class="ph codeph">gulp</samp> command-line interface for <samp class="ph codeph">npm</samp>. See <a class="xref" href="https://www.npmjs.com/package/gulp-cli" target="_blank">https://www.npmjs.com/package/gulp-cli</a> for more information.</li>
+<li class="li"><samp class="ph codeph">gulp serve</samp> plugin for starting a web server that runs tasks and serves files. This web server can be accessed by entering <samp class="ph codeph">http://localhost:5000/</samp> in a web browser. See <a class="xref" href="https://www.npmjs.com/package/gulp-serve" target="_blank">https://www.npmjs.com/package/gulp-serve</a> for more information.</li>
+<li class="li"><samp class="ph codeph">bower</samp> front end package manager for <samp class="ph codeph">npm</samp>. See <a class="xref" href="https://www.npmjs.com/package/bower" target="_blank">https://www.npmjs.com/package/bower</a> for more information.</li>
+</ul>
+</div>
+
+        </div>
+<ol class="ol steps" id="task_kfg_b5j_mw__steps_800852aa-57b8-4023-93ae-16d05c8e787c"><li class="li step stepexpand"><span class="ph cmd">To clone your copy of the <span class="ph">Predix UI Seed</span> and start a <span class="ph">Predix UI Seed</span> project, at a command prompt, enter. </span><div class="itemgroup info">
+                    <pre class="pre codeblock">git clone https://github.com/PredixDev/predix-seed.git</pre>
+
+                    <p class="p">The command generates the following output: </p>
+
+                    <pre class="pre codeblock">Cloning into 'predix-seed'...
+remote: Counting objects: 13523, done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 13523 (delta 6), reused 0 (delta 0), pack-reused 13508
+Receiving objects: 100% (13523/13523), 46.62 MiB | 2.52 MiB/s, done.
+Resolving deltas: 100% (5256/5256), done.
+Checking connectivity... done.</pre>
+
+                    <p class="p">The command also creates a <samp class="ph codeph">predix-seed</samp> directory containing the <span class="ph">Predix UI Seed</span> project files.</p>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">Record the pathname of the <samp class="ph codeph">predix-seed</samp> directory for later use. </p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">To change to the <samp class="ph codeph">predix-seed</samp> project directory, at a command prompt, enter:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">cd predix-seed</pre>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">To install the <samp class="ph codeph">gulp</samp>build system and <samp class="ph codeph">bower</samp> front end package manager, at a command prompt, enter:</span><div class="itemgroup info">
+                    <pre class="pre codeblock">npm install gulp gulp-cli bower -g</pre>
+
+                    <p class="p">See <a class="xref" href="c_application_development_with_predix_ui.html#concept_whc_5bk_wv" title="As a developer, you should understand these web technologes before using Predix UI.">Application Development with Predix UI</a> for more information about these tools.</p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">To install the <span class="ph">Predix UI Seed</span> dependencies for these utilities, at a command prompt, enter: </span><div class="itemgroup info">
+                    <pre class="pre codeblock">npm install
+bower install</pre>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">The <samp class="ph codeph">package.json</samp> file lists the build-time dependencies. The <samp class="ph codeph">bower.json</samp> file lists the run-time dependencies.</p>
+
+                </div></li>
+<li class="li step stepexpand"><span class="ph cmd">To verify that the <span class="ph">Predix UI Seed</span> files have been successfully installed:, at a command prompt, enter</span><div class="itemgroup info">
+                    <pre class="pre codeblock">gulp</pre>
+
+                </div><div class="itemgroup stepresult">
+                    <p class="p">You can display your copy of the <span class="ph">Predix UI Seed</span> in a web browser by entering <samp class="ph codeph">http://localhost:5000/</samp> in the address bar.</p>
+
+                </div></li>
+</ol>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

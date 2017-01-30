@@ -1,0 +1,71 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="You can use the Views service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances. Before you begin: For more ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="reference"></meta><meta name="DC.Title" content="Views Service Database Setup"></meta><meta name="abstract" content="You can use the Views service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances."></meta><meta name="description" content="You can use the Views service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances."></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Views Service Database Setup</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+<h1 class="title topictitle1">Views Service Database Setup</h1>
+<div class="body refbody"><p class="shortdesc">You can use the Views service database to store the state and layout of card and deck instances, as well as the relationship information between card and deck instances. </p>
+<div class="section"><h2 class="title sectiontitle">Before you begin:</h2>
+            
+            <div class="p">For more information about the Views service database, see:<ul class="ul" id="reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82__ul_c418e5cd-7acb-4ddc-9a49-8cf6929a9281"><li class="li"><a class="xref" href="c_about_views_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="The Views service Views service stores the visual information available in a web application.">About Views Service</a></li>
+<li class="li"><a class="xref" href="r_views_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">Views Service Database Operations</a></li>
+</ul>
+</div>
+
+            <p class="p">Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute Vview service  API requests. </p>
+
+            <p class="p">For more information about these APIs, see the <a class="xref" href="/api" target="_blank">API Documentation</a>.</p>
+
+        </div>
+<div class="section"></div>
+<div class="section"><h2 class="title sectiontitle">Task Roadmap</h2>
+            
+            <p class="p">Follow these tasks to set up the Views service database:</p>
+
+            
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_962fee6d-0ae6-4aa3-ae9e-9f19ab024d82__table_0f739b03-3b32-410c-86c3-c0d8f7c23660" class="table" frame="border" border="1" rules="all"><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="4.391743522178305%" id="d14287e70">#</th>
+<th class="entry" valign="top" width="43.82960035133949%" id="d14287e72">Task</th>
+<th class="entry" valign="top" width="51.77865612648221%" id="d14287e74">Information</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d14287e70 ">1</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d14287e72 ">Create a card instance in the Views service database that can be retrieved in JSON format.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d14287e74 ">See <a class="xref" href="t_creating_a_card.html#task_vg3_zyt_d5" title="Procedure for creating a card instance in the Views service database.">Creating a Card</a></td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d14287e70 ">2</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d14287e72 ">Create a deck instance in the Views service database that can be retrieved in JSON format.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d14287e74 ">See <a class="xref" href="t_creating_a_deck.html#task_fh5_drt_d5" title="Procedure for creating a deck instance in the Views service database.">Creating a Deck</a>.</td>
+<td class="entry" valign="top" width="4.391743522178305%" headers="d14287e70 ">.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d14287e70 ">3</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d14287e72 ">Associate one or more card instances with a deck instance in the Views service database and retrieve all card instances.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d14287e74 ">See <a class="xref" href="t_associating_a_card_with_a_deck.html#task_m15_zc5_d5" title="Procedure for associating a card with a deck in the Views service database">Associating a Card with a Deck</a>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d14287e70 ">4</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d14287e72 ">Tag a deck or card instance in the Views service database to look up by category.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d14287e74 ">See <a class="xref" href="t_tagging_a_deck.html#task_aft_jf5_d5" title="Procedure for tagging a deck or card in the Views service database">Tagging a Deck</a>.</td>
+</tr>
+<tr class="row"><td class="entry" valign="top" width="4.391743522178305%" headers="d14287e70 ">5</td>
+<td class="entry" valign="top" width="43.82960035133949%" headers="d14287e72 ">Query data in the Views service database with filters and return the results in JSON format.</td>
+<td class="entry" valign="top" width="51.77865612648221%" headers="d14287e74 ">See <a class="xref" href="c_query_with_filters.html#concept_wtz_nvr_35" title="Use a REST client to query data in the Views service database with filters.">Query Data with Filters</a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        </div>
+<div class="section"><h2 class="title sectiontitle">What to do next:</h2>
+            
+            <p class="p">See <a class="xref" href="t_displaying_a_multicard_.deck.html#task_274cefdb-fc52-4746-9fa2-a477e9d954f2" title="This example web application illustrates how the Views service database is used to control the visual summary of user information in a web application.">Displaying a Multi-Card Deck</a> for an example web application that displays <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">cards</a> in a <a class="xref" href="c_predix_ui_glossary.html#concept_nc4_5vg_qv" title="As a developer, you should understand these Predix UI terms and definitions.">deck</a> using the Views service database to control the visual summary of user information.</p>
+
+        </div>
+</div>
+<div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
+</body>
+</html>

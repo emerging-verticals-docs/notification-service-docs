@@ -2,7 +2,7 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
 <html xml:lang="en-us" lang="en-us">
-<head><meta name="description" content="Overview of using a REST client to query data with filters A query is a read operation on the View service database that returns a result set in JSON format. Filters specify the critera for the result ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Query Data with Filters"></meta><meta name="abstract" content="Overview of using a REST client to query data with filters"></meta><meta name="description" content="Overview of using a REST client to query data with filters"></meta><meta name="DC.Relation" scheme="URI" content="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f"></meta><meta name="DC.Relation" scheme="URI" content="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_wtz_nvr_35"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Query Data with Filters</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+<head><meta name="description" content="Use a REST client to query data in the Views service database with filters. A query is a read operation on the Views service database that returns a result set in JSON format. Filters specify the ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="concept"></meta><meta name="DC.Title" content="Query Data with Filters"></meta><meta name="abstract" content="Use a REST client to query data in the Views service database with filters."></meta><meta name="description" content="Use a REST client to query data in the Views service database with filters."></meta><meta name="DC.Relation" scheme="URI" content="c_about_views_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f"></meta><meta name="DC.Relation" scheme="URI" content="r_views_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b"></meta><meta name="DC.Creator" content="Joseph Aseo"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="concept_wtz_nvr_35"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Query Data with Filters</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
           
           var prefix = "index.html";
           
@@ -10,31 +10,31 @@
 <body onload="highlightSearchTerm()" class="frmBody" id="concept_wtz_nvr_35">
 <table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
 <h1 class="title topictitle1">Query Data with Filters</h1>
-<div class="body conbody"><p class="shortdesc">Overview of using a REST client to query data with filters</p>
-<p class="p">A query is a read operation on the View service database that returns a result set in JSON format. Filters specify the critera for the result set. Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to query data wth filters.</p>
-<p class="p">You specify a filter on the View service database by using the following format:</p>
+<div class="body conbody"><p class="shortdesc">Use a REST client to query data in the Views service database with filters.</p>
+<p class="p">A query is a read operation on the Views service database that returns a result set in JSON format. Filters specify the critera for the result set. Select a REST client (such as <a class="xref" href="https://www.getpostman.com/" target="_blank">Postman</a>) that can execute API requests to query data wth filters.</p>
+<p class="p">You specify a filter on the Views service database by using the following format:</p>
 <pre class="pre codeblock">?filter[&lt;filterType&gt;]=[&lt;filter inputs&gt;]</pre>
 
-<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_wtz_nvr_35__table_nrx_yvr_35" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Supported Filters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d6153e33">Filter Type</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d6153e35">Description</th>
-<th class="entry" valign="top" width="33.33333333333333%" id="d6153e37">Example</th>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="concept_wtz_nvr_35__table_nrx_yvr_35" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Supported Filters</span></caption><thead class="thead" align="left"><tr class="row"><th class="entry" valign="top" width="33.33333333333333%" id="d6625e33">Filter Type</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d6625e35">Description</th>
+<th class="entry" valign="top" width="33.33333333333333%" id="d6625e37">Example</th>
 </tr>
 </thead>
-<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "><samp class="ph codeph">include</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Allow related data models to be included in the result set</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph">/decks?filter[include]=cards</samp></td>
+<tbody class="tbody"><tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6625e33 "><samp class="ph codeph">include</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e35 ">Allow related data models to be included in the result set</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e37 "><samp class="ph codeph">/decks?filter[include]=cards</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "><samp class="ph codeph">order</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Allow result set to be return in order that is specified </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph"> /decks?filter[order]=createTimeStamp DESC</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6625e33 "><samp class="ph codeph">order</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e35 ">Allow result set to be return in order that is specified </td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e37 "><samp class="ph codeph"> /decks?filter[order]=createTimeStamp DESC</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "> </td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Get a deck with ordered cards</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph">decks?filter[cards] &amp;filter[order]=cards</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6625e33 "> </td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e35 ">Get a deck with ordered cards</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e37 "><samp class="ph codeph">decks?filter[cards] &amp;filter[order]=cards</samp></td>
 </tr>
-<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6153e33 "><samp class="ph codeph">where</samp></td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e35 ">Filter the result set by field value</td>
-<td class="entry" valign="top" width="33.33333333333333%" headers="d6153e37 "><samp class="ph codeph">/decks?filter[where][title]=Overview</samp></td>
+<tr class="row"><td class="entry" valign="top" width="33.33333333333333%" headers="d6625e33 "><samp class="ph codeph">where</samp></td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e35 ">Filter the result set by field value</td>
+<td class="entry" valign="top" width="33.33333333333333%" headers="d6625e37 "><samp class="ph codeph">/decks?filter[where][title]=Overview</samp></td>
 </tr>
 </tbody>
 </table>
@@ -42,10 +42,10 @@
 <div class="note note"><span class="notetitle">Note:</span> See the StrongLoop documentation for more infromation about querying data with filters (<a class="xref" href="https://docs.strongloop.com/display/public/LB/Querying+data" target="_blank">https://docs.strongloop.com/display/public/LB/Querying+data</a>).</div>
 </div>
 <div class="related-links"><div class="relinfo relconcepts"><strong>Related concepts</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="c_about_view_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="The View service stores the visual information available in a web application.">About View Service</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="c_about_views_service.html#concept_61e0544e-1969-465c-8e56-d5da6a83366f" title="The Views service Views service stores the visual information available in a web application.">About Views Service</a></div>
 </div>
 <div class="relinfo relref"><strong>Related reference</strong><br></br>
-<div class="related_link"><a class="navheader_parent_path" href="r_view_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">View Service Database Operations</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="r_views_service_database_operations.html#reference_ae9937fc-74f1-40d6-b371-b4bb1d750c5b" title="Store the state of card and deck objects in a database.">Views Service Database Operations</a></div>
 </div>
 </div><div class="navfooter"><!----></div><div class="footer"><a class="oxyFooter" href="" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/GELogo1.jpg" height="36px" alt="General Electric"></img></span><span class="xmlauthor"> © 2015-2017 General Electric Company. All rights reserved.</span></a></div>
 </body>
