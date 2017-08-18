@@ -330,7 +330,7 @@ Tokens issue by this client will now be authorized to use the notification servi
 ```
 
 ### Get All Events
-'''
+```
 Users can retrieve their events using the following API:
   
 Sample cUrl command:
