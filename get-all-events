@@ -1,0 +1,14 @@
+Users can retrieve their events using the following API:
+ 
+METHOD
+
+GET
+
+URI
+
+/v1/tenants/{tenant_uuid}/events
+
+ 
+Sample cUrl command:
+ 
+curl -X GET https://ev-notification-service.run.aws-usw02-pr.ice.predix.io/v1/tenants/{{tenant_uuid}}/events -H 'authorization: bearer {{uaa_token}}' -H 'content-type: application/json'
