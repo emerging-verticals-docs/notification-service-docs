@@ -15,8 +15,10 @@ The Predix Notification Service is a notification service that notifies list of 
     - [Delete configuration](#delete-configuration)
     - [Send email using configuration](#send-email-using-configuration)
     - [Get Tenant](#get-tenant)
+    - [Get All Events](#get-all-events)
   - [Response codes](#response-codes)
   - [Resources](#resources)
+  
 
 ## Usage
 
@@ -325,6 +327,15 @@ Tokens issue by this client will now be authorized to use the notification servi
   "message": "OK",
   "timestamp": 1481593852500
 }
+```
+
+### Get All Events
+'''
+Users can retrieve their events using the following API:
+  
+Sample cUrl command:
+ 
+curl -X GET https://ev-notification-service.run.aws-usw02-pr.ice.predix.io/v1/tenants/{{tenant_uuid}}/events -H 'authorization: bearer {{uaa_token}}' -H 'content-type: application/json'
 ```
 
 ## Response codes
